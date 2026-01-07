@@ -1,0 +1,16 @@
+{
+  "filepath": "/tmp/Math-36b/src/main/java/org/apache/commons/math/optimization/univariate/UnivariateRealOptimizer.java",
+  "nodes": [
+    {
+      "type": "class_interface",
+      "name": "UnivariateRealOptimizer",
+      "is_interface": true,
+      "parent_types": [
+        "org.apache.commons.math.optimization.univariate.BaseUnivariateOptimizer\u003corg.apache.commons.math.analysis.UnivariateFunction\u003e"
+      ],
+      "begin_line": 27,
+      "end_line": 28,
+      "comment": "\n * Interface for univariate optimization algorithms.\n *\n * @version $Id$\n * @since 3.0\n "
+    }
+  ]
+}

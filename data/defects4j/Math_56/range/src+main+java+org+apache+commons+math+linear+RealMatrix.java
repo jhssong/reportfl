@@ -1,0 +1,424 @@
+{
+  "filepath": "/tmp/Math-56b/src/main/java/org/apache/commons/math/linear/RealMatrix.java",
+  "nodes": [
+    {
+      "type": "class_interface",
+      "name": "RealMatrix",
+      "is_interface": true,
+      "parent_types": [
+        "org.apache.commons.math.linear.AnyMatrix"
+      ],
+      "begin_line": 28,
+      "end_line": 806,
+      "comment": "\n * Interface defining a real-valued matrix with basic algebraic operations.\n * \u003cp\u003e\n * Matrix element indexing is 0-based -- e.g., \u003ccode\u003egetEntry(0, 0)\u003c/code\u003e\n * returns the element in the first row, first column of the matrix.\u003c/p\u003e\n *\n * @version $Revision$ $Date$\n "
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.createMatrix(int, int)",
+      "begin_line": 40,
+      "end_line": 40,
+      "comment": "\n     * Create a new RealMatrix of the same type as the instance with the supplied\n     * row and column dimensions.\n     *\n     * @param rowDimension  the number of rows in the new matrix\n     * @param columnDimension  the number of columns in the new matrix\n     * @return a new matrix of the same type as the instance\n     * @throws org.apache.commons.math.exception.NotStrictlyPositiveException\n     * if row or column dimension is not positive.\n     * @since 2.0\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.copy()",
+      "begin_line": 47,
+      "end_line": 47,
+      "comment": "\n     * Returns a (deep) copy of this.\n     *\n     * @return matrix copy\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.add(org.apache.commons.math.linear.RealMatrix)",
+      "begin_line": 56,
+      "end_line": 56,
+      "comment": "\n     * Compute the sum of this and m.\n     *\n     * @param m    matrix to be added\n     * @return     this + m\n     * @throws  IllegalArgumentException if m is not the same size as this\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.subtract(org.apache.commons.math.linear.RealMatrix)",
+      "begin_line": 65,
+      "end_line": 65,
+      "comment": "\n     * Compute this minus m.\n     *\n     * @param m    matrix to be subtracted\n     * @return     this - m\n     * @throws  IllegalArgumentException if m is not the same size as this\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.scalarAdd(double)",
+      "begin_line": 73,
+      "end_line": 73,
+      "comment": "\n     * Returns the result of adding d to each entry of this.\n     *\n     * @param d    value to be added to each entry\n     * @return     d + this\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.scalarMultiply(double)",
+      "begin_line": 81,
+      "end_line": 81,
+      "comment": "\n     * Returns the result multiplying each entry of this by d.\n     *\n     * @param d    value to multiply all entries by\n     * @return     d * this\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.multiply(org.apache.commons.math.linear.RealMatrix)",
+      "begin_line": 91,
+      "end_line": 91,
+      "comment": "\n     * Returns the result of postmultiplying this by m.\n     *\n     * @param m    matrix to postmultiply by\n     * @return     this * m\n     * @throws     IllegalArgumentException\n     *             if columnDimension(this) !\u003d rowDimension(m)\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.preMultiply(org.apache.commons.math.linear.RealMatrix)",
+      "begin_line": 100,
+      "end_line": 100,
+      "comment": "\n     * Returns the result premultiplying this by \u003ccode\u003em\u003c/code\u003e.\n     * @param m    matrix to premultiply by\n     * @return     m * this\n     * @throws     IllegalArgumentException\n     *             if rowDimension(this) !\u003d columnDimension(m)\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.power(int)",
+      "begin_line": 110,
+      "end_line": 110,
+      "comment": "\n     * Returns the result multiplying this with itself \u003ccode\u003ep\u003c/code\u003e times.\n     * Depending on the underlying storage, instability for high powers might occur.\n     * @param      p raise this to power p\n     * @return     this^p\n     * @throws     IllegalArgumentException if p \u003c 0\n     *             NonSquareMatrixException if the matrix is not square\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.getData()",
+      "begin_line": 117,
+      "end_line": 117,
+      "comment": "\n     * Returns matrix entries as a two-dimensional array.\n     *\n     * @return    2-dimensional array of entries\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.getNorm()",
+      "begin_line": 125,
+      "end_line": 125,
+      "comment": "\n     * Returns the \u003ca href\u003d\"http://mathworld.wolfram.com/MaximumAbsoluteRowSumNorm.html\"\u003e\n     * maximum absolute row sum norm\u003c/a\u003e of the matrix.\n     *\n     * @return norm\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.getFrobeniusNorm()",
+      "begin_line": 133,
+      "end_line": 133,
+      "comment": "\n     * Returns the \u003ca href\u003d\"http://mathworld.wolfram.com/FrobeniusNorm.html\"\u003e\n     * Frobenius norm\u003c/a\u003e of the matrix.\n     *\n     * @return norm\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.getSubMatrix(int, int, int, int)",
+      "begin_line": 148,
+      "end_line": 148,
+      "comment": "\n     * Gets a submatrix. Rows and columns are indicated\n     * counting from 0 to n-1.\n     *\n     * @param startRow Initial row index\n     * @param endRow Final row index (inclusive)\n     * @param startColumn Initial column index\n     * @param endColumn Final column index (inclusive)\n     * @return The subMatrix containing the data of the\n     *         specified rows and columns\n     * @throws org.apache.commons.math.exception.OutOfRangeException if\n     * the indices are not valid.\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.getSubMatrix(int[], int[])",
+      "begin_line": 161,
+      "end_line": 161,
+      "comment": "\n    * Gets a submatrix. Rows and columns are indicated\n    * counting from 0 to n-1.\n    *\n    * @param selectedRows Array of row indices.\n    * @param selectedColumns Array of column indices.\n    * @return The subMatrix containing the data in the\n    *         specified rows and columns\n    * @throws org.apache.commons.math.exception.OutOfRangeException if\n    * the indices are not valid.\n    ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.copySubMatrix(int, int, int, int, double[][])",
+      "begin_line": 177,
+      "end_line": 178,
+      "comment": "\n    * Copy a submatrix. Rows and columns are indicated\n    * counting from 0 to n-1.\n    *\n    * @param startRow Initial row index\n    * @param endRow Final row index (inclusive)\n    * @param startColumn Initial column index\n    * @param endColumn Final column index (inclusive)\n    * @param destination The arrays where the submatrix data should be copied\n    * (if larger than rows/columns counts, only the upper-left part will be used)\n    * @throws org.apache.commons.math.exception.OutOfRangeException if the\n    * indices are not valid.\n    * @exception IllegalArgumentException if the destination array is too small\n    ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.copySubMatrix(int[], int[], double[][])",
+      "begin_line": 191,
+      "end_line": 191,
+      "comment": "\n     * Copy a submatrix. Rows and columns are indicated\n     * counting from 0 to n-1.\n     *\n     * @param selectedRows Array of row indices.\n     * @param selectedColumns Array of column indices.\n     * @param destination The arrays where the submatrix data should be copied\n     * (if larger than rows/columns counts, only the upper-left part will be used)\n     * @throws org.apache.commons.math.exception.OutOfRangeException if the\n     * indices are not valid.\n     * @exception IllegalArgumentException if the destination array is too small\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.setSubMatrix(double[][], int, int)",
+      "begin_line": 225,
+      "end_line": 225,
+      "comment": "\n    * Replace the submatrix starting at \u003ccode\u003erow, column\u003c/code\u003e using data in\n    * the input \u003ccode\u003esubMatrix\u003c/code\u003e array. Indexes are 0-based.\n    * \u003cp\u003e\n    * Example:\u003cbr\u003e\n    * Starting with \u003cpre\u003e\n    * 1  2  3  4\n    * 5  6  7  8\n    * 9  0  1  2\n    * \u003c/pre\u003e\n    * and \u003ccode\u003esubMatrix \u003d {{3, 4} {5,6}}\u003c/code\u003e, invoking\n    * \u003ccode\u003esetSubMatrix(subMatrix,1,1))\u003c/code\u003e will result in \u003cpre\u003e\n    * 1  2  3  4\n    * 5  3  4  8\n    * 9  5  6  2\n    * \u003c/pre\u003e\u003c/p\u003e\n    *\n    * @param subMatrix  array containing the submatrix replacement data\n    * @param row  row coordinate of the top, left element to be replaced\n    * @param column  column coordinate of the top, left element to be replaced\n    * @throws org.apache.commons.math.exception.ZeroException if\n    * {@code subMatrix} does not contain at least one column.\n    * @throws org.apache.commons.math.exception.OutOfRangeException if\n    * {@code subMatrix} does not fit into this matrix from element in\n    * {@code (row, column)}.\n    * @throws org.apache.commons.math.exception.DimensionMismatchException\n    * if {@code subMatrix} is not rectangular.\n    * (not all rows have the same length) or empty.\n    * @throws org.apache.commons.math.exception.NullArgumentException if\n    * {@code subMatrix} is {@code null}.\n    * @since 2.0\n    ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.getRowMatrix(int)",
+      "begin_line": 236,
+      "end_line": 236,
+      "comment": "\n    * Geet the entries at the given row index\n    * as a row matrix.  Row indices start at 0.\n    *\n    * @param row Row to be fetched.\n    * @return row Matrix.\n    * @throws org.apache.commons.math.exception.OutOfRangeException if\n    * the specified row index is invalid.\n    ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.setRowMatrix(int, org.apache.commons.math.linear.RealMatrix)",
+      "begin_line": 250,
+      "end_line": 250,
+      "comment": "\n    * Set the entries at the given row index\n    * as a row matrix.  Row indices start at 0.\n    *\n    * @param row Row to be set.\n    * @param matrix Row matrix (must have one row and the same number of\n    * columns as the instance).\n    * @throws org.apache.commons.math.exception.OutOfRangeException if the\n    * specified row index is invalid.\n    * @throws MatrixDimensionMismatchException\n    * if the matrix dimensions do not match one instance row.\n    ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.getColumnMatrix(int)",
+      "begin_line": 261,
+      "end_line": 261,
+      "comment": "\n    * Get the entries at the given column index\n    * as a column matrix.  Column indices start at 0.\n    *\n    * @param column Column to be fetched.\n    * @return column Matrix.\n    * @throws org.apache.commons.math.exception.OutOfRangeException if\n    * the specified column index is invalid.\n    ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.setColumnMatrix(int, org.apache.commons.math.linear.RealMatrix)",
+      "begin_line": 275,
+      "end_line": 275,
+      "comment": "\n    * Set the entries at the given column index\n    * as a column matrix.  Column indices start at 0.\n    *\n    * @param column Column to be set.\n    * @param matrix Column matrix (must have one column and the same number\n    * of rows as the instance).\n    * @throws org.apache.commons.math.exception.OutOfRangeException if\n    * the specified column index is invalid.\n    * @throws MatrixDimensionMismatchException\n    * if the {@code matrix} dimensions do not match one instance column.\n    ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.getRowVector(int)",
+      "begin_line": 286,
+      "end_line": 286,
+      "comment": "\n    * Returns the entries in row number \u003ccode\u003erow\u003c/code\u003e\n    * as a vector.  Row indices start at 0.\n    *\n    * @param row Row to be fetched.\n    * @return a row vector.\n    * @throws org.apache.commons.math.exception.OutOfRangeException if\n    * the specified row index is invalid.\n    ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.setRowVector(int, org.apache.commons.math.linear.RealVector)",
+      "begin_line": 300,
+      "end_line": 300,
+      "comment": "\n    * Set the entries at the given row index.\n    * as a vector.  Row indices start at 0.\n    *\n    * @param row Row to be set.\n    * @param vector row vector (must have the same number of columns\n    * as the instance).\n    * @throws org.apache.commons.math.exception.OutOfRangeException if\n    * the specified row index is invalid.\n    * @throws MatrixDimensionMismatchException\n    * if the vector dimension does not match one instance row.\n    ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.getColumnVector(int)",
+      "begin_line": 311,
+      "end_line": 311,
+      "comment": "\n    * Get the entries at the given column index\n    * as a vector.  Column indices start at 0.\n    *\n    * @param column Column to be fetched.\n    * @return a column vector.\n    * @throws org.apache.commons.math.exception.OutOfRangeException if\n    * the specified column index is invalid\n    ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.setColumnVector(int, org.apache.commons.math.linear.RealVector)",
+      "begin_line": 325,
+      "end_line": 325,
+      "comment": "\n    * Set the entries at the given column index\n    * as a vector.  Column indices start at 0.\n    *\n    * @param column Column to be set.\n    * @param vector column vector (must have the same number of rows as\n    * the instance).\n    * @throws org.apache.commons.math.exception.OutOfRangeException if the\n    * specified column index is invalid.\n    * @throws MatrixDimensionMismatchException\n    * if the vector dimension does not match one instance column.\n    ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.getRow(int)",
+      "begin_line": 336,
+      "end_line": 336,
+      "comment": "\n     * Get the entries at the given row index.\n     * Row indices start at 0.\n     *\n     * @param row Row to be fetched.\n     * @return the array of entries in the row.\n     * @throws org.apache.commons.math.exception.OutOfRangeException if the\n     * specified row index is not valid.\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.setRow(int, double[])",
+      "begin_line": 350,
+      "end_line": 350,
+      "comment": "\n     * Set the entries at the given row index\n     * as a row matrix.  Row indices start at 0.\n     *\n     * @param row Row to be set.\n     * @param array Row matrix (must have the same number of columns as\n     * the instance)\n     * @throws org.apache.commons.math.exception.OutOfRangeException if the\n     * specified row index is invalid.\n     * @throws MatrixDimensionMismatchException\n     * if the array size does not match one instance row.\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.getColumn(int)",
+      "begin_line": 361,
+      "end_line": 361,
+      "comment": "\n     * Get the entries at the given column index as an array.\n     * Column indices start at 0.\n     *\n     * @param column Column to be fetched.\n     * @return the array of entries in the column.\n     * @throws org.apache.commons.math.exception.OutOfRangeException if the\n     * specified column index is not valid.\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.setColumn(int, double[])",
+      "begin_line": 375,
+      "end_line": 375,
+      "comment": "\n     * Set the entries at the given column index\n     * as a column matrix array.  Column indices start at 0.\n     *\n     * @param column Column to be set.\n     * @param array Column array (must have the same number of rows as\n     * the instance).\n     * @throws org.apache.commons.math.exception.OutOfRangeException if the\n     * specified column index is invalid.\n     * @throws MatrixDimensionMismatchException\n     * if the array size does not match one instance column.\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.getEntry(int, int)",
+      "begin_line": 387,
+      "end_line": 387,
+      "comment": "\n     * Get the entry in the specified row and column.\n     * Row and column indices start at 0.\n     *\n     * @param row Row location of entry to be fetched.\n     * @param column Column location of entry to be fetched.\n     * @return the matrix entry at {@code (row, column)}.\n     * @throws org.apache.commons.math.exception.OutOfRangeException if the\n     * row or column index is not valid.\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.setEntry(int, int, double)",
+      "begin_line": 400,
+      "end_line": 400,
+      "comment": "\n     * Set the entry in the specified row and column.\n     * Row and column indices start at 0.\n     *\n     * @param row Row location of entry to be set.\n     * @param column Column location of entry to be set.\n     * @param value matrix entry to be set.\n     * @throws org.apache.commons.math.exception.OutOfRangeException if\n     * the row or column index is not valid\n     * @since 2.0\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.addToEntry(int, int, double)",
+      "begin_line": 413,
+      "end_line": 413,
+      "comment": "\n     * Change an entry in the specified row and column.\n     * Row and column indices start at 0.\n     *\n     * @param row Row location of entry to be set.\n     * @param column Column location of entry to be set.\n     * @param increment value to add to the matrix entry.\n     * @throws org.apache.commons.math.exception.OutOfRangeException if\n     * the row or column index is not valid.\n     * @since 2.0\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.multiplyEntry(int, int, double)",
+      "begin_line": 426,
+      "end_line": 426,
+      "comment": "\n     * Change an entry in the specified row and column.\n     * Row and column indices start at 0.\n     *\n     * @param row Row location of entry to be set.\n     * @param column Column location of entry to be set.\n     * @param factor Multiplication factor for the matrix entry.\n     * @throws org.apache.commons.math.exception.OutOfRangeException if\n     * the row or column index is not valid.\n     * @since 2.0\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.transpose()",
+      "begin_line": 433,
+      "end_line": 433,
+      "comment": "\n     * Returns the transpose of this matrix.\n     *\n     * @return transpose matrix\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.getTrace()",
+      "begin_line": 443,
+      "end_line": 443,
+      "comment": "\n     * Returns the \u003ca href\u003d\"http://mathworld.wolfram.com/MatrixTrace.html\"\u003e\n     * trace\u003c/a\u003e of the matrix (the sum of the elements on the main diagonal).\n     *\n     * @return the trace.\n     * @throws NonSquareMatrixException\n     * if the matrix is not square.\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.operate(double[])",
+      "begin_line": 452,
+      "end_line": 452,
+      "comment": "\n     * Returns the result of multiplying this by the vector \u003ccode\u003ev\u003c/code\u003e.\n     *\n     * @param v the vector to operate on\n     * @return this*v\n     * @throws IllegalArgumentException if columnDimension !\u003d v.size()\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.operate(org.apache.commons.math.linear.RealVector)",
+      "begin_line": 461,
+      "end_line": 461,
+      "comment": "\n     * Returns the result of multiplying this by the vector \u003ccode\u003ev\u003c/code\u003e.\n     *\n     * @param v the vector to operate on\n     * @return this*v\n     * @throws IllegalArgumentException if columnDimension !\u003d v.size()\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.preMultiply(double[])",
+      "begin_line": 470,
+      "end_line": 470,
+      "comment": "\n     * Returns the (row) vector result of premultiplying this by the vector \u003ccode\u003ev\u003c/code\u003e.\n     *\n     * @param v the row vector to premultiply by\n     * @return v*this\n     * @throws IllegalArgumentException if rowDimension !\u003d v.size()\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.preMultiply(org.apache.commons.math.linear.RealVector)",
+      "begin_line": 479,
+      "end_line": 479,
+      "comment": "\n     * Returns the (row) vector result of premultiplying this by the vector \u003ccode\u003ev\u003c/code\u003e.\n     *\n     * @param v the row vector to premultiply by\n     * @return v*this\n     * @throws IllegalArgumentException if rowDimension !\u003d v.size()\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.walkInRowOrder(org.apache.commons.math.linear.RealMatrixChangingVisitor)",
+      "begin_line": 503,
+      "end_line": 503,
+      "comment": "\n     * Visit (and possibly change) all matrix entries in row order.\n     * \u003cp\u003eRow order starts at upper left and iterating through all elements\n     * of a row from left to right before going to the leftmost element\n     * of the next row.\u003c/p\u003e\n     * @param visitor visitor used to process all matrix entries\n     * @throws org.apache.commons.math.exception.MathUserException if the visitor\n     * cannot process an entry.\n     * @see #walkInRowOrder(RealMatrixPreservingVisitor)\n     * @see #walkInRowOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInRowOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @see #walkInColumnOrder(RealMatrixChangingVisitor)\n     * @see #walkInColumnOrder(RealMatrixPreservingVisitor)\n     * @see #walkInColumnOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInColumnOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @see #walkInOptimizedOrder(RealMatrixChangingVisitor)\n     * @see #walkInOptimizedOrder(RealMatrixPreservingVisitor)\n     * @see #walkInOptimizedOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInOptimizedOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @return the value returned by {@link RealMatrixChangingVisitor#end()} at the end\n     * of the walk\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.walkInRowOrder(org.apache.commons.math.linear.RealMatrixPreservingVisitor)",
+      "begin_line": 527,
+      "end_line": 527,
+      "comment": "\n     * Visit (but don\u0027t change) all matrix entries in row order.\n     * \u003cp\u003eRow order starts at upper left and iterating through all elements\n     * of a row from left to right before going to the leftmost element\n     * of the next row.\u003c/p\u003e\n     * @param visitor visitor used to process all matrix entries\n     * @throws org.apache.commons.math.exception.MathUserException if the visitor\n     * cannot process an entry.\n     * @see #walkInRowOrder(RealMatrixChangingVisitor)\n     * @see #walkInRowOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInRowOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @see #walkInColumnOrder(RealMatrixChangingVisitor)\n     * @see #walkInColumnOrder(RealMatrixPreservingVisitor)\n     * @see #walkInColumnOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInColumnOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @see #walkInOptimizedOrder(RealMatrixChangingVisitor)\n     * @see #walkInOptimizedOrder(RealMatrixPreservingVisitor)\n     * @see #walkInOptimizedOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInOptimizedOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @return the value returned by {@link RealMatrixPreservingVisitor#end()} at the end\n     * of the walk\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.walkInRowOrder(org.apache.commons.math.linear.RealMatrixChangingVisitor, int, int, int, int)",
+      "begin_line": 557,
+      "end_line": 558,
+      "comment": "\n     * Visit (and possibly change) some matrix entries in row order.\n     * \u003cp\u003eRow order starts at upper left and iterating through all elements\n     * of a row from left to right before going to the leftmost element\n     * of the next row.\u003c/p\u003e\n     * @param visitor visitor used to process all matrix entries\n     * @param startRow Initial row index\n     * @param endRow Final row index (inclusive)\n     * @param startColumn Initial column index\n     * @param endColumn Final column index\n     * @throws org.apache.commons.math.exception.MathUserException if the visitor\n     * cannot process an entry.\n     * @throws org.apache.commons.math.exception.OutOfRangeException if\n     * the indices are not valid.\n     * @see #walkInRowOrder(RealMatrixChangingVisitor)\n     * @see #walkInRowOrder(RealMatrixPreservingVisitor)\n     * @see #walkInRowOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @see #walkInColumnOrder(RealMatrixChangingVisitor)\n     * @see #walkInColumnOrder(RealMatrixPreservingVisitor)\n     * @see #walkInColumnOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInColumnOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @see #walkInOptimizedOrder(RealMatrixChangingVisitor)\n     * @see #walkInOptimizedOrder(RealMatrixPreservingVisitor)\n     * @see #walkInOptimizedOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInOptimizedOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @return the value returned by {@link RealMatrixChangingVisitor#end()} at the end\n     * of the walk\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.walkInRowOrder(org.apache.commons.math.linear.RealMatrixPreservingVisitor, int, int, int, int)",
+      "begin_line": 588,
+      "end_line": 589,
+      "comment": "\n     * Visit (but don\u0027t change) some matrix entries in row order.\n     * \u003cp\u003eRow order starts at upper left and iterating through all elements\n     * of a row from left to right before going to the leftmost element\n     * of the next row.\u003c/p\u003e\n     * @param visitor visitor used to process all matrix entries\n     * @param startRow Initial row index\n     * @param endRow Final row index (inclusive)\n     * @param startColumn Initial column index\n     * @param endColumn Final column index\n     * @throws org.apache.commons.math.exception.MathUserException if the visitor\n     * cannot process an entry.\n     * @throws org.apache.commons.math.exception.OutOfRangeException if\n     * the indices are not valid.\n     * @see #walkInRowOrder(RealMatrixChangingVisitor)\n     * @see #walkInRowOrder(RealMatrixPreservingVisitor)\n     * @see #walkInRowOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInColumnOrder(RealMatrixChangingVisitor)\n     * @see #walkInColumnOrder(RealMatrixPreservingVisitor)\n     * @see #walkInColumnOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInColumnOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @see #walkInOptimizedOrder(RealMatrixChangingVisitor)\n     * @see #walkInOptimizedOrder(RealMatrixPreservingVisitor)\n     * @see #walkInOptimizedOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInOptimizedOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @return the value returned by {@link RealMatrixPreservingVisitor#end()} at the end\n     * of the walk\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.walkInColumnOrder(org.apache.commons.math.linear.RealMatrixChangingVisitor)",
+      "begin_line": 613,
+      "end_line": 613,
+      "comment": "\n     * Visit (and possibly change) all matrix entries in column order.\n     * \u003cp\u003eColumn order starts at upper left and iterating through all elements\n     * of a column from top to bottom before going to the topmost element\n     * of the next column.\u003c/p\u003e\n     * @param visitor visitor used to process all matrix entries\n     * @throws org.apache.commons.math.exception.MathUserException if the visitor\n     * cannot process an entry.\n     * @see #walkInRowOrder(RealMatrixChangingVisitor)\n     * @see #walkInRowOrder(RealMatrixPreservingVisitor)\n     * @see #walkInRowOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInRowOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @see #walkInColumnOrder(RealMatrixPreservingVisitor)\n     * @see #walkInColumnOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInColumnOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @see #walkInOptimizedOrder(RealMatrixChangingVisitor)\n     * @see #walkInOptimizedOrder(RealMatrixPreservingVisitor)\n     * @see #walkInOptimizedOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInOptimizedOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @return the value returned by {@link RealMatrixChangingVisitor#end()} at the end\n     * of the walk\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.walkInColumnOrder(org.apache.commons.math.linear.RealMatrixPreservingVisitor)",
+      "begin_line": 637,
+      "end_line": 637,
+      "comment": "\n     * Visit (but don\u0027t change) all matrix entries in column order.\n     * \u003cp\u003eColumn order starts at upper left and iterating through all elements\n     * of a column from top to bottom before going to the topmost element\n     * of the next column.\u003c/p\u003e\n     * @param visitor visitor used to process all matrix entries\n     * @throws org.apache.commons.math.exception.MathUserException if the visitor\n     * cannot process an entry.\n     * @see #walkInRowOrder(RealMatrixChangingVisitor)\n     * @see #walkInRowOrder(RealMatrixPreservingVisitor)\n     * @see #walkInRowOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInRowOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @see #walkInColumnOrder(RealMatrixChangingVisitor)\n     * @see #walkInColumnOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInColumnOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @see #walkInOptimizedOrder(RealMatrixChangingVisitor)\n     * @see #walkInOptimizedOrder(RealMatrixPreservingVisitor)\n     * @see #walkInOptimizedOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInOptimizedOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @return the value returned by {@link RealMatrixPreservingVisitor#end()} at the end\n     * of the walk\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.walkInColumnOrder(org.apache.commons.math.linear.RealMatrixChangingVisitor, int, int, int, int)",
+      "begin_line": 667,
+      "end_line": 668,
+      "comment": "\n     * Visit (and possibly change) some matrix entries in column order.\n     * \u003cp\u003eColumn order starts at upper left and iterating through all elements\n     * of a column from top to bottom before going to the topmost element\n     * of the next column.\u003c/p\u003e\n     * @param visitor visitor used to process all matrix entries\n     * @param startRow Initial row index\n     * @param endRow Final row index (inclusive)\n     * @param startColumn Initial column index\n     * @param endColumn Final column index\n     * @throws org.apache.commons.math.exception.MathUserException if the visitor\n     * cannot process an entry.\n     * @throws org.apache.commons.math.exception.OutOfRangeException if\n     * the indices are not valid.\n     * @see #walkInRowOrder(RealMatrixChangingVisitor)\n     * @see #walkInRowOrder(RealMatrixPreservingVisitor)\n     * @see #walkInRowOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInRowOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @see #walkInColumnOrder(RealMatrixChangingVisitor)\n     * @see #walkInColumnOrder(RealMatrixPreservingVisitor)\n     * @see #walkInColumnOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @see #walkInOptimizedOrder(RealMatrixChangingVisitor)\n     * @see #walkInOptimizedOrder(RealMatrixPreservingVisitor)\n     * @see #walkInOptimizedOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInOptimizedOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @return the value returned by {@link RealMatrixChangingVisitor#end()} at the end\n     * of the walk\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.walkInColumnOrder(org.apache.commons.math.linear.RealMatrixPreservingVisitor, int, int, int, int)",
+      "begin_line": 698,
+      "end_line": 699,
+      "comment": "\n     * Visit (but don\u0027t change) some matrix entries in column order.\n     * \u003cp\u003eColumn order starts at upper left and iterating through all elements\n     * of a column from top to bottom before going to the topmost element\n     * of the next column.\u003c/p\u003e\n     * @param visitor visitor used to process all matrix entries\n     * @param startRow Initial row index\n     * @param endRow Final row index (inclusive)\n     * @param startColumn Initial column index\n     * @param endColumn Final column index\n     * @throws org.apache.commons.math.exception.MathUserException if the visitor\n     * cannot process an entry.\n     * @throws org.apache.commons.math.exception.OutOfRangeException if\n     * the indices are not valid.\n     * @see #walkInRowOrder(RealMatrixChangingVisitor)\n     * @see #walkInRowOrder(RealMatrixPreservingVisitor)\n     * @see #walkInRowOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInRowOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @see #walkInColumnOrder(RealMatrixChangingVisitor)\n     * @see #walkInColumnOrder(RealMatrixPreservingVisitor)\n     * @see #walkInColumnOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInOptimizedOrder(RealMatrixChangingVisitor)\n     * @see #walkInOptimizedOrder(RealMatrixPreservingVisitor)\n     * @see #walkInOptimizedOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInOptimizedOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @return the value returned by {@link RealMatrixPreservingVisitor#end()} at the end\n     * of the walk\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.walkInOptimizedOrder(org.apache.commons.math.linear.RealMatrixChangingVisitor)",
+      "begin_line": 722,
+      "end_line": 722,
+      "comment": "\n     * Visit (and possibly change) all matrix entries using the fastest possible order.\n     * \u003cp\u003eThe fastest walking order depends on the exact matrix class. It may be\n     * different from traditional row or column orders.\u003c/p\u003e\n     * @param visitor visitor used to process all matrix entries\n     * @throws org.apache.commons.math.exception.MathUserException if the visitor\n     * cannot process an entry.\n     * @see #walkInRowOrder(RealMatrixChangingVisitor)\n     * @see #walkInRowOrder(RealMatrixPreservingVisitor)\n     * @see #walkInRowOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInRowOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @see #walkInColumnOrder(RealMatrixChangingVisitor)\n     * @see #walkInColumnOrder(RealMatrixPreservingVisitor)\n     * @see #walkInColumnOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInColumnOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @see #walkInOptimizedOrder(RealMatrixPreservingVisitor)\n     * @see #walkInOptimizedOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInOptimizedOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @return the value returned by {@link RealMatrixChangingVisitor#end()} at the end\n     * of the walk\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.walkInOptimizedOrder(org.apache.commons.math.linear.RealMatrixPreservingVisitor)",
+      "begin_line": 745,
+      "end_line": 745,
+      "comment": "\n     * Visit (but don\u0027t change) all matrix entries using the fastest possible order.\n     * \u003cp\u003eThe fastest walking order depends on the exact matrix class. It may be\n     * different from traditional row or column orders.\u003c/p\u003e\n     * @param visitor visitor used to process all matrix entries\n     * @throws org.apache.commons.math.exception.MathUserException if the visitor\n     * cannot process an entry.\n     * @see #walkInRowOrder(RealMatrixChangingVisitor)\n     * @see #walkInRowOrder(RealMatrixPreservingVisitor)\n     * @see #walkInRowOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInRowOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @see #walkInColumnOrder(RealMatrixChangingVisitor)\n     * @see #walkInColumnOrder(RealMatrixPreservingVisitor)\n     * @see #walkInColumnOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInColumnOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @see #walkInOptimizedOrder(RealMatrixChangingVisitor)\n     * @see #walkInOptimizedOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInOptimizedOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @return the value returned by {@link RealMatrixPreservingVisitor#end()} at the end\n     * of the walk\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.walkInOptimizedOrder(org.apache.commons.math.linear.RealMatrixChangingVisitor, int, int, int, int)",
+      "begin_line": 774,
+      "end_line": 775,
+      "comment": "\n     * Visit (and possibly change) some matrix entries using the fastest possible order.\n     * \u003cp\u003eThe fastest walking order depends on the exact matrix class. It may be\n     * different from traditional row or column orders.\u003c/p\u003e\n     * @param visitor visitor used to process all matrix entries\n     * @param startRow Initial row index\n     * @param endRow Final row index (inclusive)\n     * @param startColumn Initial column index\n     * @param endColumn Final column index (inclusive)\n     * @throws org.apache.commons.math.exception.MathUserException if the visitor\n     * cannot process an entry.\n     * @throws org.apache.commons.math.exception.OutOfRangeException if\n     * the indices are not valid.\n     * @see #walkInRowOrder(RealMatrixChangingVisitor)\n     * @see #walkInRowOrder(RealMatrixPreservingVisitor)\n     * @see #walkInRowOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInRowOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @see #walkInColumnOrder(RealMatrixChangingVisitor)\n     * @see #walkInColumnOrder(RealMatrixPreservingVisitor)\n     * @see #walkInColumnOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInColumnOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @see #walkInOptimizedOrder(RealMatrixChangingVisitor)\n     * @see #walkInOptimizedOrder(RealMatrixPreservingVisitor)\n     * @see #walkInOptimizedOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @return the value returned by {@link RealMatrixChangingVisitor#end()} at the end\n     * of the walk\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrix.walkInOptimizedOrder(org.apache.commons.math.linear.RealMatrixPreservingVisitor, int, int, int, int)",
+      "begin_line": 804,
+      "end_line": 805,
+      "comment": "\n     * Visit (but don\u0027t change) some matrix entries using the fastest possible order.\n     * \u003cp\u003eThe fastest walking order depends on the exact matrix class. It may be\n     * different from traditional row or column orders.\u003c/p\u003e\n     * @param visitor visitor used to process all matrix entries\n     * @param startRow Initial row index\n     * @param endRow Final row index (inclusive)\n     * @param startColumn Initial column index\n     * @param endColumn Final column index (inclusive)\n     * @throws org.apache.commons.math.exception.MathUserException if the visitor\n     * cannot process an entry.\n     * @throws org.apache.commons.math.exception.OutOfRangeException if the\n     * indices are not valid.\n     * @see #walkInRowOrder(RealMatrixChangingVisitor)\n     * @see #walkInRowOrder(RealMatrixPreservingVisitor)\n     * @see #walkInRowOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInRowOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @see #walkInColumnOrder(RealMatrixChangingVisitor)\n     * @see #walkInColumnOrder(RealMatrixPreservingVisitor)\n     * @see #walkInColumnOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @see #walkInColumnOrder(RealMatrixPreservingVisitor, int, int, int, int)\n     * @see #walkInOptimizedOrder(RealMatrixChangingVisitor)\n     * @see #walkInOptimizedOrder(RealMatrixPreservingVisitor)\n     * @see #walkInOptimizedOrder(RealMatrixChangingVisitor, int, int, int, int)\n     * @return the value returned by {@link RealMatrixPreservingVisitor#end()} at the end\n     * of the walk\n     ",
+      "child_ranges": []
+    }
+  ]
+}

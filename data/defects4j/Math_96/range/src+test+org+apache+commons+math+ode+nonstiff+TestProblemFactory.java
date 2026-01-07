@@ -1,0 +1,41 @@
+{
+  "filepath": "/tmp/Math-96b/src/test/org/apache/commons/math/ode/nonstiff/TestProblemFactory.java",
+  "nodes": [
+    {
+      "type": "class_interface",
+      "name": "TestProblemFactory",
+      "is_interface": false,
+      "parent_types": [],
+      "begin_line": 23,
+      "end_line": 49,
+      "comment": "\n * This class is used in the junit tests for the ODE integrators.\n "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "pool"
+      ],
+      "begin_line": 26,
+      "end_line": 32,
+      "comment": " Problems pool. "
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.math.ode.nonstiff.TestProblemFactory.TestProblemFactory()",
+      "begin_line": 38,
+      "end_line": 39,
+      "comment": "\n   * Private constructor.\n   * This is a utility class, so there are no instance at all.\n   ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.ode.nonstiff.TestProblemFactory.getProblems()",
+      "begin_line": 45,
+      "end_line": 47,
+      "comment": "\n   * Get the problems.\n   * @return array of problems to solve\n   ",
+      "child_ranges": [
+        "(line 46,col 5)-(line 46,col 16)"
+      ]
+    }
+  ]
+}

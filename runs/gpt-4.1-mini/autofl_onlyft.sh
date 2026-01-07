@@ -1,0 +1,12 @@
+LABEL="autofl_onlyft"
+REPETITION=5
+MODEL="gpt-4.1-mini-2025-04-14"
+PROMPT_FILE="prompts/system_msg_expbug.txt"
+USE_PURE_AUTOFL=true
+USE_CURRENT_BUG_REPORT=false
+USE_RECENT_BUG_REPORT=false
+TIMEWINDOW=0
+
+
+bash runner.sh ${LABEL} ${REPETITION} ${MODEL} ${PROMPT_FILE} ${USE_PURE_AUTOFL} ${USE_CURRENT_BUG_REPORT} ${USE_RECENT_BUG_REPORT} ${TIMEWINDOW}
+bash runner-combined_results.sh ${LABEL} ${REPETITION} ${MODEL} ${USE_PURE_AUTOFL}

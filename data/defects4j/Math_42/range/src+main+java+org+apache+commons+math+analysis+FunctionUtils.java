@@ -1,0 +1,313 @@
+{
+  "filepath": "/tmp/Math-42b/src/main/java/org/apache/commons/math/analysis/FunctionUtils.java",
+  "nodes": [
+    {
+      "type": "class_interface",
+      "name": "FunctionUtils",
+      "is_interface": false,
+      "parent_types": [],
+      "begin_line": 28,
+      "end_line": 293,
+      "comment": "\n * Utilities for manipulating function objects.\n *\n * @version $Id$\n * @since 3.0\n "
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.math.analysis.FunctionUtils.FunctionUtils()",
+      "begin_line": 32,
+      "end_line": 32,
+      "comment": "\n     * Class only contains static methods.\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.FunctionUtils.compose(org.apache.commons.math.analysis.UnivariateFunction...)",
+      "begin_line": 42,
+      "end_line": 53,
+      "comment": "\n     * Compose functions.  The functions in the argument list are composed\n     * sequentially, in the order given.  For example, compose(f1,f2,f3)\n     * acts like f1(f2(f3(x))).\n     *\n     * @param f List of functions.\n     * @return the composite function.\n     ",
+      "child_ranges": [
+        "(line 43,col 9)-(line 52,col 10)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.FunctionUtils.Anonymous-953cfd00-082b-4702-be4c-2ebbfc6db919.value(double)",
+      "begin_line": 45,
+      "end_line": 51,
+      "comment": " {@inheritDoc} ",
+      "child_ranges": [
+        "(line 46,col 17)-(line 46,col 29)",
+        "(line 47,col 17)-(line 49,col 17)",
+        "(line 50,col 17)-(line 50,col 25)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.FunctionUtils.compose(org.apache.commons.math.analysis.DifferentiableUnivariateFunction...)",
+      "begin_line": 63,
+      "end_line": 90,
+      "comment": "\n     * Compose functions.  The functions in the argument list are composed\n     * sequentially, in the order given.  For example, compose(f1,f2,f3)\n     * acts like f1(f2(f3(x))).\n     *\n     * @param f List of functions.\n     * @return the composite function.\n     ",
+      "child_ranges": [
+        "(line 64,col 9)-(line 89,col 10)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.FunctionUtils.Anonymous-5ed3788a-3543-4b22-b407-56295cb577c8.value(double)",
+      "begin_line": 66,
+      "end_line": 72,
+      "comment": " {@inheritDoc} ",
+      "child_ranges": [
+        "(line 67,col 17)-(line 67,col 29)",
+        "(line 68,col 17)-(line 70,col 17)",
+        "(line 71,col 17)-(line 71,col 25)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.FunctionUtils.Anonymous-35ac59ca-148a-4ec1-a541-a946c339996f.derivative()",
+      "begin_line": 75,
+      "end_line": 88,
+      "comment": " {@inheritDoc} ",
+      "child_ranges": [
+        "(line 76,col 17)-(line 87,col 18)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.FunctionUtils.Anonymous-f5a9ff07-1df0-4ac9-a700-902751d05a74.value(double)",
+      "begin_line": 78,
+      "end_line": 86,
+      "comment": " {@inheritDoc} ",
+      "child_ranges": [
+        "(line 79,col 25)-(line 79,col 37)",
+        "(line 80,col 25)-(line 80,col 37)",
+        "(line 81,col 25)-(line 84,col 25)",
+        "(line 85,col 25)-(line 85,col 33)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.FunctionUtils.add(org.apache.commons.math.analysis.UnivariateFunction...)",
+      "begin_line": 98,
+      "end_line": 109,
+      "comment": "\n     * Add functions.\n     *\n     * @param f List of functions.\n     * @return a function that computes the sum of the functions.\n     ",
+      "child_ranges": [
+        "(line 99,col 9)-(line 108,col 10)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.FunctionUtils.Anonymous-e788dd61-39bd-443c-a30d-442b1d48a5f5.value(double)",
+      "begin_line": 101,
+      "end_line": 107,
+      "comment": " {@inheritDoc} ",
+      "child_ranges": [
+        "(line 102,col 17)-(line 102,col 41)",
+        "(line 103,col 17)-(line 105,col 17)",
+        "(line 106,col 17)-(line 106,col 25)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.FunctionUtils.add(org.apache.commons.math.analysis.DifferentiableUnivariateFunction...)",
+      "begin_line": 117,
+      "end_line": 142,
+      "comment": "\n     * Add functions.\n     *\n     * @param f List of functions.\n     * @return a function that computes the sum of the functions.\n     ",
+      "child_ranges": [
+        "(line 118,col 9)-(line 141,col 10)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.FunctionUtils.Anonymous-0bdbfa72-6481-4ba4-8f84-69218ae5319a.value(double)",
+      "begin_line": 120,
+      "end_line": 126,
+      "comment": " {@inheritDoc} ",
+      "child_ranges": [
+        "(line 121,col 17)-(line 121,col 41)",
+        "(line 122,col 17)-(line 124,col 17)",
+        "(line 125,col 17)-(line 125,col 25)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.FunctionUtils.Anonymous-e4a59b26-91b1-441a-a246-b26b22f9a01e.derivative()",
+      "begin_line": 129,
+      "end_line": 140,
+      "comment": " {@inheritDoc} ",
+      "child_ranges": [
+        "(line 130,col 17)-(line 139,col 18)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.FunctionUtils.Anonymous-a80d317b-1a3a-4d89-a2d2-502729ac0510.value(double)",
+      "begin_line": 132,
+      "end_line": 138,
+      "comment": " {@inheritDoc} ",
+      "child_ranges": [
+        "(line 133,col 25)-(line 133,col 62)",
+        "(line 134,col 25)-(line 136,col 25)",
+        "(line 137,col 25)-(line 137,col 33)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.FunctionUtils.multiply(org.apache.commons.math.analysis.UnivariateFunction...)",
+      "begin_line": 150,
+      "end_line": 161,
+      "comment": "\n     * Multiply functions.\n     *\n     * @param f List of functions.\n     * @return a function that computes the product of the functions.\n     ",
+      "child_ranges": [
+        "(line 151,col 9)-(line 160,col 10)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.FunctionUtils.Anonymous-4dbfbfbe-9f50-41c9-bffe-0578bd5a13f1.value(double)",
+      "begin_line": 153,
+      "end_line": 159,
+      "comment": " {@inheritDoc} ",
+      "child_ranges": [
+        "(line 154,col 17)-(line 154,col 41)",
+        "(line 155,col 17)-(line 157,col 17)",
+        "(line 158,col 17)-(line 158,col 25)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.FunctionUtils.multiply(org.apache.commons.math.analysis.DifferentiableUnivariateFunction...)",
+      "begin_line": 169,
+      "end_line": 200,
+      "comment": "\n     * Multiply functions.\n     *\n     * @param f List of functions.\n     * @return a function that computes the product of the functions.\n     ",
+      "child_ranges": [
+        "(line 170,col 9)-(line 199,col 10)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.FunctionUtils.Anonymous-809a4f66-af7a-4727-8614-84301e7d24e8.value(double)",
+      "begin_line": 172,
+      "end_line": 178,
+      "comment": " {@inheritDoc} ",
+      "child_ranges": [
+        "(line 173,col 17)-(line 173,col 41)",
+        "(line 174,col 17)-(line 176,col 17)",
+        "(line 177,col 17)-(line 177,col 25)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.FunctionUtils.Anonymous-0edd1ed8-1ae9-4586-a272-abf37cb57cbd.derivative()",
+      "begin_line": 181,
+      "end_line": 198,
+      "comment": " {@inheritDoc} ",
+      "child_ranges": [
+        "(line 182,col 17)-(line 197,col 18)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.FunctionUtils.Anonymous-04a7f73c-3cbe-427b-bd51-29f1b110ae25.value(double)",
+      "begin_line": 184,
+      "end_line": 196,
+      "comment": " {@inheritDoc} ",
+      "child_ranges": [
+        "(line 185,col 25)-(line 185,col 39)",
+        "(line 186,col 25)-(line 194,col 25)",
+        "(line 195,col 25)-(line 195,col 35)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.FunctionUtils.combine(org.apache.commons.math.analysis.BivariateRealFunction, org.apache.commons.math.analysis.UnivariateFunction, org.apache.commons.math.analysis.UnivariateFunction)",
+      "begin_line": 211,
+      "end_line": 220,
+      "comment": "\n     * Returns the univariate function \u003cbr/\u003e\n     * {@code h(x) \u003d combiner(f(x), g(x))}.\n     *\n     * @param combiner Combiner function.\n     * @param f Function.\n     * @param g Function.\n     * @return the composite function.\n     ",
+      "child_ranges": [
+        "(line 214,col 9)-(line 219,col 10)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.FunctionUtils.Anonymous-631fc63d-6677-4629-8761-d2925f99cebf.value(double)",
+      "begin_line": 216,
+      "end_line": 218,
+      "comment": " {@inheritDoc} ",
+      "child_ranges": [
+        "(line 217,col 17)-(line 217,col 62)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.FunctionUtils.collector(org.apache.commons.math.analysis.BivariateRealFunction, org.apache.commons.math.analysis.UnivariateFunction, double)",
+      "begin_line": 232,
+      "end_line": 245,
+      "comment": "\n     * Returns a MultivariateFunction h(x[]) defined by \u003cpre\u003e \u003ccode\u003e\n     * h(x[]) \u003d combiner(...combiner(combiner(initialValue,f(x[0])),f(x[1]))...),f(x[x.length-1]))\n     * \u003c/code\u003e\u003c/pre\u003e\n     *\n     * @param combiner Combiner function.\n     * @param f Function.\n     * @param initialValue Initial value.\n     * @return a collector function.\n     ",
+      "child_ranges": [
+        "(line 235,col 9)-(line 244,col 10)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.FunctionUtils.Anonymous-a1c5e621-93b5-4758-8521-c138ca7fa22c.value(double[])",
+      "begin_line": 237,
+      "end_line": 243,
+      "comment": " {@inheritDoc} ",
+      "child_ranges": [
+        "(line 238,col 17)-(line 238,col 80)",
+        "(line 239,col 17)-(line 241,col 17)",
+        "(line 242,col 17)-(line 242,col 30)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.FunctionUtils.collector(org.apache.commons.math.analysis.BivariateRealFunction, double)",
+      "begin_line": 256,
+      "end_line": 259,
+      "comment": "\n     * Returns a MultivariateFunction h(x[]) defined by \u003cpre\u003e \u003ccode\u003e\n     * h(x[]) \u003d combiner(...combiner(combiner(initialValue,x[0]),x[1])...),x[x.length-1])\n     * \u003c/code\u003e\u003c/pre\u003e\n     *\n     * @param combiner Combiner function.\n     * @param initialValue Initial value.\n     * @return a collector function.\n     ",
+      "child_ranges": [
+        "(line 258,col 9)-(line 258,col 65)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.FunctionUtils.fix1stArgument(org.apache.commons.math.analysis.BivariateRealFunction, double)",
+      "begin_line": 268,
+      "end_line": 276,
+      "comment": "\n     * Create a unary function by fixing the first argument of a binary function.\n     *\n     * @param f Binary function.\n     * @param fixed Value to which the first argument of {@code f} is set.\n     * @return the unary function h(x) \u003d f(fixed, x)\n     ",
+      "child_ranges": [
+        "(line 270,col 9)-(line 275,col 10)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.FunctionUtils.Anonymous-f11cbdfd-f4c1-4861-a787-b1100a34e8e7.value(double)",
+      "begin_line": 272,
+      "end_line": 274,
+      "comment": " {@inheritDoc} ",
+      "child_ranges": [
+        "(line 273,col 17)-(line 273,col 41)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.FunctionUtils.fix2ndArgument(org.apache.commons.math.analysis.BivariateRealFunction, double)",
+      "begin_line": 284,
+      "end_line": 292,
+      "comment": "\n     * Create a unary function by fixing the second argument of a binary function.\n     *\n     * @param f Binary function.\n     * @param fixed Value to which the second argument of {@code f} is set.\n     * @return the unary function h(x) \u003d f(x, fixed)\n     ",
+      "child_ranges": [
+        "(line 286,col 9)-(line 291,col 10)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.FunctionUtils.Anonymous-02dd0667-36e9-4a08-823d-92491c31de5d.value(double)",
+      "begin_line": 288,
+      "end_line": 290,
+      "comment": " {@inheritDoc} ",
+      "child_ranges": [
+        "(line 289,col 17)-(line 289,col 41)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "filepath": "/tmp/Math-93b/src/java/org/apache/commons/math/linear/TriDiagonalTransformer.java",
+  "nodes": [
+    {
+      "type": "class_interface",
+      "name": "TriDiagonalTransformer",
+      "is_interface": false,
+      "parent_types": [
+        "java.io.Serializable"
+      ],
+      "begin_line": 38,
+      "end_line": 271,
+      "comment": "\n * Class transforming a symmetrical matrix to tridiagonal shape.\n * \u003cp\u003eA symmetrical m \u0026times; m matrix A can be written as the product of three matrices:\n * A \u003d Q \u0026times; T \u0026times; Q\u003csup\u003eT\u003c/sup\u003e with Q an orthogonal matrix and T a symmetrical\n * tridiagonal matrix. Both Q and T are m \u0026times; m matrices.\u003c/p\u003e\n * \u003cp\u003eThis implementation only uses the upper part of the matrix, the part below the\n * diagonal is not accessed at all.\u003c/p\u003e\n * \u003cp\u003eTransformation to tridiagonal shape is often not a goal by itself, but it is\n * an intermediate step in more general decomposition algorithms like {@link\n * EigenDecomposition eigen decomposition}. This class is therefore intended for internal\n * use by the library and is not public. As a consequence of this explicitly limited scope,\n * many methods directly returns references to internal arrays, not copies.\u003c/p\u003e\n * @version $Revision$ $Date$\n * @since 2.0\n "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "serialVersionUID"
+      ],
+      "begin_line": 41,
+      "end_line": 41,
+      "comment": " Serializable version identifier. "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "householderVectors"
+      ],
+      "begin_line": 44,
+      "end_line": 44,
+      "comment": " Householder vectors. "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "main"
+      ],
+      "begin_line": 47,
+      "end_line": 47,
+      "comment": " Main diagonal. "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "secondary"
+      ],
+      "begin_line": 50,
+      "end_line": 50,
+      "comment": " Secondary diagonal. "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "cachedQ"
+      ],
+      "begin_line": 53,
+      "end_line": 53,
+      "comment": " Cached value of Q. "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "cachedQt"
+      ],
+      "begin_line": 56,
+      "end_line": 56,
+      "comment": " Cached value of Qt. "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "cachedT"
+      ],
+      "begin_line": 59,
+      "end_line": 59,
+      "comment": " Cached value of T. "
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.math.linear.TriDiagonalTransformer.TriDiagonalTransformer(org.apache.commons.math.linear.RealMatrix)",
+      "begin_line": 68,
+      "end_line": 85,
+      "comment": "\n     * Build the transformation to tridiagonal shape of a symmetrical matrix.\n     * \u003cp\u003eThe specified matrix is assumed to be symmetrical without any check.\n     * Only the upper triangular part of the matrix is used.\u003c/p\u003e\n     * @param matrix the symmetrical matrix to transform.\n     * @exception InvalidMatrixException if matrix is not square\n     ",
+      "child_ranges": [
+        "(line 70,col 9)-(line 72,col 9)",
+        "(line 74,col 9)-(line 74,col 47)",
+        "(line 75,col 9)-(line 75,col 46)",
+        "(line 76,col 9)-(line 76,col 34)",
+        "(line 77,col 9)-(line 77,col 38)",
+        "(line 78,col 9)-(line 78,col 25)",
+        "(line 79,col 9)-(line 79,col 25)",
+        "(line 80,col 9)-(line 80,col 25)",
+        "(line 83,col 9)-(line 83,col 20)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.TriDiagonalTransformer.getQ()",
+      "begin_line": 92,
+      "end_line": 97,
+      "comment": "\n     * Returns the matrix Q of the transform. \n     * \u003cp\u003eQ is an orthogonal matrix, i.e. its transpose is also its inverse.\u003c/p\u003e\n     * @return the Q matrix\n     ",
+      "child_ranges": [
+        "(line 93,col 9)-(line 95,col 9)",
+        "(line 96,col 9)-(line 96,col 23)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.TriDiagonalTransformer.getQT()",
+      "begin_line": 104,
+      "end_line": 142,
+      "comment": "\n     * Returns the transpose of the matrix Q of the transform. \n     * \u003cp\u003eQ is an orthogonal matrix, i.e. its transpose is also its inverse.\u003c/p\u003e\n     * @return the Q matrix\n     ",
+      "child_ranges": [
+        "(line 106,col 9)-(line 137,col 9)",
+        "(line 140,col 9)-(line 140,col 24)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.TriDiagonalTransformer.getT()",
+      "begin_line": 148,
+      "end_line": 169,
+      "comment": "\n     * Returns the tridiagonal matrix T of the transform. \n     * @return the T matrix\n     ",
+      "child_ranges": [
+        "(line 150,col 9)-(line 164,col 9)",
+        "(line 167,col 9)-(line 167,col 23)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.TriDiagonalTransformer.getHouseholderVectorsRef()",
+      "begin_line": 177,
+      "end_line": 179,
+      "comment": "\n     * Get the Householder vectors of the transform.\n     * \u003cp\u003eNote that since this class is only intended for internal use,\n     * it returns directly a reference to its internal arrays, not a copy.\u003c/p\u003e\n     * @return the main diagonal elements of the B matrix\n     ",
+      "child_ranges": [
+        "(line 178,col 9)-(line 178,col 34)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.TriDiagonalTransformer.getMainDiagonalRef()",
+      "begin_line": 187,
+      "end_line": 189,
+      "comment": "\n     * Get the main diagonal elements of the matrix T of the transform.\n     * \u003cp\u003eNote that since this class is only intended for internal use,\n     * it returns directly a reference to its internal arrays, not a copy.\u003c/p\u003e\n     * @return the main diagonal elements of the T matrix\n     ",
+      "child_ranges": [
+        "(line 188,col 9)-(line 188,col 20)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.TriDiagonalTransformer.getSecondaryDiagonalRef()",
+      "begin_line": 197,
+      "end_line": 199,
+      "comment": "\n     * Get the secondary diagonal elements of the matrix T of the transform.\n     * \u003cp\u003eNote that since this class is only intended for internal use,\n     * it returns directly a reference to its internal arrays, not a copy.\u003c/p\u003e\n     * @return the secondary diagonal elements of the T matrix\n     ",
+      "child_ranges": [
+        "(line 198,col 9)-(line 198,col 25)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.TriDiagonalTransformer.transform()",
+      "begin_line": 205,
+      "end_line": 269,
+      "comment": "\n     * Transform original matrix to tridiagonal form.\n     * \u003cp\u003eTransformation is done using Householder transforms.\u003c/p\u003e\n     ",
+      "child_ranges": [
+        "(line 207,col 9)-(line 207,col 48)",
+        "(line 208,col 9)-(line 208,col 41)",
+        "(line 209,col 9)-(line 267,col 9)",
+        "(line 268,col 9)-(line 268,col 55)"
+      ]
+    }
+  ]
+}

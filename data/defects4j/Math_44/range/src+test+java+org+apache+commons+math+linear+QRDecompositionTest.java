@@ -1,0 +1,296 @@
+{
+  "filepath": "/tmp/Math-44b/src/test/java/org/apache/commons/math/linear/QRDecompositionTest.java",
+  "nodes": [
+    {
+      "type": "class_interface",
+      "name": "QRDecompositionTest",
+      "is_interface": false,
+      "parent_types": [],
+      "begin_line": 26,
+      "end_line": 254,
+      "comment": ""
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "testData3x3NonSingular"
+      ],
+      "begin_line": 27,
+      "end_line": 30,
+      "comment": ""
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "testData3x3Singular"
+      ],
+      "begin_line": 32,
+      "end_line": 35,
+      "comment": ""
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "testData3x4"
+      ],
+      "begin_line": 37,
+      "end_line": 40,
+      "comment": ""
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "testData4x3"
+      ],
+      "begin_line": 42,
+      "end_line": 46,
+      "comment": ""
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "entryTolerance"
+      ],
+      "begin_line": 48,
+      "end_line": 48,
+      "comment": ""
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "normTolerance"
+      ],
+      "begin_line": 50,
+      "end_line": 50,
+      "comment": ""
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.QRDecompositionTest.testDimensions()",
+      "begin_line": 53,
+      "end_line": 67,
+      "comment": " test dimensions ",
+      "child_ranges": [
+        "(line 55,col 9)-(line 55,col 77)",
+        "(line 57,col 9)-(line 57,col 66)",
+        "(line 59,col 9)-(line 59,col 66)",
+        "(line 61,col 9)-(line 61,col 48)",
+        "(line 62,col 9)-(line 62,col 56)",
+        "(line 63,col 9)-(line 63,col 56)",
+        "(line 64,col 9)-(line 64,col 50)",
+        "(line 65,col 9)-(line 65,col 50)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.QRDecompositionTest.checkDimension(org.apache.commons.math.linear.RealMatrix)",
+      "begin_line": 69,
+      "end_line": 77,
+      "comment": "",
+      "child_ranges": [
+        "(line 70,col 9)-(line 70,col 39)",
+        "(line 71,col 9)-(line 71,col 45)",
+        "(line 72,col 9)-(line 72,col 52)",
+        "(line 73,col 9)-(line 73,col 66)",
+        "(line 74,col 9)-(line 74,col 69)",
+        "(line 75,col 9)-(line 75,col 66)",
+        "(line 76,col 9)-(line 76,col 69)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.QRDecompositionTest.testAEqualQR()",
+      "begin_line": 80,
+      "end_line": 97,
+      "comment": " test A \u003d QR ",
+      "child_ranges": [
+        "(line 82,col 9)-(line 82,col 76)",
+        "(line 84,col 9)-(line 84,col 73)",
+        "(line 86,col 9)-(line 86,col 65)",
+        "(line 88,col 9)-(line 88,col 65)",
+        "(line 90,col 9)-(line 90,col 48)",
+        "(line 91,col 9)-(line 91,col 56)",
+        "(line 92,col 9)-(line 92,col 56)",
+        "(line 93,col 9)-(line 93,col 49)",
+        "(line 95,col 9)-(line 95,col 49)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.QRDecompositionTest.checkAEqualQR(org.apache.commons.math.linear.RealMatrix)",
+      "begin_line": 99,
+      "end_line": 103,
+      "comment": "",
+      "child_ranges": [
+        "(line 100,col 9)-(line 100,col 52)",
+        "(line 101,col 9)-(line 101,col 74)",
+        "(line 102,col 9)-(line 102,col 52)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.QRDecompositionTest.testQOrthogonal()",
+      "begin_line": 106,
+      "end_line": 123,
+      "comment": " test the orthogonality of Q ",
+      "child_ranges": [
+        "(line 108,col 9)-(line 108,col 79)",
+        "(line 110,col 9)-(line 110,col 76)",
+        "(line 112,col 9)-(line 112,col 68)",
+        "(line 114,col 9)-(line 114,col 68)",
+        "(line 116,col 9)-(line 116,col 48)",
+        "(line 117,col 9)-(line 117,col 56)",
+        "(line 118,col 9)-(line 118,col 56)",
+        "(line 119,col 9)-(line 119,col 52)",
+        "(line 121,col 9)-(line 121,col 52)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.QRDecompositionTest.checkQOrthogonal(org.apache.commons.math.linear.RealMatrix)",
+      "begin_line": 125,
+      "end_line": 130,
+      "comment": "",
+      "child_ranges": [
+        "(line 126,col 9)-(line 126,col 52)",
+        "(line 127,col 9)-(line 127,col 83)",
+        "(line 128,col 9)-(line 128,col 77)",
+        "(line 129,col 9)-(line 129,col 52)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.QRDecompositionTest.testRUpperTriangular()",
+      "begin_line": 133,
+      "end_line": 156,
+      "comment": " test that R is upper triangular ",
+      "child_ranges": [
+        "(line 135,col 9)-(line 135,col 81)",
+        "(line 136,col 9)-(line 136,col 65)",
+        "(line 138,col 9)-(line 138,col 67)",
+        "(line 139,col 9)-(line 139,col 65)",
+        "(line 141,col 9)-(line 141,col 59)",
+        "(line 142,col 9)-(line 142,col 65)",
+        "(line 144,col 9)-(line 144,col 59)",
+        "(line 145,col 9)-(line 145,col 65)",
+        "(line 147,col 9)-(line 147,col 48)",
+        "(line 148,col 9)-(line 148,col 56)",
+        "(line 149,col 9)-(line 149,col 56)",
+        "(line 150,col 9)-(line 150,col 43)",
+        "(line 151,col 9)-(line 151,col 65)",
+        "(line 153,col 9)-(line 153,col 43)",
+        "(line 154,col 9)-(line 154,col 65)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.QRDecompositionTest.checkUpperTriangular(org.apache.commons.math.linear.RealMatrix)",
+      "begin_line": 158,
+      "end_line": 167,
+      "comment": "",
+      "child_ranges": [
+        "(line 159,col 9)-(line 166,col 11)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.QRDecompositionTest.Anonymous-1a042018-0350-431a-93da-f152d7cafc2b.visit(int, int, double)",
+      "begin_line": 160,
+      "end_line": 165,
+      "comment": "",
+      "child_ranges": [
+        "(line 162,col 17)-(line 164,col 17)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.QRDecompositionTest.testHTrapezoidal()",
+      "begin_line": 170,
+      "end_line": 193,
+      "comment": " test that H is trapezoidal ",
+      "child_ranges": [
+        "(line 172,col 9)-(line 172,col 81)",
+        "(line 173,col 9)-(line 173,col 61)",
+        "(line 175,col 9)-(line 175,col 67)",
+        "(line 176,col 9)-(line 176,col 61)",
+        "(line 178,col 9)-(line 178,col 59)",
+        "(line 179,col 9)-(line 179,col 61)",
+        "(line 181,col 9)-(line 181,col 59)",
+        "(line 182,col 9)-(line 182,col 61)",
+        "(line 184,col 9)-(line 184,col 48)",
+        "(line 185,col 9)-(line 185,col 56)",
+        "(line 186,col 9)-(line 186,col 56)",
+        "(line 187,col 9)-(line 187,col 43)",
+        "(line 188,col 9)-(line 188,col 61)",
+        "(line 190,col 9)-(line 190,col 43)",
+        "(line 191,col 9)-(line 191,col 61)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.QRDecompositionTest.checkTrapezoidal(org.apache.commons.math.linear.RealMatrix)",
+      "begin_line": 195,
+      "end_line": 204,
+      "comment": "",
+      "child_ranges": [
+        "(line 196,col 9)-(line 203,col 11)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.QRDecompositionTest.Anonymous-ea5858ac-343f-46d5-9bde-be5e1bc948bd.visit(int, int, double)",
+      "begin_line": 197,
+      "end_line": 202,
+      "comment": "",
+      "child_ranges": [
+        "(line 199,col 17)-(line 201,col 17)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.QRDecompositionTest.testMatricesValues()",
+      "begin_line": 206,
+      "end_line": 241,
+      "comment": " test matrices values ",
+      "child_ranges": [
+        "(line 208,col 9)-(line 209,col 86)",
+        "(line 210,col 9)-(line 214,col 11)",
+        "(line 215,col 9)-(line 219,col 11)",
+        "(line 220,col 9)-(line 224,col 11)",
+        "(line 227,col 9)-(line 227,col 33)",
+        "(line 228,col 9)-(line 228,col 68)",
+        "(line 229,col 9)-(line 229,col 35)",
+        "(line 230,col 9)-(line 230,col 81)",
+        "(line 231,col 9)-(line 231,col 33)",
+        "(line 232,col 9)-(line 232,col 68)",
+        "(line 233,col 9)-(line 233,col 33)",
+        "(line 234,col 9)-(line 234,col 68)",
+        "(line 237,col 9)-(line 237,col 42)",
+        "(line 238,col 9)-(line 238,col 42)",
+        "(line 239,col 9)-(line 239,col 42)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.QRDecompositionTest.createTestMatrix(java.util.Random, int, int)",
+      "begin_line": 243,
+      "end_line": 252,
+      "comment": "",
+      "child_ranges": [
+        "(line 244,col 9)-(line 244,col 67)",
+        "(line 245,col 9)-(line 250,col 11)",
+        "(line 251,col 9)-(line 251,col 17)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.QRDecompositionTest.Anonymous-3a093814-25b8-4873-9834-35f7d6b4fc47.visit(int, int, double)",
+      "begin_line": 246,
+      "end_line": 249,
+      "comment": "",
+      "child_ranges": [
+        "(line 248,col 17)-(line 248,col 50)"
+      ]
+    }
+  ]
+}

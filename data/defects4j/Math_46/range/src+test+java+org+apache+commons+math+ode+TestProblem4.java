@@ -1,0 +1,227 @@
+{
+  "filepath": "/tmp/Math-46b/src/test/java/org/apache/commons/math/ode/TestProblem4.java",
+  "nodes": [
+    {
+      "type": "class_interface",
+      "name": "TestProblem4",
+      "is_interface": false,
+      "parent_types": [
+        "TestProblemAbstract"
+      ],
+      "begin_line": 38,
+      "end_line": 153,
+      "comment": "\n * This class is used in the junit tests for the ODE integrators.\n\n * \u003cp\u003eThis specific problem is the following differential equation :\n * \u003cpre\u003e\n *    x\u0027\u0027 \u003d -x\n * \u003c/pre\u003e\n * And when x decreases down to 0, the state should be changed as follows :\n * \u003cpre\u003e\n *   x\u0027 -\u003e -x\u0027\n * \u003c/pre\u003e\n * The theoretical solution of this problem is x \u003d |sin(t+a)|\n * \u003c/p\u003e\n\n "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "a"
+      ],
+      "begin_line": 42,
+      "end_line": 42,
+      "comment": " Time offset. "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "y"
+      ],
+      "begin_line": 45,
+      "end_line": 45,
+      "comment": " theoretical state "
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.math.ode.TestProblem4.TestProblem4()",
+      "begin_line": 48,
+      "end_line": 57,
+      "comment": " Simple constructor. ",
+      "child_ranges": [
+        "(line 49,col 5)-(line 49,col 12)",
+        "(line 50,col 5)-(line 50,col 12)",
+        "(line 51,col 5)-(line 51,col 55)",
+        "(line 52,col 5)-(line 52,col 34)",
+        "(line 53,col 5)-(line 53,col 27)",
+        "(line 54,col 5)-(line 54,col 39)",
+        "(line 55,col 5)-(line 55,col 30)",
+        "(line 56,col 5)-(line 56,col 30)"
+      ]
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.math.ode.TestProblem4.TestProblem4(org.apache.commons.math.ode.TestProblem4)",
+      "begin_line": 63,
+      "end_line": 67,
+      "comment": "\n   * Copy constructor.\n   * @param problem problem to copy\n   ",
+      "child_ranges": [
+        "(line 64,col 5)-(line 64,col 19)",
+        "(line 65,col 5)-(line 65,col 18)",
+        "(line 66,col 5)-(line 66,col 26)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.ode.TestProblem4.copy()",
+      "begin_line": 70,
+      "end_line": 73,
+      "comment": " {@inheritDoc} ",
+      "child_ranges": [
+        "(line 72,col 5)-(line 72,col 34)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.ode.TestProblem4.getEventsHandlers()",
+      "begin_line": 75,
+      "end_line": 78,
+      "comment": "",
+      "child_ranges": [
+        "(line 77,col 5)-(line 77,col 59)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.ode.TestProblem4.getTheoreticalEventsTimes()",
+      "begin_line": 84,
+      "end_line": 93,
+      "comment": "\n   * Get the theoretical events times.\n   * @return theoretical events times\n   ",
+      "child_ranges": [
+        "(line 86,col 7)-(line 92,col 8)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.ode.TestProblem4.doComputeDerivatives(double, double[], double[])",
+      "begin_line": 95,
+      "end_line": 99,
+      "comment": "",
+      "child_ranges": [
+        "(line 97,col 5)-(line 97,col 20)",
+        "(line 98,col 5)-(line 98,col 20)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.ode.TestProblem4.computeTheoreticalState(double)",
+      "begin_line": 101,
+      "end_line": 108,
+      "comment": "",
+      "child_ranges": [
+        "(line 103,col 5)-(line 103,col 37)",
+        "(line 104,col 5)-(line 104,col 37)",
+        "(line 105,col 5)-(line 105,col 29)",
+        "(line 106,col 5)-(line 106,col 35)",
+        "(line 107,col 5)-(line 107,col 13)"
+      ]
+    },
+    {
+      "type": "class_interface",
+      "name": "Bounce",
+      "is_interface": false,
+      "parent_types": [
+        "org.apache.commons.math.ode.events.EventHandler"
+      ],
+      "begin_line": 110,
+      "end_line": 133,
+      "comment": ""
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "sign"
+      ],
+      "begin_line": 112,
+      "end_line": 112,
+      "comment": ""
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.math.ode.TestProblem4.Bounce.Bounce()",
+      "begin_line": 114,
+      "end_line": 116,
+      "comment": "",
+      "child_ranges": [
+        "(line 115,col 7)-(line 115,col 16)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.ode.TestProblem4.Bounce.g(double, double[])",
+      "begin_line": 118,
+      "end_line": 120,
+      "comment": "",
+      "child_ranges": [
+        "(line 119,col 7)-(line 119,col 25)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.ode.TestProblem4.Bounce.eventOccurred(double, double[], boolean)",
+      "begin_line": 122,
+      "end_line": 126,
+      "comment": "",
+      "child_ranges": [
+        "(line 124,col 7)-(line 124,col 19)",
+        "(line 125,col 7)-(line 125,col 38)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.ode.TestProblem4.Bounce.resetState(double, double[])",
+      "begin_line": 128,
+      "end_line": 131,
+      "comment": "",
+      "child_ranges": [
+        "(line 129,col 7)-(line 129,col 19)",
+        "(line 130,col 7)-(line 130,col 19)"
+      ]
+    },
+    {
+      "type": "class_interface",
+      "name": "Stop",
+      "is_interface": false,
+      "parent_types": [
+        "org.apache.commons.math.ode.events.EventHandler"
+      ],
+      "begin_line": 135,
+      "end_line": 151,
+      "comment": ""
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.math.ode.TestProblem4.Stop.Stop()",
+      "begin_line": 137,
+      "end_line": 138,
+      "comment": "",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.ode.TestProblem4.Stop.g(double, double[])",
+      "begin_line": 140,
+      "end_line": 142,
+      "comment": "",
+      "child_ranges": [
+        "(line 141,col 7)-(line 141,col 22)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.ode.TestProblem4.Stop.eventOccurred(double, double[], boolean)",
+      "begin_line": 144,
+      "end_line": 146,
+      "comment": "",
+      "child_ranges": [
+        "(line 145,col 7)-(line 145,col 31)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.ode.TestProblem4.Stop.resetState(double, double[])",
+      "begin_line": 148,
+      "end_line": 149,
+      "comment": "",
+      "child_ranges": []
+    }
+  ]
+}

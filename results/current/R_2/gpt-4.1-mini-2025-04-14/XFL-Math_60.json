@@ -1,0 +1,187 @@
+{
+    "time": 1763871837.8307438,
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a debugging assistant. You have access to the source code of the system under test (SUT), the failing test case (signature + snippet), the current issue report describing the failure.\n\nYour task is to provide a step-by-step explanation of how the bug occurred using all available evidence:\n\u2013 the failing test (signature + snippet),\n\u2013 the current bug report,\n\u2013 and code snippets of methods from the SUT.\n\nSome identifiers in the current bug report may be anonymized with placeholders (e.g., C#.M#). If the same token (e.g., C1) appears multiple times, it consistently refers to the same class (C) or method (M) throughout the report. These tokens are not complete qualified names. Always confirm actual identifiers by inspecting the source code using get_code_snippet.\n\nYou will be given 9 opportunities to interact with functions to gather information for the debugging. An example diagnosis would look like follows.\n\nTitle: Diagnosis\nDetails: The corresponding issue report describes that tooltip text in the UI is displayed with HTML entities such as &quot; instead of the intended characters. This strongly suggests a missing escaping or decoding step in tooltip generation. Inspecting the implementation of StandardToolTipTagFragmentGenerator.generateToolTipFragment reveals that it directly returns the toolTipText without applying any escaping. Recent issue reports mention similar encoding or escaping problems in related UI components, reinforcing the suspicion that this method lacks proper handling. The behavior observed in the code matches the issue report's symptoms, indicating that missing escaping in this method is the likely root cause.\n\nAfter providing this diagnosis, you will be prompted to suggest which methods would be the best locations to be fixed. The answers should be in the form of `ClassName.MethodName(ArgType1, ArgType2, ...)` without commentary (one per line), as your answer will be automatically processed before finally being presented to the user."
+        },
+        {
+            "role": "user",
+            "content": "The test `['org.apache.commons.math.distribution.NormalDistributionTest.testExtremeValues()']` failed.\nThe test looks like:\n\n```java\n157 :     public void testExtremeValues() throws Exception {\n158 :         NormalDistribution distribution = new NormalDistributionImpl(0, 1);\n159 :         for (int i = 0; i < 100; i++) { // make sure no convergence exception\n160 :             double lowerTail = distribution.cumulativeProbability(-i);\n161 :             double upperTail = distribution.cumulativeProbability(i);\n162 :             if (i < 9) { // make sure not top-coded \n163 :                 // For i = 10, due to bad tail precision in erf (MATH-364), 1 is returned\n164 :                 // TODO: once MATH-364 is resolved, replace 9 with 30\n165 :                 assertTrue(lowerTail > 0.0d);\n166 :                 assertTrue(upperTail < 1.0d);\n167 :             }\n168 :             else { // make sure top coding not reversed\n169 :                 assertTrue(lowerTail < 0.00001);\n170 :                 assertTrue(upperTail > 0.99999);\n171 :             }\n172 :         }\n173 :         \n174 :         assertEquals(distribution.cumulativeProbability(Double.MAX_VALUE), 1, 0);\n178 :         \n179 :    }\n```\n\nCurrent bug report: {'summary': 'ConvergenceException in NormalDistributionImpl.cumulativeProbability()', 'description': 'I get a ConvergenceException in NormalDistributionImpl.cumulativeProbability() for very large/small parameters including Infinity, -Infinity.  \\nFor instance in the following code:\\n @Test  \\n public void testCumulative() {  \\n final NormalDistribution nd = new NormalDistributionImpl();  \\n for (int i = 0; i < 500; i++) {  \\n final double val = Math.exp![](https://issues.apache.org/jira/images/icons/emo'}\n\nProceed to fault localisation and produce a step-by-step diagnosis."
+        },
+        {
+            "role": "assistant",
+            "content": null,
+            "function_call": {
+                "name": "get_code_snippet",
+                "arguments": "{\"signature\":\"org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(double)\"}"
+            },
+            "refusal": null,
+            "annotations": []
+        },
+        {
+            "role": "function",
+            "name": "get_code_snippet",
+            "content": "\"124 :     public double cumulativeProbability(double x) throws MathException {\\n125 :         final double dev = x - mean;\\n126 :         try {\\n127 :         return 0.5 * (1.0 + Erf.erf((dev) /\\n128 :                     (standardDeviation * FastMath.sqrt(2.0))));\\n129 :         } catch (MaxIterationsExceededException ex) {\\n130 :             if (x < (mean - 20 * standardDeviation)) { // JDK 1.5 blows at 38\\n131 :                 return 0;\\n132 :             } else if (x > (mean + 20 * standardDeviation)) {\\n133 :                 return 1;\\n134 :             } else {\\n135 :                 throw ex;\\n136 :             }\\n137 :         }\\n138 :     }\""
+        },
+        {
+            "role": "assistant",
+            "content": "Title: Diagnosis\n\nDetails: \nThe failing test `testExtremeValues()` in `NormalDistributionTest` tries to verify that the cumulative probability for extreme values (large positive and negative) behaves correctly. Specifically, it expects values near zero on the far left tail and values near one on the far right tail without throwing exceptions.\n\nThe failure relates to a `ConvergenceException` (specifically `MaxIterationsExceededException`) thrown from `NormalDistributionImpl.cumulativeProbability(double)` when computing the CDF for very large or very small inputs, including infinity or negative infinity.\n\nInspecting the `cumulativeProbability` method reveals it computes the CDF via the error function `Erf.erf()`. This function throws `MaxIterationsExceededException` when it fails to converge. The catch block in `cumulativeProbability` tries to handle this: \n- For values less than (`mean - 20 * standardDeviation`), it returns 0.\n- For values greater than (`mean + 20 * standardDeviation`), it returns 1.\n- Otherwise, it rethrows the original exception.\n\nThis approach generally handles typical extreme inputs. However, the test's problematic inputs include very large loop indices (`i` up to 100) as well as assertions for `Double.MAX_VALUE`. The method handles `Double.MAX_VALUE` fine since it is greater than `(mean + 20 * standardDeviation)` and returns 1 without exception.\n\nHowever, the test at line 160 calls `cumulativeProbability(-i)` for `i` up to 100. When exactly the exception occurs is not stated, but it may be the case that for some intermediate values near the cutoff thresholds, the error function fails to converge quickly and the exception is thrown. The current method only traps exceptions for values 20 standard deviations away from the mean, but the test iterates up to 100 standard deviations, potentially leading to uncaught exceptions.\n\nFurthermore, the bug report hints the error arises for infinity or negative infinity which are not explicitly handled in the method. Passing infinity to the `Erf.erf()` might cause it to throw `MaxIterationsExceededException`, and the catch block does not specifically check for infinity values (Double.POSITIVE_INFINITY, Double.NEGATIVE_INFINITY). Hence, the exception might propagate and cause test failure.\n\nIn summary, the bug is caused by `NormalDistributionImpl.cumulativeProbability` not properly handling extreme values like infinities or values beyond the \u00b120 standard deviation check limits, leading to occasional `MaxIterationsExceededException` failure on extreme inputs. This matches the failing test behavior and the described issue in the bug report.\n\nNext, I will check the `Erf.erf` method briefly to confirm its behavior with extreme values and see if it can handle infinities gracefully or will throw exceptions.",
+            "function_call": {
+                "name": "get_code_snippet",
+                "arguments": "{\"signature\":\"org.apache.commons.math.special.Erf.erf(double)\"}"
+            },
+            "refusal": null,
+            "annotations": []
+        },
+        {
+            "role": "function",
+            "name": "get_code_snippet",
+            "content": "\"50 :     public static double erf(double x) throws MathException {\\n51 :         double ret = Gamma.regularizedGammaP(0.5, x * x, 1.0e-15, 10000);\\n52 :         if (x < 0) {\\n53 :             ret = -ret;\\n54 :         }\\n55 :         return ret;\\n56 :     }\""
+        },
+        {
+            "role": "assistant",
+            "content": null,
+            "function_call": {
+                "name": "get_code_snippet",
+                "arguments": "{\"signature\":\"org.apache.commons.math.special.Gamma.regularizedGammaP(double,double,double,int)\"}"
+            },
+            "refusal": null,
+            "annotations": []
+        },
+        {
+            "role": "function",
+            "name": "get_code_snippet",
+            "content": "\"158 :     public static double regularizedGammaP(double a,\\n159 :                                            double x,\\n160 :                                            double epsilon,\\n161 :                                            int maxIterations)\\n162 :         throws MathException\\n163 :     {\\n164 :         double ret;\\n165 : \\n166 :         if (Double.isNaN(a) || Double.isNaN(x) || (a <= 0.0) || (x < 0.0)) {\\n167 :             ret = Double.NaN;\\n168 :         } else if (x == 0.0) {\\n169 :             ret = 0.0;\\n170 :         } else if (x >= a + 1) {\\n171 :             // use regularizedGammaQ because it should converge faster in this\\n172 :             // case.\\n173 :             ret = 1.0 - regularizedGammaQ(a, x, epsilon, maxIterations);\\n174 :         } else {\\n175 :             // calculate series\\n176 :             double n = 0.0; // current element index\\n177 :             double an = 1.0 / a; // n-th element in the series\\n178 :             double sum = an; // partial sum\\n179 :             while (FastMath.abs(an/sum) > epsilon && n < maxIterations && sum < Double.POSITIVE_INFINITY) {\\n180 :                 // compute next element in the series\\n181 :                 n = n + 1.0;\\n182 :                 an = an * (x / (a + n));\\n183 : \\n184 :                 // update partial sum\\n185 :                 sum = sum + an;\\n186 :             }\\n187 :             if (n >= maxIterations) {\\n188 :                 throw new MaxIterationsExceededException(maxIterations);\\n189 :             } else if (Double.isInfinite(sum)) {\\n190 :                 ret = 1.0;\\n191 :             } else {\\n192 :                 ret = FastMath.exp(-x + (a * FastMath.log(x)) - logGamma(a)) * sum;\\n193 :             }\\n194 :         }\\n195 : \\n196 :         return ret;\\n197 :     }\""
+        },
+        {
+            "role": "assistant",
+            "content": "The `Erf.erf(double)` method computes the error function using the regularized gamma function `Gamma.regularizedGammaP(0.5, x * x, 1.0e-15, 10000)`.\n\nLooking at `Gamma.regularizedGammaP` method:\n- It throws `MaxIterationsExceededException` if the series computation exceeds `maxIterations`.\n- There is no explicit handling for infinite `x` in terms of special return values other than if `x` is `NaN` or negative (it returns NaN for invalid input).\n- The series summation stops if it reaches maximum iterations or the relative term size is smaller than epsilon.\n- If the sum becomes infinite, it returns 1.0.\n\nThis means that for very large `x` values or improper values like infinity, the method may not return a sane value quickly and might throw `MaxIterationsExceededException`.\n\nCombined with the earlier observation, `NormalDistributionImpl.cumulativeProbability` only catches `MaxIterationsExceededException` for inputs within 20 standard deviations from `mean`. For inputs beyond that or for infinities, the exception will propagate, causing test failures.\n\nThis confirms the root cause: missing handling for inputs outside the \u00b120 standard deviation range in `NormalDistributionImpl.cumulativeProbability` for the `MaxIterationsExceededException`, especially for infinite values, causing the convergence exception seen in the test and reported issue.\n\nHence, the bug occurs because the method does not robustly handle extreme values or infinity inputs to cumulativeProbability, allowing exceptions from the underlying calculation (`Erf.erf`) to propagate instead of returning expected values 0 or 1.\n\nThis causes the test, which exercises extreme values, to fail due to unexpected exceptions.",
+            "refusal": null,
+            "annotations": []
+        },
+        {
+            "role": "user",
+            "content": "Based on the available information, provide the signatures of the most likely culprit methods for the bug. Your answer will be processed automatically, so make sure to only answer with the accurate signatures of all likely culprits (in `ClassName.MethodName(ArgType1, ArgType2, ...)` format), without commentary (one per line). "
+        },
+        {
+            "role": "assistant",
+            "content": "org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(double)\norg.apache.commons.math.special.Erf.erf(double)\norg.apache.commons.math.special.Gamma.regularizedGammaP(double,double,double,int)",
+            "refusal": null,
+            "annotations": []
+        }
+    ],
+    "interaction_records": {
+        "step_histories": [
+            {
+                "prompt_messages": [
+                    "m1",
+                    "m2"
+                ],
+                "response_message": "m3"
+            },
+            {
+                "prompt_messages": [
+                    "m1",
+                    "m2",
+                    "m3",
+                    "m4"
+                ],
+                "response_message": "m5"
+            },
+            {
+                "prompt_messages": [
+                    "m1",
+                    "m2",
+                    "m3",
+                    "m4",
+                    "m5",
+                    "m6"
+                ],
+                "response_message": "m7"
+            },
+            {
+                "prompt_messages": [
+                    "m1",
+                    "m2",
+                    "m3",
+                    "m4",
+                    "m5",
+                    "m6",
+                    "m7",
+                    "m8"
+                ],
+                "response_message": "m9"
+            }
+        ],
+        "mid_to_message": {
+            "m1": {
+                "role": "system",
+                "content": "You are a debugging assistant. You have access to the source code of the system under test (SUT), the failing test case (signature + snippet), the current issue report describing the failure.\n\nYour task is to provide a step-by-step explanation of how the bug occurred using all available evidence:\n\u2013 the failing test (signature + snippet),\n\u2013 the current bug report,\n\u2013 and code snippets of methods from the SUT.\n\nSome identifiers in the current bug report may be anonymized with placeholders (e.g., C#.M#). If the same token (e.g., C1) appears multiple times, it consistently refers to the same class (C) or method (M) throughout the report. These tokens are not complete qualified names. Always confirm actual identifiers by inspecting the source code using get_code_snippet.\n\nYou will be given 9 opportunities to interact with functions to gather information for the debugging. An example diagnosis would look like follows.\n\nTitle: Diagnosis\nDetails: The corresponding issue report describes that tooltip text in the UI is displayed with HTML entities such as &quot; instead of the intended characters. This strongly suggests a missing escaping or decoding step in tooltip generation. Inspecting the implementation of StandardToolTipTagFragmentGenerator.generateToolTipFragment reveals that it directly returns the toolTipText without applying any escaping. Recent issue reports mention similar encoding or escaping problems in related UI components, reinforcing the suspicion that this method lacks proper handling. The behavior observed in the code matches the issue report's symptoms, indicating that missing escaping in this method is the likely root cause.\n\nAfter providing this diagnosis, you will be prompted to suggest which methods would be the best locations to be fixed. The answers should be in the form of `ClassName.MethodName(ArgType1, ArgType2, ...)` without commentary (one per line), as your answer will be automatically processed before finally being presented to the user."
+            },
+            "m2": {
+                "role": "user",
+                "content": "The test `['org.apache.commons.math.distribution.NormalDistributionTest.testExtremeValues()']` failed.\nThe test looks like:\n\n```java\n157 :     public void testExtremeValues() throws Exception {\n158 :         NormalDistribution distribution = new NormalDistributionImpl(0, 1);\n159 :         for (int i = 0; i < 100; i++) { // make sure no convergence exception\n160 :             double lowerTail = distribution.cumulativeProbability(-i);\n161 :             double upperTail = distribution.cumulativeProbability(i);\n162 :             if (i < 9) { // make sure not top-coded \n163 :                 // For i = 10, due to bad tail precision in erf (MATH-364), 1 is returned\n164 :                 // TODO: once MATH-364 is resolved, replace 9 with 30\n165 :                 assertTrue(lowerTail > 0.0d);\n166 :                 assertTrue(upperTail < 1.0d);\n167 :             }\n168 :             else { // make sure top coding not reversed\n169 :                 assertTrue(lowerTail < 0.00001);\n170 :                 assertTrue(upperTail > 0.99999);\n171 :             }\n172 :         }\n173 :         \n174 :         assertEquals(distribution.cumulativeProbability(Double.MAX_VALUE), 1, 0);\n178 :         \n179 :    }\n```\n\nCurrent bug report: {'summary': 'ConvergenceException in NormalDistributionImpl.cumulativeProbability()', 'description': 'I get a ConvergenceException in NormalDistributionImpl.cumulativeProbability() for very large/small parameters including Infinity, -Infinity.  \\nFor instance in the following code:\\n @Test  \\n public void testCumulative() {  \\n final NormalDistribution nd = new NormalDistributionImpl();  \\n for (int i = 0; i < 500; i++) {  \\n final double val = Math.exp![](https://issues.apache.org/jira/images/icons/emo'}\n\nProceed to fault localisation and produce a step-by-step diagnosis."
+            },
+            "m3": {
+                "role": "assistant",
+                "content": null,
+                "function_call": {
+                    "name": "get_code_snippet",
+                    "arguments": "{\"signature\":\"org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(double)\"}"
+                },
+                "refusal": null,
+                "annotations": []
+            },
+            "m4": {
+                "role": "function",
+                "name": "get_code_snippet",
+                "content": "\"124 :     public double cumulativeProbability(double x) throws MathException {\\n125 :         final double dev = x - mean;\\n126 :         try {\\n127 :         return 0.5 * (1.0 + Erf.erf((dev) /\\n128 :                     (standardDeviation * FastMath.sqrt(2.0))));\\n129 :         } catch (MaxIterationsExceededException ex) {\\n130 :             if (x < (mean - 20 * standardDeviation)) { // JDK 1.5 blows at 38\\n131 :                 return 0;\\n132 :             } else if (x > (mean + 20 * standardDeviation)) {\\n133 :                 return 1;\\n134 :             } else {\\n135 :                 throw ex;\\n136 :             }\\n137 :         }\\n138 :     }\""
+            },
+            "m5": {
+                "role": "assistant",
+                "content": "Title: Diagnosis\n\nDetails: \nThe failing test `testExtremeValues()` in `NormalDistributionTest` tries to verify that the cumulative probability for extreme values (large positive and negative) behaves correctly. Specifically, it expects values near zero on the far left tail and values near one on the far right tail without throwing exceptions.\n\nThe failure relates to a `ConvergenceException` (specifically `MaxIterationsExceededException`) thrown from `NormalDistributionImpl.cumulativeProbability(double)` when computing the CDF for very large or very small inputs, including infinity or negative infinity.\n\nInspecting the `cumulativeProbability` method reveals it computes the CDF via the error function `Erf.erf()`. This function throws `MaxIterationsExceededException` when it fails to converge. The catch block in `cumulativeProbability` tries to handle this: \n- For values less than (`mean - 20 * standardDeviation`), it returns 0.\n- For values greater than (`mean + 20 * standardDeviation`), it returns 1.\n- Otherwise, it rethrows the original exception.\n\nThis approach generally handles typical extreme inputs. However, the test's problematic inputs include very large loop indices (`i` up to 100) as well as assertions for `Double.MAX_VALUE`. The method handles `Double.MAX_VALUE` fine since it is greater than `(mean + 20 * standardDeviation)` and returns 1 without exception.\n\nHowever, the test at line 160 calls `cumulativeProbability(-i)` for `i` up to 100. When exactly the exception occurs is not stated, but it may be the case that for some intermediate values near the cutoff thresholds, the error function fails to converge quickly and the exception is thrown. The current method only traps exceptions for values 20 standard deviations away from the mean, but the test iterates up to 100 standard deviations, potentially leading to uncaught exceptions.\n\nFurthermore, the bug report hints the error arises for infinity or negative infinity which are not explicitly handled in the method. Passing infinity to the `Erf.erf()` might cause it to throw `MaxIterationsExceededException`, and the catch block does not specifically check for infinity values (Double.POSITIVE_INFINITY, Double.NEGATIVE_INFINITY). Hence, the exception might propagate and cause test failure.\n\nIn summary, the bug is caused by `NormalDistributionImpl.cumulativeProbability` not properly handling extreme values like infinities or values beyond the \u00b120 standard deviation check limits, leading to occasional `MaxIterationsExceededException` failure on extreme inputs. This matches the failing test behavior and the described issue in the bug report.\n\nNext, I will check the `Erf.erf` method briefly to confirm its behavior with extreme values and see if it can handle infinities gracefully or will throw exceptions.",
+                "function_call": {
+                    "name": "get_code_snippet",
+                    "arguments": "{\"signature\":\"org.apache.commons.math.special.Erf.erf(double)\"}"
+                },
+                "refusal": null,
+                "annotations": []
+            },
+            "m6": {
+                "role": "function",
+                "name": "get_code_snippet",
+                "content": "\"50 :     public static double erf(double x) throws MathException {\\n51 :         double ret = Gamma.regularizedGammaP(0.5, x * x, 1.0e-15, 10000);\\n52 :         if (x < 0) {\\n53 :             ret = -ret;\\n54 :         }\\n55 :         return ret;\\n56 :     }\""
+            },
+            "m7": {
+                "role": "assistant",
+                "content": null,
+                "function_call": {
+                    "name": "get_code_snippet",
+                    "arguments": "{\"signature\":\"org.apache.commons.math.special.Gamma.regularizedGammaP(double,double,double,int)\"}"
+                },
+                "refusal": null,
+                "annotations": []
+            },
+            "m8": {
+                "role": "function",
+                "name": "get_code_snippet",
+                "content": "\"158 :     public static double regularizedGammaP(double a,\\n159 :                                            double x,\\n160 :                                            double epsilon,\\n161 :                                            int maxIterations)\\n162 :         throws MathException\\n163 :     {\\n164 :         double ret;\\n165 : \\n166 :         if (Double.isNaN(a) || Double.isNaN(x) || (a <= 0.0) || (x < 0.0)) {\\n167 :             ret = Double.NaN;\\n168 :         } else if (x == 0.0) {\\n169 :             ret = 0.0;\\n170 :         } else if (x >= a + 1) {\\n171 :             // use regularizedGammaQ because it should converge faster in this\\n172 :             // case.\\n173 :             ret = 1.0 - regularizedGammaQ(a, x, epsilon, maxIterations);\\n174 :         } else {\\n175 :             // calculate series\\n176 :             double n = 0.0; // current element index\\n177 :             double an = 1.0 / a; // n-th element in the series\\n178 :             double sum = an; // partial sum\\n179 :             while (FastMath.abs(an/sum) > epsilon && n < maxIterations && sum < Double.POSITIVE_INFINITY) {\\n180 :                 // compute next element in the series\\n181 :                 n = n + 1.0;\\n182 :                 an = an * (x / (a + n));\\n183 : \\n184 :                 // update partial sum\\n185 :                 sum = sum + an;\\n186 :             }\\n187 :             if (n >= maxIterations) {\\n188 :                 throw new MaxIterationsExceededException(maxIterations);\\n189 :             } else if (Double.isInfinite(sum)) {\\n190 :                 ret = 1.0;\\n191 :             } else {\\n192 :                 ret = FastMath.exp(-x + (a * FastMath.log(x)) - logGamma(a)) * sum;\\n193 :             }\\n194 :         }\\n195 : \\n196 :         return ret;\\n197 :     }\""
+            },
+            "m9": {
+                "role": "assistant",
+                "content": "The `Erf.erf(double)` method computes the error function using the regularized gamma function `Gamma.regularizedGammaP(0.5, x * x, 1.0e-15, 10000)`.\n\nLooking at `Gamma.regularizedGammaP` method:\n- It throws `MaxIterationsExceededException` if the series computation exceeds `maxIterations`.\n- There is no explicit handling for infinite `x` in terms of special return values other than if `x` is `NaN` or negative (it returns NaN for invalid input).\n- The series summation stops if it reaches maximum iterations or the relative term size is smaller than epsilon.\n- If the sum becomes infinite, it returns 1.0.\n\nThis means that for very large `x` values or improper values like infinity, the method may not return a sane value quickly and might throw `MaxIterationsExceededException`.\n\nCombined with the earlier observation, `NormalDistributionImpl.cumulativeProbability` only catches `MaxIterationsExceededException` for inputs within 20 standard deviations from `mean`. For inputs beyond that or for infinities, the exception will propagate, causing test failures.\n\nThis confirms the root cause: missing handling for inputs outside the \u00b120 standard deviation range in `NormalDistributionImpl.cumulativeProbability` for the `MaxIterationsExceededException`, especially for infinite values, causing the convergence exception seen in the test and reported issue.\n\nHence, the bug occurs because the method does not robustly handle extreme values or infinity inputs to cumulativeProbability, allowing exceptions from the underlying calculation (`Erf.erf`) to propagate instead of returning expected values 0 or 1.\n\nThis causes the test, which exercises extreme values, to fail due to unexpected exceptions.",
+                "refusal": null,
+                "annotations": []
+            }
+        }
+    },
+    "buggy_methods": {
+        "org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(double)": {
+            "is_found": true,
+            "matching_answer": [
+                "org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(double)"
+            ]
+        }
+    }
+}

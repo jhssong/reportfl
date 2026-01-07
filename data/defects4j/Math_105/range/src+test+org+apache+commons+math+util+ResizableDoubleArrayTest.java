@@ -1,0 +1,290 @@
+{
+  "filepath": "/tmp/Math-105b/src/test/org/apache/commons/math/util/ResizableDoubleArrayTest.java",
+  "nodes": [
+    {
+      "type": "class_interface",
+      "name": "ResizableDoubleArrayTest",
+      "is_interface": false,
+      "parent_types": [
+        "DoubleArrayAbstractTest"
+      ],
+      "begin_line": 26,
+      "end_line": 351,
+      "comment": "\n * This class contains test cases for the ResizableDoubleArray.\n * \n * @version $Revision$ $Date$\n "
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.math.util.ResizableDoubleArrayTest.ResizableDoubleArrayTest(java.lang.String)",
+      "begin_line": 28,
+      "end_line": 30,
+      "comment": "",
+      "child_ranges": [
+        "(line 29,col 9)-(line 29,col 22)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.util.ResizableDoubleArrayTest.tearDown()",
+      "begin_line": 32,
+      "end_line": 35,
+      "comment": "",
+      "child_ranges": [
+        "(line 33,col 9)-(line 33,col 18)",
+        "(line 34,col 9)-(line 34,col 18)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.util.ResizableDoubleArrayTest.setUp()",
+      "begin_line": 37,
+      "end_line": 40,
+      "comment": "",
+      "child_ranges": [
+        "(line 38,col 9)-(line 38,col 40)",
+        "(line 39,col 9)-(line 39,col 40)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.util.ResizableDoubleArrayTest.testConstructors()",
+      "begin_line": 42,
+      "end_line": 108,
+      "comment": "",
+      "child_ranges": [
+        "(line 43,col 9)-(line 43,col 44)",
+        "(line 44,col 9)-(line 44,col 48)",
+        "(line 45,col 9)-(line 45,col 67)",
+        "(line 47,col 9)-(line 47,col 66)",
+        "(line 48,col 9)-(line 48,col 49)",
+        "(line 49,col 9)-(line 49,col 52)",
+        "(line 50,col 9)-(line 50,col 77)",
+        "(line 51,col 9)-(line 51,col 85)",
+        "(line 52,col 9)-(line 52,col 61)",
+        "(line 53,col 9)-(line 58,col 9)",
+        "(line 60,col 9)-(line 60,col 51)",
+        "(line 61,col 9)-(line 61,col 49)",
+        "(line 62,col 9)-(line 62,col 52)",
+        "(line 63,col 9)-(line 63,col 77)",
+        "(line 64,col 9)-(line 64,col 85)",
+        "(line 65,col 9)-(line 65,col 61)",
+        "(line 67,col 9)-(line 72,col 9)",
+        "(line 74,col 9)-(line 74,col 51)",
+        "(line 75,col 9)-(line 75,col 59)",
+        "(line 76,col 9)-(line 76,col 63)",
+        "(line 78,col 9)-(line 78,col 57)",
+        "(line 79,col 9)-(line 79,col 49)",
+        "(line 80,col 9)-(line 80,col 52)",
+        "(line 81,col 9)-(line 81,col 77)",
+        "(line 82,col 9)-(line 82,col 63)",
+        "(line 83,col 9)-(line 83,col 61)",
+        "(line 85,col 9)-(line 90,col 9)",
+        "(line 92,col 9)-(line 93,col 52)",
+        "(line 94,col 9)-(line 94,col 49)",
+        "(line 95,col 9)-(line 95,col 52)",
+        "(line 96,col 9)-(line 96,col 77)",
+        "(line 97,col 9)-(line 97,col 63)",
+        "(line 98,col 9)-(line 99,col 43)",
+        "(line 101,col 9)-(line 106,col 9)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.util.ResizableDoubleArrayTest.testSetElementArbitraryExpansion()",
+      "begin_line": 111,
+      "end_line": 167,
+      "comment": "",
+      "child_ranges": [
+        "(line 114,col 9)-(line 114,col 27)",
+        "(line 115,col 9)-(line 115,col 27)",
+        "(line 116,col 9)-(line 116,col 27)",
+        "(line 117,col 9)-(line 117,col 30)",
+        "(line 120,col 9)-(line 120,col 33)",
+        "(line 122,col 9)-(line 123,col 43)",
+        "(line 125,col 9)-(line 126,col 57)",
+        "(line 128,col 9)-(line 129,col 35)",
+        "(line 130,col 9)-(line 131,col 34)",
+        "(line 134,col 9)-(line 134,col 19)",
+        "(line 135,col 9)-(line 135,col 27)",
+        "(line 136,col 9)-(line 136,col 27)",
+        "(line 137,col 9)-(line 137,col 27)",
+        "(line 138,col 9)-(line 138,col 73)",
+        "(line 139,col 9)-(line 139,col 45)",
+        "(line 140,col 9)-(line 140,col 30)",
+        "(line 141,col 9)-(line 141,col 73)",
+        "(line 142,col 9)-(line 142,col 45)",
+        "(line 143,col 9)-(line 143,col 32)",
+        "(line 144,col 9)-(line 144,col 74)",
+        "(line 145,col 9)-(line 145,col 46)",
+        "(line 146,col 9)-(line 146,col 31)",
+        "(line 147,col 9)-(line 147,col 74)",
+        "(line 148,col 9)-(line 148,col 46)",
+        "(line 150,col 9)-(line 155,col 9)",
+        "(line 159,col 9)-(line 160,col 52)",
+        "(line 161,col 9)-(line 161,col 52)",
+        "(line 162,col 9)-(line 162,col 30)",
+        "(line 163,col 9)-(line 163,col 30)",
+        "(line 164,col 9)-(line 164,col 52)",
+        "(line 165,col 9)-(line 165,col 30)",
+        "(line 166,col 9)-(line 166,col 52)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.util.ResizableDoubleArrayTest.testAdd1000()",
+      "begin_line": 169,
+      "end_line": 174,
+      "comment": "",
+      "child_ranges": [
+        "(line 170,col 9)-(line 170,col 28)",
+        "(line 171,col 9)-(line 173,col 71)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.util.ResizableDoubleArrayTest.testAddElementRolling()",
+      "begin_line": 176,
+      "end_line": 231,
+      "comment": "",
+      "child_ranges": [
+        "(line 177,col 9)-(line 177,col 38)",
+        "(line 180,col 9)-(line 180,col 19)",
+        "(line 181,col 9)-(line 181,col 25)",
+        "(line 182,col 9)-(line 182,col 25)",
+        "(line 183,col 9)-(line 183,col 32)",
+        "(line 184,col 9)-(line 184,col 45)",
+        "(line 185,col 9)-(line 185,col 32)",
+        "(line 186,col 9)-(line 186,col 45)",
+        "(line 187,col 9)-(line 187,col 45)",
+        "(line 188,col 9)-(line 188,col 25)",
+        "(line 189,col 9)-(line 189,col 45)",
+        "(line 190,col 9)-(line 190,col 32)",
+        "(line 191,col 9)-(line 191,col 45)",
+        "(line 192,col 9)-(line 192,col 45)",
+        "(line 193,col 9)-(line 193,col 45)",
+        "(line 196,col 9)-(line 197,col 52)",
+        "(line 198,col 9)-(line 198,col 52)",
+        "(line 199,col 9)-(line 199,col 30)",
+        "(line 200,col 9)-(line 200,col 30)",
+        "(line 201,col 9)-(line 201,col 30)",
+        "(line 202,col 9)-(line 202,col 50)",
+        "(line 203,col 9)-(line 203,col 50)",
+        "(line 204,col 9)-(line 204,col 50)",
+        "(line 205,col 9)-(line 205,col 52)",
+        "(line 206,col 9)-(line 206,col 49)",
+        "(line 207,col 9)-(line 207,col 37)",
+        "(line 208,col 9)-(line 208,col 50)",
+        "(line 209,col 9)-(line 209,col 50)",
+        "(line 210,col 9)-(line 210,col 50)",
+        "(line 211,col 9)-(line 211,col 52)",
+        "(line 212,col 9)-(line 212,col 49)",
+        "(line 213,col 9)-(line 213,col 37)",
+        "(line 214,col 9)-(line 214,col 50)",
+        "(line 215,col 9)-(line 215,col 50)",
+        "(line 216,col 9)-(line 216,col 50)",
+        "(line 217,col 9)-(line 217,col 52)",
+        "(line 218,col 9)-(line 218,col 49)",
+        "(line 219,col 9)-(line 224,col 9)",
+        "(line 225,col 9)-(line 230,col 9)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.util.ResizableDoubleArrayTest.testSetNumberOfElements()",
+      "begin_line": 233,
+      "end_line": 255,
+      "comment": "",
+      "child_ranges": [
+        "(line 234,col 9)-(line 234,col 29)",
+        "(line 235,col 9)-(line 235,col 29)",
+        "(line 236,col 9)-(line 236,col 29)",
+        "(line 237,col 9)-(line 237,col 29)",
+        "(line 238,col 9)-(line 238,col 29)",
+        "(line 239,col 9)-(line 239,col 29)",
+        "(line 240,col 9)-(line 240,col 83)",
+        "(line 242,col 9)-(line 242,col 56)",
+        "(line 243,col 9)-(line 243,col 83)",
+        "(line 245,col 9)-(line 249,col 9)",
+        "(line 251,col 9)-(line 251,col 57)",
+        "(line 252,col 9)-(line 252,col 90)",
+        "(line 253,col 9)-(line 253,col 109)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.util.ResizableDoubleArrayTest.testWithInitialCapacity()",
+      "begin_line": 257,
+      "end_line": 275,
+      "comment": "",
+      "child_ranges": [
+        "(line 259,col 9)-(line 259,col 64)",
+        "(line 260,col 9)-(line 260,col 89)",
+        "(line 262,col 9)-(line 262,col 53)",
+        "(line 263,col 9)-(line 263,col 55)",
+        "(line 265,col 9)-(line 267,col 9)",
+        "(line 269,col 9)-(line 269,col 111)",
+        "(line 271,col 9)-(line 271,col 31)",
+        "(line 273,col 9)-(line 274,col 57)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.util.ResizableDoubleArrayTest.testWithInitialCapacityAndExpansionFactor()",
+      "begin_line": 277,
+      "end_line": 297,
+      "comment": "",
+      "child_ranges": [
+        "(line 279,col 9)-(line 279,col 76)",
+        "(line 280,col 9)-(line 280,col 90)",
+        "(line 282,col 9)-(line 282,col 53)",
+        "(line 283,col 9)-(line 283,col 55)",
+        "(line 285,col 9)-(line 287,col 9)",
+        "(line 289,col 9)-(line 289,col 110)",
+        "(line 291,col 9)-(line 291,col 31)",
+        "(line 293,col 9)-(line 294,col 55)",
+        "(line 296,col 9)-(line 296,col 109)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.util.ResizableDoubleArrayTest.testDiscard()",
+      "begin_line": 299,
+      "end_line": 327,
+      "comment": "",
+      "child_ranges": [
+        "(line 300,col 9)-(line 300,col 27)",
+        "(line 301,col 9)-(line 301,col 27)",
+        "(line 302,col 9)-(line 302,col 27)",
+        "(line 303,col 9)-(line 303,col 27)",
+        "(line 304,col 9)-(line 304,col 27)",
+        "(line 305,col 9)-(line 305,col 27)",
+        "(line 306,col 9)-(line 306,col 27)",
+        "(line 307,col 9)-(line 307,col 27)",
+        "(line 308,col 9)-(line 308,col 27)",
+        "(line 309,col 9)-(line 309,col 27)",
+        "(line 310,col 9)-(line 310,col 27)",
+        "(line 311,col 9)-(line 311,col 82)",
+        "(line 313,col 9)-(line 313,col 59)",
+        "(line 314,col 9)-(line 314,col 80)",
+        "(line 316,col 9)-(line 320,col 9)",
+        "(line 322,col 9)-(line 326,col 9)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.util.ResizableDoubleArrayTest.testMutators()",
+      "begin_line": 329,
+      "end_line": 350,
+      "comment": "",
+      "child_ranges": [
+        "(line 330,col 9)-(line 330,col 63)",
+        "(line 331,col 9)-(line 331,col 82)",
+        "(line 332,col 9)-(line 332,col 58)",
+        "(line 333,col 9)-(line 333,col 77)",
+        "(line 334,col 9)-(line 339,col 9)",
+        "(line 340,col 9)-(line 341,col 52)",
+        "(line 342,col 9)-(line 343,col 63)",
+        "(line 344,col 9)-(line 349,col 9)"
+      ]
+    }
+  ]
+}

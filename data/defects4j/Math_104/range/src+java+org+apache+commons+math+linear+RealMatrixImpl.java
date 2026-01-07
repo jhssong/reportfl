@@ -1,0 +1,643 @@
+{
+  "filepath": "/tmp/Math-104b/src/java/org/apache/commons/math/linear/RealMatrixImpl.java",
+  "nodes": [
+    {
+      "type": "class_interface",
+      "name": "RealMatrixImpl",
+      "is_interface": false,
+      "parent_types": [
+        "org.apache.commons.math.linear.RealMatrix",
+        "java.io.Serializable"
+      ],
+      "begin_line": 51,
+      "end_line": 1036,
+      "comment": "\n * Implementation of RealMatrix using a double[][] array to store entries and\n * \u003ca href\u003d\"http://www.math.gatech.edu/~bourbaki/math2601/Web-notes/2num.pdf\"\u003e\n * LU decompostion\u003c/a\u003e to support linear system\n * solution and inverse.\n * \u003cp\u003e\n * The LU decompostion is performed as needed, to support the following operations: \u003cul\u003e\n * \u003cli\u003esolve\u003c/li\u003e\n * \u003cli\u003eisSingular\u003c/li\u003e\n * \u003cli\u003egetDeterminant\u003c/li\u003e\n * \u003cli\u003einverse\u003c/li\u003e \u003c/ul\u003e\n * \u003cp\u003e\n * \u003cstrong\u003eUsage notes\u003c/strong\u003e:\u003cbr\u003e\n * \u003cul\u003e\u003cli\u003e\n * The LU decomposition is cached and reused on subsequent calls.   \n * If data are modified via references to the underlying array obtained using\n * \u003ccode\u003egetDataRef()\u003c/code\u003e, then the stored LU decomposition will not be\n * discarded.  In this case, you need to explicitly invoke \n * \u003ccode\u003eLUDecompose()\u003c/code\u003e to recompute the decomposition\n * before using any of the methods above.\u003c/li\u003e\n * \u003cli\u003e\n * As specified in the {@link RealMatrix} interface, matrix element indexing\n * is 0-based -- e.g., \u003ccode\u003egetEntry(0, 0)\u003c/code\u003e\n * returns the element in the first row, first column of the matrix.\u003c/li\u003e\u003c/ul\u003e\n *\n * @version $Revision$ $Date$\n "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "serialVersionUID"
+      ],
+      "begin_line": 54,
+      "end_line": 54,
+      "comment": " Serializable version identifier "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "data"
+      ],
+      "begin_line": 57,
+      "end_line": 57,
+      "comment": " Entries of the matrix "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "lu"
+      ],
+      "begin_line": 62,
+      "end_line": 62,
+      "comment": " Entries of cached LU decomposition.\n     *  All updates to data (other than luDecompose()) *must* set this to null\n     "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "permutation"
+      ],
+      "begin_line": 65,
+      "end_line": 65,
+      "comment": " Permutation associated with LU decompostion "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "parity"
+      ],
+      "begin_line": 68,
+      "end_line": 68,
+      "comment": " Parity of the permutation associated with the LU decomposition "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "TOO_SMALL"
+      ],
+      "begin_line": 71,
+      "end_line": 71,
+      "comment": " Bound to determine effective singularity in LU decomposition "
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.RealMatrixImpl()",
+      "begin_line": 76,
+      "end_line": 77,
+      "comment": "\n     * Creates a matrix with no data\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.RealMatrixImpl(int, int)",
+      "begin_line": 87,
+      "end_line": 94,
+      "comment": "\n     * Create a new RealMatrix with the supplied row and column dimensions.\n     *\n     * @param rowDimension  the number of rows in the new matrix\n     * @param columnDimension  the number of columns in the new matrix\n     * @throws IllegalArgumentException if row or column dimension is not\n     *  positive\n     ",
+      "child_ranges": [
+        "(line 88,col 9)-(line 91,col 9)",
+        "(line 92,col 9)-(line 92,col 57)",
+        "(line 93,col 9)-(line 93,col 18)"
+      ]
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.RealMatrixImpl(double[][])",
+      "begin_line": 107,
+      "end_line": 110,
+      "comment": "\n     * Create a new RealMatrix using the input array as the underlying\n     * data array.\n     * \u003cp\u003e\n     * The input array is copied, not referenced.\n     *\n     * @param d data for new matrix\n     * @throws IllegalArgumentException if \u003ccode\u003edata\u003c/code\u003e is not rectangular\n     *  (not all rows have the same length) or empty\n     * @throws NullPointerException if \u003ccode\u003edata\u003c/code\u003e is null\n     ",
+      "child_ranges": [
+        "(line 108,col 9)-(line 108,col 23)",
+        "(line 109,col 9)-(line 109,col 18)"
+      ]
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.RealMatrixImpl(double[])",
+      "begin_line": 121,
+      "end_line": 127,
+      "comment": "\n     * Create a new (column) RealMatrix using \u003ccode\u003ev\u003c/code\u003e as the\n     * data for the unique column of the \u003ccode\u003ev.length x 1\u003c/code\u003e matrix\n     * created.\n     * \u003cp\u003e\n     * The input array is copied, not referenced.\n     *\n     * @param v column vector holding data for new matrix\n     ",
+      "child_ranges": [
+        "(line 122,col 9)-(line 122,col 29)",
+        "(line 123,col 9)-(line 123,col 36)",
+        "(line 124,col 9)-(line 126,col 9)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.copy()",
+      "begin_line": 134,
+      "end_line": 136,
+      "comment": "\n     * Create a new RealMatrix which is a copy of this.\n     *\n     * @return  the cloned matrix\n     ",
+      "child_ranges": [
+        "(line 135,col 9)-(line 135,col 50)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.add(org.apache.commons.math.linear.RealMatrix)",
+      "begin_line": 145,
+      "end_line": 159,
+      "comment": "\n     * Compute the sum of this and \u003ccode\u003em\u003c/code\u003e.\n     *\n     * @param m    matrix to be added\n     * @return     this + m\n     * @throws  IllegalArgumentException if m is not the same size as this\n     ",
+      "child_ranges": [
+        "(line 146,col 9)-(line 149,col 9)",
+        "(line 150,col 9)-(line 150,col 46)",
+        "(line 151,col 9)-(line 151,col 52)",
+        "(line 152,col 9)-(line 152,col 63)",
+        "(line 153,col 9)-(line 157,col 9)",
+        "(line 158,col 9)-(line 158,col 43)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.subtract(org.apache.commons.math.linear.RealMatrix)",
+      "begin_line": 168,
+      "end_line": 182,
+      "comment": "\n     * Compute  this minus \u003ccode\u003em\u003c/code\u003e.\n     *\n     * @param m    matrix to be subtracted\n     * @return     this + m\n     * @throws  IllegalArgumentException if m is not the same size as *this\n     ",
+      "child_ranges": [
+        "(line 169,col 9)-(line 172,col 9)",
+        "(line 173,col 9)-(line 173,col 46)",
+        "(line 174,col 9)-(line 174,col 52)",
+        "(line 175,col 9)-(line 175,col 63)",
+        "(line 176,col 9)-(line 180,col 9)",
+        "(line 181,col 9)-(line 181,col 43)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.scalarAdd(double)",
+      "begin_line": 190,
+      "end_line": 200,
+      "comment": "\n     * Returns the result of adding d to each entry of this.\n     *\n     * @param d    value to be added to each entry\n     * @return     d + this\n     ",
+      "child_ranges": [
+        "(line 191,col 9)-(line 191,col 46)",
+        "(line 192,col 9)-(line 192,col 52)",
+        "(line 193,col 9)-(line 193,col 63)",
+        "(line 194,col 9)-(line 198,col 9)",
+        "(line 199,col 9)-(line 199,col 43)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.scalarMultiply(double)",
+      "begin_line": 207,
+      "end_line": 217,
+      "comment": "\n     * Returns the result multiplying each entry of this by \u003ccode\u003ed\u003c/code\u003e\n     * @param d  value to multiply all entries by\n     * @return d * this\n     ",
+      "child_ranges": [
+        "(line 208,col 9)-(line 208,col 46)",
+        "(line 209,col 9)-(line 209,col 52)",
+        "(line 210,col 9)-(line 210,col 63)",
+        "(line 211,col 9)-(line 215,col 9)",
+        "(line 216,col 9)-(line 216,col 43)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.multiply(org.apache.commons.math.linear.RealMatrix)",
+      "begin_line": 226,
+      "end_line": 245,
+      "comment": "\n     * Returns the result of postmultiplying this by \u003ccode\u003em\u003c/code\u003e.\n     * @param m    matrix to postmultiply by\n     * @return     this*m\n     * @throws     IllegalArgumentException\n     *             if columnDimension(this) !\u003d rowDimension(m)\n     ",
+      "child_ranges": [
+        "(line 227,col 9)-(line 229,col 9)",
+        "(line 230,col 9)-(line 230,col 43)",
+        "(line 231,col 9)-(line 231,col 43)",
+        "(line 232,col 9)-(line 232,col 45)",
+        "(line 233,col 9)-(line 233,col 54)",
+        "(line 234,col 9)-(line 234,col 23)",
+        "(line 235,col 9)-(line 243,col 9)",
+        "(line 244,col 9)-(line 244,col 43)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.preMultiply(org.apache.commons.math.linear.RealMatrix)",
+      "begin_line": 254,
+      "end_line": 256,
+      "comment": "\n     * Returns the result premultiplying this by \u003ccode\u003em\u003c/code\u003e.\n     * @param m    matrix to premultiply by\n     * @return     m * this\n     * @throws     IllegalArgumentException\n     *             if rowDimension(this) !\u003d columnDimension(m)\n     ",
+      "child_ranges": [
+        "(line 255,col 9)-(line 255,col 32)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.getData()",
+      "begin_line": 265,
+      "end_line": 267,
+      "comment": "\n     * Returns matrix entries as a two-dimensional array.\n     * \u003cp\u003e\n     * Makes a fresh copy of the underlying data.\n     *\n     * @return    2-dimensional array of entries\n     ",
+      "child_ranges": [
+        "(line 266,col 9)-(line 266,col 25)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.getDataRef()",
+      "begin_line": 276,
+      "end_line": 278,
+      "comment": "\n     * Returns a reference to the underlying data array.\n     * \u003cp\u003e\n     * Does not make a fresh copy of the underlying data.\n     *\n     * @return 2-dimensional array of entries\n     ",
+      "child_ranges": [
+        "(line 277,col 9)-(line 277,col 20)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.getNorm()",
+      "begin_line": 284,
+      "end_line": 294,
+      "comment": "\n     *\n     * @return norm\n     ",
+      "child_ranges": [
+        "(line 285,col 9)-(line 285,col 29)",
+        "(line 286,col 9)-(line 292,col 9)",
+        "(line 293,col 9)-(line 293,col 25)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.getSubMatrix(int, int, int, int)",
+      "begin_line": 308,
+      "end_line": 325,
+      "comment": "\n     * Gets a submatrix. Rows and columns are indicated\n     * counting from 0 to n-1.\n     *\n     * @param startRow Initial row index\n     * @param endRow Final row index\n     * @param startColumn Initial column index\n     * @param endColumn Final column index\n     * @return The subMatrix containing the data of the\n     *         specified rows and columns\n     * @exception MatrixIndexException if row or column selections are not valid\n     ",
+      "child_ranges": [
+        "(line 310,col 9)-(line 315,col 9)",
+        "(line 316,col 9)-(line 317,col 43)",
+        "(line 318,col 9)-(line 318,col 58)",
+        "(line 319,col 9)-(line 323,col 13)",
+        "(line 324,col 9)-(line 324,col 25)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.getSubMatrix(int[], int[])",
+      "begin_line": 338,
+      "end_line": 358,
+      "comment": "\n     * Gets a submatrix. Rows and columns are indicated\n     * counting from 0 to n-1.\n     *\n     * @param selectedRows Array of row indices must be non-empty\n     * @param selectedColumns Array of column indices must be non-empty\n     * @return The subMatrix containing the data in the\n     *     specified rows and columns\n     * @exception MatrixIndexException  if supplied row or column index arrays\n     *     are not valid\n     ",
+      "child_ranges": [
+        "(line 340,col 9)-(line 343,col 9)",
+        "(line 344,col 9)-(line 345,col 40)",
+        "(line 346,col 9)-(line 346,col 58)",
+        "(line 347,col 9)-(line 356,col 9)",
+        "(line 357,col 9)-(line 357,col 25)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.setSubMatrix(double[][], int, int)",
+      "begin_line": 387,
+      "end_line": 423,
+      "comment": "\n     * Replace the submatrix starting at \u003ccode\u003erow, column\u003c/code\u003e using data in\n     * the input \u003ccode\u003esubMatrix\u003c/code\u003e array. Indexes are 0-based.\n     * \u003cp\u003e \n     * Example:\u003cbr\u003e\n     * Starting with \u003cpre\u003e\n     * 1  2  3  4\n     * 5  6  7  8\n     * 9  0  1  2\n     * \u003c/pre\u003e\n     * and \u003ccode\u003esubMatrix \u003d {{3, 4} {5,6}}\u003c/code\u003e, invoking \n     * \u003ccode\u003esetSubMatrix(subMatrix,1,1))\u003c/code\u003e will result in \u003cpre\u003e\n     * 1  2  3  4\n     * 5  3  4  8\n     * 9  5  6  2\n     * \u003c/pre\u003e\n     * \n     * @param subMatrix  array containing the submatrix replacement data\n     * @param row  row coordinate of the top, left element to be replaced\n     * @param column  column coordinate of the top, left element to be replaced\n     * @throws MatrixIndexException  if subMatrix does not fit into this \n     *    matrix from element in (row, column) \n     * @throws IllegalArgumentException if \u003ccode\u003esubMatrix\u003c/code\u003e is not rectangular\n     *  (not all rows have the same length) or empty\n     * @throws NullPointerException if \u003ccode\u003esubMatrix\u003c/code\u003e is null\n     * @since 1.1\n     ",
+      "child_ranges": [
+        "(line 389,col 9)-(line 392,col 9)",
+        "(line 393,col 9)-(line 393,col 37)",
+        "(line 394,col 9)-(line 397,col 9)",
+        "(line 398,col 9)-(line 398,col 40)",
+        "(line 399,col 9)-(line 402,col 9)",
+        "(line 403,col 9)-(line 408,col 9)",
+        "(line 409,col 9)-(line 414,col 9)",
+        "(line 415,col 9)-(line 418,col 61)",
+        "(line 419,col 9)-(line 421,col 9)",
+        "(line 422,col 9)-(line 422,col 18)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.getRowMatrix(int)",
+      "begin_line": 433,
+      "end_line": 441,
+      "comment": "\n     * Returns the entries in row number \u003ccode\u003erow\u003c/code\u003e as a row matrix.\n     * Row indices start at 0.\n     * \n     * @param row  the row to be fetched\n     * @return row matrix\n     * @throws MatrixIndexException if the specified row index is invalid\n     ",
+      "child_ranges": [
+        "(line 434,col 9)-(line 436,col 9)",
+        "(line 437,col 9)-(line 437,col 46)",
+        "(line 438,col 9)-(line 438,col 46)",
+        "(line 439,col 9)-(line 439,col 57)",
+        "(line 440,col 9)-(line 440,col 39)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.getColumnMatrix(int)",
+      "begin_line": 451,
+      "end_line": 461,
+      "comment": "\n     * Returns the entries in column number \u003ccode\u003ecolumn\u003c/code\u003e\n     * as a column matrix.  Column indices start at 0.\n     *\n     * @param column the column to be fetched\n     * @return column matrix\n     * @throws MatrixIndexException if the specified column index is invalid\n     ",
+      "child_ranges": [
+        "(line 452,col 9)-(line 454,col 9)",
+        "(line 455,col 9)-(line 455,col 43)",
+        "(line 456,col 9)-(line 456,col 46)",
+        "(line 457,col 9)-(line 459,col 9)",
+        "(line 460,col 9)-(line 460,col 39)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.getRow(int)",
+      "begin_line": 473,
+      "end_line": 481,
+      "comment": "\n     * Returns the entries in row number \u003ccode\u003erow\u003c/code\u003e as an array.\n     * \u003cp\u003e\n     * Row indices start at 0.  A \u003ccode\u003eMatrixIndexException\u003c/code\u003e is thrown\n     * unless \u003ccode\u003e0 \u003c\u003d row \u003c rowDimension.\u003c/code\u003e\n     *\n     * @param row the row to be fetched\n     * @return array of entries in the row\n     * @throws MatrixIndexException if the specified row index is not valid\n     ",
+      "child_ranges": [
+        "(line 474,col 9)-(line 476,col 9)",
+        "(line 477,col 9)-(line 477,col 46)",
+        "(line 478,col 9)-(line 478,col 41)",
+        "(line 479,col 9)-(line 479,col 54)",
+        "(line 480,col 9)-(line 480,col 19)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.getColumn(int)",
+      "begin_line": 493,
+      "end_line": 503,
+      "comment": "\n     * Returns the entries in column number \u003ccode\u003ecol\u003c/code\u003e as an array.\n     * \u003cp\u003e\n     * Column indices start at 0.  A \u003ccode\u003eMatrixIndexException\u003c/code\u003e is thrown\n     * unless \u003ccode\u003e0 \u003c\u003d column \u003c columnDimension.\u003c/code\u003e\n     *\n     * @param col the column to be fetched\n     * @return array of entries in the column\n     * @throws MatrixIndexException if the specified column index is not valid\n     ",
+      "child_ranges": [
+        "(line 494,col 9)-(line 496,col 9)",
+        "(line 497,col 9)-(line 497,col 43)",
+        "(line 498,col 9)-(line 498,col 41)",
+        "(line 499,col 9)-(line 501,col 9)",
+        "(line 502,col 9)-(line 502,col 19)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.getEntry(int, int)",
+      "begin_line": 520,
+      "end_line": 526,
+      "comment": "\n     * Returns the entry in the specified row and column.\n     * \u003cp\u003e\n     * Row and column indices start at 0 and must satisfy \n     * \u003cul\u003e\n     * \u003cli\u003e\u003ccode\u003e0 \u003c\u003d row \u003c rowDimension\u003c/code\u003e\u003c/li\u003e\n     * \u003cli\u003e\u003ccode\u003e 0 \u003c\u003d column \u003c columnDimension\u003c/code\u003e\u003c/li\u003e\n     * \u003c/ul\u003e\n     * otherwise a \u003ccode\u003eMatrixIndexException\u003c/code\u003e is thrown.\n     * \n     * @param row  row location of entry to be fetched\n     * @param column  column location of entry to be fetched\n     * @return matrix entry in row,column\n     * @throws MatrixIndexException if the row or column index is not valid\n     ",
+      "child_ranges": [
+        "(line 522,col 9)-(line 524,col 9)",
+        "(line 525,col 9)-(line 525,col 33)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.transpose()",
+      "begin_line": 533,
+      "end_line": 544,
+      "comment": "\n     * Returns the transpose matrix.\n     *\n     * @return transpose matrix\n     ",
+      "child_ranges": [
+        "(line 534,col 9)-(line 534,col 43)",
+        "(line 535,col 9)-(line 535,col 46)",
+        "(line 536,col 9)-(line 536,col 62)",
+        "(line 537,col 9)-(line 537,col 46)",
+        "(line 538,col 9)-(line 542,col 9)",
+        "(line 543,col 9)-(line 543,col 19)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.inverse()",
+      "begin_line": 552,
+      "end_line": 555,
+      "comment": "\n     * Returns the inverse matrix if this matrix is invertible.\n     *\n     * @return inverse matrix\n     * @throws InvalidMatrixException if this is not invertible\n     ",
+      "child_ranges": [
+        "(line 553,col 9)-(line 554,col 42)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.getDeterminant()",
+      "begin_line": 561,
+      "end_line": 574,
+      "comment": "\n     * @return determinant\n     * @throws InvalidMatrixException if matrix is not square\n     ",
+      "child_ranges": [
+        "(line 562,col 9)-(line 564,col 9)",
+        "(line 565,col 9)-(line 573,col 9)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.isSquare()",
+      "begin_line": 579,
+      "end_line": 581,
+      "comment": "\n     * @return true if the matrix is square (rowDimension \u003d columnDimension)\n     ",
+      "child_ranges": [
+        "(line 580,col 9)-(line 580,col 69)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.isSingular()",
+      "begin_line": 586,
+      "end_line": 597,
+      "comment": "\n     * @return true if the matrix is singular\n     ",
+      "child_ranges": [
+        "(line 587,col 9)-(line 596,col 9)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.getRowDimension()",
+      "begin_line": 602,
+      "end_line": 604,
+      "comment": "\n     * @return rowDimension\n     ",
+      "child_ranges": [
+        "(line 603,col 9)-(line 603,col 27)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.getColumnDimension()",
+      "begin_line": 609,
+      "end_line": 611,
+      "comment": "\n     * @return columnDimension\n     ",
+      "child_ranges": [
+        "(line 610,col 9)-(line 610,col 30)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.getTrace()",
+      "begin_line": 617,
+      "end_line": 626,
+      "comment": "\n     * @return trace\n     * @throws IllegalArgumentException if the matrix is not square\n     ",
+      "child_ranges": [
+        "(line 618,col 9)-(line 620,col 9)",
+        "(line 621,col 9)-(line 621,col 34)",
+        "(line 622,col 9)-(line 624,col 9)",
+        "(line 625,col 9)-(line 625,col 21)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.operate(double[])",
+      "begin_line": 633,
+      "end_line": 648,
+      "comment": "\n     * @param v vector to operate on\n     * @throws IllegalArgumentException if columnDimension !\u003d v.length\n     * @return resulting vector\n     ",
+      "child_ranges": [
+        "(line 634,col 9)-(line 636,col 9)",
+        "(line 637,col 9)-(line 637,col 43)",
+        "(line 638,col 9)-(line 638,col 46)",
+        "(line 639,col 9)-(line 639,col 44)",
+        "(line 640,col 9)-(line 646,col 9)",
+        "(line 647,col 9)-(line 647,col 19)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.preMultiply(double[])",
+      "begin_line": 655,
+      "end_line": 670,
+      "comment": "\n     * @param v vector to premultiply by\n     * @throws IllegalArgumentException if rowDimension !\u003d v.length\n     * @return resulting matrix\n     ",
+      "child_ranges": [
+        "(line 656,col 9)-(line 656,col 43)",
+        "(line 657,col 9)-(line 659,col 9)",
+        "(line 660,col 9)-(line 660,col 46)",
+        "(line 661,col 9)-(line 661,col 41)",
+        "(line 662,col 9)-(line 668,col 9)",
+        "(line 669,col 9)-(line 669,col 19)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.solve(double[])",
+      "begin_line": 683,
+      "end_line": 695,
+      "comment": "\n     * Returns a matrix of (column) solution vectors for linear systems with\n     * coefficient matrix \u003d this and constant vectors \u003d columns of\n     * \u003ccode\u003eb\u003c/code\u003e.\n     *\n     * @param b  array of constant forming RHS of linear systems to\n     * to solve\n     * @return solution array\n     * @throws IllegalArgumentException if this.rowDimension !\u003d row dimension\n     * @throws InvalidMatrixException if this matrix is not square or is singular\n     ",
+      "child_ranges": [
+        "(line 684,col 9)-(line 684,col 43)",
+        "(line 685,col 9)-(line 687,col 9)",
+        "(line 688,col 9)-(line 688,col 51)",
+        "(line 689,col 9)-(line 689,col 79)",
+        "(line 690,col 9)-(line 690,col 41)",
+        "(line 691,col 9)-(line 693,col 9)",
+        "(line 694,col 9)-(line 694,col 19)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.solve(org.apache.commons.math.linear.RealMatrix)",
+      "begin_line": 708,
+      "end_line": 754,
+      "comment": "\n     * Returns a matrix of (column) solution vectors for linear systems with\n     * coefficient matrix \u003d this and constant vectors \u003d columns of\n     * \u003ccode\u003eb\u003c/code\u003e.\n     *\n     * @param b  matrix of constant vectors forming RHS of linear systems to\n     * to solve\n     * @return matrix of solution vectors\n     * @throws IllegalArgumentException if this.rowDimension !\u003d row dimension\n     * @throws InvalidMatrixException if this matrix is not square or is singular\n     ",
+      "child_ranges": [
+        "(line 709,col 9)-(line 711,col 9)",
+        "(line 712,col 9)-(line 714,col 9)",
+        "(line 715,col 9)-(line 717,col 9)",
+        "(line 719,col 9)-(line 719,col 45)",
+        "(line 720,col 9)-(line 720,col 43)",
+        "(line 721,col 9)-(line 721,col 40)",
+        "(line 724,col 9)-(line 724,col 49)",
+        "(line 725,col 9)-(line 729,col 9)",
+        "(line 732,col 9)-(line 738,col 9)",
+        "(line 741,col 9)-(line 750,col 9)",
+        "(line 752,col 9)-(line 752,col 55)",
+        "(line 753,col 9)-(line 753,col 22)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.luDecompose()",
+      "begin_line": 774,
+      "end_line": 846,
+      "comment": "\n     * Computes a new\n     * \u003ca href\u003d\"http://www.math.gatech.edu/~bourbaki/math2601/Web-notes/2num.pdf\"\u003e\n     * LU decompostion\u003c/a\u003e for this matrix, storing the result for use by other methods.\n     * \u003cp\u003e\n     * \u003cstrong\u003eImplementation Note\u003c/strong\u003e:\u003cbr\u003e\n     * Uses \u003ca href\u003d\"http://www.damtp.cam.ac.uk/user/fdl/people/sd/lectures/nummeth98/linear.htm\"\u003e\n     * Crout\u0027s algortithm\u003c/a\u003e, with partial pivoting.\n     * \u003cp\u003e\n     * \u003cstrong\u003eUsage Note\u003c/strong\u003e:\u003cbr\u003e\n     * This method should rarely be invoked directly. Its only use is\n     * to force recomputation of the LU decomposition when changes have been\n     * made to the underlying data using direct array references. Changes\n     * made using setXxx methods will trigger recomputation when needed\n     * automatically.\n     *\n     * @throws InvalidMatrixException if the matrix is non-square or singular.\n     ",
+      "child_ranges": [
+        "(line 776,col 9)-(line 776,col 43)",
+        "(line 777,col 9)-(line 777,col 46)",
+        "(line 778,col 9)-(line 780,col 9)",
+        "(line 781,col 9)-(line 781,col 28)",
+        "(line 784,col 9)-(line 784,col 37)",
+        "(line 785,col 9)-(line 787,col 9)",
+        "(line 788,col 9)-(line 788,col 19)",
+        "(line 791,col 9)-(line 845,col 9)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.toString()",
+      "begin_line": 852,
+      "end_line": 870,
+      "comment": "\n     *\n     * @see java.lang.Object#toString()\n     ",
+      "child_ranges": [
+        "(line 853,col 9)-(line 853,col 46)",
+        "(line 854,col 9)-(line 854,col 38)",
+        "(line 855,col 9)-(line 867,col 9)",
+        "(line 868,col 9)-(line 868,col 24)",
+        "(line 869,col 9)-(line 869,col 30)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.equals(java.lang.Object)",
+      "begin_line": 881,
+      "end_line": 903,
+      "comment": "\n     * Returns true iff \u003ccode\u003eobject\u003c/code\u003e is a \n     * \u003ccode\u003eRealMatrixImpl\u003c/code\u003e instance with the same dimensions as this\n     * and all corresponding matrix entries are equal.  Corresponding entries\n     * are compared using {@link java.lang.Double#doubleToLongBits(double)}\n     * \n     * @param object the object to test equality against.\n     * @return true if object equals this\n     ",
+      "child_ranges": [
+        "(line 882,col 9)-(line 884,col 9)",
+        "(line 885,col 9)-(line 887,col 9)",
+        "(line 888,col 9)-(line 888,col 43)",
+        "(line 889,col 9)-(line 889,col 38)",
+        "(line 890,col 9)-(line 890,col 41)",
+        "(line 891,col 9)-(line 893,col 9)",
+        "(line 894,col 9)-(line 901,col 9)",
+        "(line 902,col 9)-(line 902,col 20)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.hashCode()",
+      "begin_line": 910,
+      "end_line": 923,
+      "comment": "\n     * Computes a hashcode for the matrix.\n     * \n     * @return hashcode for matrix\n     ",
+      "child_ranges": [
+        "(line 911,col 9)-(line 911,col 20)",
+        "(line 912,col 9)-(line 912,col 38)",
+        "(line 913,col 9)-(line 913,col 41)",
+        "(line 914,col 9)-(line 914,col 31)",
+        "(line 915,col 9)-(line 915,col 31)",
+        "(line 916,col 9)-(line 921,col 9)",
+        "(line 922,col 9)-(line 922,col 19)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.getIdentity(int)",
+      "begin_line": 935,
+      "end_line": 937,
+      "comment": "\n     * Returns \u003ccode\u003edimension x dimension\u003c/code\u003e identity matrix.\n     *\n     * @param dimension dimension of identity matrix to generate\n     * @return identity matrix\n     * @throws IllegalArgumentException  if dimension is not positive\n     * @deprecated use {@link MatrixUtils#createRealIdentityMatrix}\n     ",
+      "child_ranges": [
+        "(line 936,col 9)-(line 936,col 63)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.getLUMatrix()",
+      "begin_line": 966,
+      "end_line": 971,
+      "comment": "\n     *  Returns the LU decomposition as a RealMatrix.\n     *  Returns a fresh copy of the cached LU matrix if this has been computed;\n     *  otherwise the composition is computed and cached for use by other methods.\n     *  Since a copy is returned in either case, changes to the returned matrix do not\n     *  affect the LU decomposition property.\n     * \u003cp\u003e\n     * The matrix returned is a compact representation of the LU decomposition.\n     * Elements below the main diagonal correspond to entries of the \"L\" matrix;\n     * elements on and above the main diagonal correspond to entries of the \"U\"\n     * matrix.\n     * \u003cp\u003e\n     * Example: \u003cpre\u003e\n     *\n     *     Returned matrix                L                  U\n     *         2  3  1                   1  0  0            2  3  1\n     *         5  4  6                   5  1  0            0  4  6\n     *         1  7  8                   1  7  1            0  0  8\n     * \u003c/pre\u003e\n     *\n     * The L and U matrices satisfy the matrix equation LU \u003d permuteRows(this), \u003cbr\u003e\n     *  where permuteRows reorders the rows of the matrix to follow the order determined\n     *  by the \u003ca href\u003d#getPermutation()\u003epermutation\u003c/a\u003e property.\n     *\n     * @return LU decomposition matrix\n     * @throws InvalidMatrixException if the matrix is non-square or singular.\n     ",
+      "child_ranges": [
+        "(line 967,col 9)-(line 969,col 9)",
+        "(line 970,col 9)-(line 970,col 38)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.getPermutation()",
+      "begin_line": 985,
+      "end_line": 989,
+      "comment": "\n     * Returns the permutation associated with the lu decomposition.\n     * The entries of the array represent a permutation of the numbers 0, ... , nRows - 1.\n     * \u003cp\u003e\n     * Example:\n     * permutation \u003d [1, 2, 0] means current 2nd row is first, current third row is second\n     * and current first row is last.\n     * \u003cp\u003e\n     * Returns a fresh copy of the array.\n     *\n     * @return the permutation\n     ",
+      "child_ranges": [
+        "(line 986,col 9)-(line 986,col 48)",
+        "(line 987,col 9)-(line 987,col 69)",
+        "(line 988,col 9)-(line 988,col 19)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.copyOut()",
+      "begin_line": 998,
+      "end_line": 1006,
+      "comment": "\n     * Returns a fresh copy of the underlying data array.\n     *\n     * @return a copy of the underlying data array.\n     ",
+      "child_ranges": [
+        "(line 999,col 9)-(line 999,col 43)",
+        "(line 1000,col 9)-(line 1000,col 70)",
+        "(line 1002,col 9)-(line 1004,col 9)",
+        "(line 1005,col 9)-(line 1005,col 19)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.copyIn(double[][])",
+      "begin_line": 1018,
+      "end_line": 1020,
+      "comment": "\n     * Replaces data with a fresh copy of the input array.\n     * \u003cp\u003e\n     * Verifies that the input array is rectangular and non-empty\n     *\n     * @param in data to copy in\n     * @throws IllegalArgumentException if input array is emtpy or not\n     *    rectangular\n     * @throws NullPointerException if input array is null\n     ",
+      "child_ranges": [
+        "(line 1019,col 9)-(line 1019,col 29)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.linear.RealMatrixImpl.isValidCoordinate(int, int)",
+      "begin_line": 1029,
+      "end_line": 1034,
+      "comment": "\n     * Tests a given coordinate as being valid or invalid\n     *\n     * @param row the row index.\n     * @param col the column index.\n     * @return true if the coordinate is with the current dimensions\n     ",
+      "child_ranges": [
+        "(line 1030,col 9)-(line 1030,col 43)",
+        "(line 1031,col 9)-(line 1031,col 46)",
+        "(line 1033,col 9)-(line 1033,col 74)"
+      ]
+    }
+  ]
+}

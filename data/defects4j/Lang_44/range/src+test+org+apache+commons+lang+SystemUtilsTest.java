@@ -1,0 +1,515 @@
+{
+  "filepath": "/tmp/Lang-44b/src/test/org/apache/commons/lang/SystemUtilsTest.java",
+  "nodes": [
+    {
+      "type": "class_interface",
+      "name": "SystemUtilsTest",
+      "is_interface": false,
+      "parent_types": [
+        "TestCase"
+      ],
+      "begin_line": 43,
+      "end_line": 549,
+      "comment": "\n * Unit tests {@link org.apache.commons.lang.SystemUtils}.\n * \n * Only limited testing can be performed.\n * \n * @author Stephen Colebourne\n * @author Tetsuya Kaneuchi\n * @author Gary D. Gregory\n * @version $Id$\n "
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang.SystemUtilsTest.main(java.lang.String[])",
+      "begin_line": 44,
+      "end_line": 46,
+      "comment": "",
+      "child_ranges": [
+        "(line 45,col 9)-(line 45,col 32)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang.SystemUtilsTest.suite()",
+      "begin_line": 48,
+      "end_line": 52,
+      "comment": "",
+      "child_ranges": [
+        "(line 49,col 9)-(line 49,col 63)",
+        "(line 50,col 9)-(line 50,col 43)",
+        "(line 51,col 9)-(line 51,col 21)"
+      ]
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "JAVA_VERSION"
+      ],
+      "begin_line": 57,
+      "end_line": 57,
+      "comment": "-----------------------------------------------------------------------"
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "JAVA_VERSION_TRIMMED"
+      ],
+      "begin_line": 59,
+      "end_line": 59,
+      "comment": ""
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "OS_NAME"
+      ],
+      "begin_line": 61,
+      "end_line": 61,
+      "comment": ""
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "OS_VERSION"
+      ],
+      "begin_line": 63,
+      "end_line": 63,
+      "comment": ""
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.lang.SystemUtilsTest.SystemUtilsTest(java.lang.String)",
+      "begin_line": 65,
+      "end_line": 67,
+      "comment": "",
+      "child_ranges": [
+        "(line 66,col 9)-(line 66,col 20)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang.SystemUtilsTest.getJavaVersionAsFloat()",
+      "begin_line": 83,
+      "end_line": 96,
+      "comment": "\n     * \u003cp\u003eGets the Java version number as a \u003ccode\u003efloat\u003c/code\u003e.\u003c/p\u003e\n     *\n     * \u003cp\u003eExample return values:\u003c/p\u003e\n     * \u003cul\u003e\n     *  \u003cli\u003e\u003ccode\u003e1.2f\u003c/code\u003e for JDK 1.2\n     *  \u003cli\u003e\u003ccode\u003e1.31f\u003c/code\u003e for JDK 1.3.1\n     * \u003c/ul\u003e\n     * \n     * \u003cp\u003ePatch releases are not reported.\n     * Zero is returned if {@link #JAVA_VERSION_TRIMMED} is \u003ccode\u003enull\u003c/code\u003e.\u003c/p\u003e\n     * \n     * @return the version, for example 1.31f for JDK 1.3.1\n     ",
+      "child_ranges": [
+        "(line 84,col 9)-(line 86,col 9)",
+        "(line 87,col 9)-(line 87,col 58)",
+        "(line 88,col 9)-(line 90,col 9)",
+        "(line 91,col 9)-(line 95,col 9)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang.SystemUtilsTest.getJavaVersionAsInt()",
+      "begin_line": 112,
+      "end_line": 128,
+      "comment": "\n     * \u003cp\u003eGets the Java version number as an \u003ccode\u003eint\u003c/code\u003e.\u003c/p\u003e\n     *\n     * \u003cp\u003eExample return values:\u003c/p\u003e\n     * \u003cul\u003e\n     *  \u003cli\u003e\u003ccode\u003e120\u003c/code\u003e for JDK 1.2\n     *  \u003cli\u003e\u003ccode\u003e131\u003c/code\u003e for JDK 1.3.1\n     * \u003c/ul\u003e\n     * \n     * \u003cp\u003ePatch releases are not reported.\n     * Zero is returned if {@link #JAVA_VERSION_TRIMMED} is \u003ccode\u003enull\u003c/code\u003e.\u003c/p\u003e\n     * \n     * @return the version, for example 131 for JDK 1.3.1\n     ",
+      "child_ranges": [
+        "(line 113,col 9)-(line 115,col 9)",
+        "(line 116,col 9)-(line 116,col 58)",
+        "(line 117,col 9)-(line 117,col 57)",
+        "(line 118,col 9)-(line 122,col 9)",
+        "(line 123,col 9)-(line 127,col 9)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang.SystemUtilsTest.getJavaVersionTrimmed()",
+      "begin_line": 135,
+      "end_line": 145,
+      "comment": "\n     * Trims the text of the java version to start with numbers.\n     * \n     * @return the trimmed java version\n     ",
+      "child_ranges": [
+        "(line 136,col 9)-(line 143,col 9)",
+        "(line 144,col 9)-(line 144,col 20)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang.SystemUtilsTest.getJavaVersionMatches(java.lang.String)",
+      "begin_line": 154,
+      "end_line": 159,
+      "comment": "\n     * Decides if the java version matches.\n     * \n     * @param versionPrefix\n     *                  the prefix for the java version\n     * @return true if matches, or false if not or can\u0027t determine\n     ",
+      "child_ranges": [
+        "(line 155,col 9)-(line 157,col 9)",
+        "(line 158,col 9)-(line 158,col 62)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang.SystemUtilsTest.getOSMatches(java.lang.String)",
+      "begin_line": 168,
+      "end_line": 173,
+      "comment": "\n     * Decides if the operating system matches.\n     * \n     * @param osNamePrefix\n     *                  the prefix for the os name\n     * @return true if matches, or false if not or can\u0027t determine\n     ",
+      "child_ranges": [
+        "(line 169,col 9)-(line 171,col 9)",
+        "(line 172,col 9)-(line 172,col 48)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang.SystemUtilsTest.getOSMatches(java.lang.String, java.lang.String)",
+      "begin_line": 184,
+      "end_line": 189,
+      "comment": "\n     * Decides if the operating system matches.\n     * \n     * @param osNamePrefix\n     *                  the prefix for the os name\n     * @param osVersionPrefix\n     *                  the prefix for the version\n     * @return true if matches, or false if not or can\u0027t determine\n     ",
+      "child_ranges": [
+        "(line 185,col 9)-(line 187,col 9)",
+        "(line 188,col 9)-(line 188,col 90)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang.SystemUtilsTest.setUp()",
+      "begin_line": 191,
+      "end_line": 193,
+      "comment": "",
+      "child_ranges": [
+        "(line 192,col 9)-(line 192,col 22)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang.SystemUtilsTest.tearDown()",
+      "begin_line": 195,
+      "end_line": 197,
+      "comment": "",
+      "child_ranges": [
+        "(line 196,col 9)-(line 196,col 25)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang.SystemUtilsTest.testConstructor()",
+      "begin_line": 200,
+      "end_line": 207,
+      "comment": "-----------------------------------------------------------------------",
+      "child_ranges": [
+        "(line 201,col 9)-(line 201,col 41)",
+        "(line 202,col 9)-(line 202,col 73)",
+        "(line 203,col 9)-(line 203,col 37)",
+        "(line 204,col 9)-(line 204,col 70)",
+        "(line 205,col 9)-(line 205,col 80)",
+        "(line 206,col 9)-(line 206,col 80)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang.SystemUtilsTest.testGetJavaHome()",
+      "begin_line": 212,
+      "end_line": 216,
+      "comment": "\n     * Assums no security manager exists.\n     ",
+      "child_ranges": [
+        "(line 213,col 9)-(line 213,col 45)",
+        "(line 214,col 9)-(line 214,col 34)",
+        "(line 215,col 9)-(line 215,col 40)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang.SystemUtilsTest.testGetJavaIoTmpDir()",
+      "begin_line": 221,
+      "end_line": 225,
+      "comment": "\n     * Assums no security manager exists.\n     ",
+      "child_ranges": [
+        "(line 222,col 9)-(line 222,col 49)",
+        "(line 223,col 9)-(line 223,col 34)",
+        "(line 224,col 9)-(line 224,col 40)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang.SystemUtilsTest.testGetUserDir()",
+      "begin_line": 230,
+      "end_line": 234,
+      "comment": "\n     * Assums no security manager exists.\n     ",
+      "child_ranges": [
+        "(line 231,col 9)-(line 231,col 44)",
+        "(line 232,col 9)-(line 232,col 34)",
+        "(line 233,col 9)-(line 233,col 40)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang.SystemUtilsTest.testGetUserHome()",
+      "begin_line": 239,
+      "end_line": 243,
+      "comment": "\n     * Assums no security manager exists.\n     ",
+      "child_ranges": [
+        "(line 240,col 9)-(line 240,col 45)",
+        "(line 241,col 9)-(line 241,col 34)",
+        "(line 242,col 9)-(line 242,col 40)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang.SystemUtilsTest.testIS_JAVA()",
+      "begin_line": 245,
+      "end_line": 299,
+      "comment": "",
+      "child_ranges": [
+        "(line 246,col 9)-(line 246,col 64)",
+        "(line 247,col 9)-(line 298,col 9)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang.SystemUtilsTest.testIS_OS()",
+      "begin_line": 301,
+      "end_line": 335,
+      "comment": "",
+      "child_ranges": [
+        "(line 302,col 9)-(line 302,col 54)",
+        "(line 303,col 9)-(line 334,col 9)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang.SystemUtilsTest.testDeprecatedJavaVersion()",
+      "begin_line": 338,
+      "end_line": 340,
+      "comment": "-----------------------------------------------------------------------",
+      "child_ranges": [
+        "(line 339,col 9)-(line 339,col 87)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang.SystemUtilsTest.testJavaVersionAsFloat()",
+      "begin_line": 342,
+      "end_line": 376,
+      "comment": "",
+      "child_ranges": [
+        "(line 343,col 9)-(line 343,col 28)",
+        "(line 344,col 9)-(line 344,col 55)",
+        "(line 345,col 9)-(line 345,col 61)",
+        "(line 346,col 9)-(line 346,col 29)",
+        "(line 347,col 9)-(line 347,col 55)",
+        "(line 348,col 9)-(line 348,col 63)",
+        "(line 349,col 9)-(line 349,col 29)",
+        "(line 350,col 9)-(line 350,col 55)",
+        "(line 351,col 9)-(line 351,col 63)",
+        "(line 352,col 9)-(line 352,col 31)",
+        "(line 353,col 9)-(line 353,col 55)",
+        "(line 354,col 9)-(line 354,col 63)",
+        "(line 355,col 9)-(line 355,col 31)",
+        "(line 356,col 9)-(line 356,col 55)",
+        "(line 357,col 9)-(line 357,col 64)",
+        "(line 358,col 9)-(line 358,col 31)",
+        "(line 359,col 9)-(line 359,col 55)",
+        "(line 360,col 9)-(line 360,col 63)",
+        "(line 361,col 9)-(line 361,col 31)",
+        "(line 362,col 9)-(line 362,col 55)",
+        "(line 363,col 9)-(line 363,col 64)",
+        "(line 364,col 9)-(line 364,col 31)",
+        "(line 365,col 9)-(line 365,col 55)",
+        "(line 366,col 9)-(line 366,col 63)",
+        "(line 367,col 9)-(line 367,col 31)",
+        "(line 368,col 9)-(line 368,col 55)",
+        "(line 369,col 9)-(line 369,col 63)",
+        "(line 370,col 9)-(line 370,col 38)",
+        "(line 371,col 9)-(line 371,col 55)",
+        "(line 372,col 9)-(line 372,col 64)",
+        "(line 373,col 9)-(line 373,col 35)",
+        "(line 374,col 9)-(line 374,col 55)",
+        "(line 375,col 9)-(line 375,col 63)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang.SystemUtilsTest.testJavaVersionAsInt()",
+      "begin_line": 378,
+      "end_line": 412,
+      "comment": "",
+      "child_ranges": [
+        "(line 379,col 9)-(line 379,col 28)",
+        "(line 380,col 9)-(line 380,col 55)",
+        "(line 381,col 9)-(line 381,col 47)",
+        "(line 382,col 9)-(line 382,col 29)",
+        "(line 383,col 9)-(line 383,col 55)",
+        "(line 384,col 9)-(line 384,col 49)",
+        "(line 385,col 9)-(line 385,col 29)",
+        "(line 386,col 9)-(line 386,col 55)",
+        "(line 387,col 9)-(line 387,col 49)",
+        "(line 388,col 9)-(line 388,col 31)",
+        "(line 389,col 9)-(line 389,col 55)",
+        "(line 390,col 9)-(line 390,col 49)",
+        "(line 391,col 9)-(line 391,col 31)",
+        "(line 392,col 9)-(line 392,col 55)",
+        "(line 393,col 9)-(line 393,col 49)",
+        "(line 394,col 9)-(line 394,col 31)",
+        "(line 395,col 9)-(line 395,col 55)",
+        "(line 396,col 9)-(line 396,col 49)",
+        "(line 397,col 9)-(line 397,col 31)",
+        "(line 398,col 9)-(line 398,col 55)",
+        "(line 399,col 9)-(line 399,col 49)",
+        "(line 400,col 9)-(line 400,col 31)",
+        "(line 401,col 9)-(line 401,col 55)",
+        "(line 402,col 9)-(line 402,col 49)",
+        "(line 403,col 9)-(line 403,col 31)",
+        "(line 404,col 9)-(line 404,col 55)",
+        "(line 405,col 9)-(line 405,col 49)",
+        "(line 406,col 9)-(line 406,col 38)",
+        "(line 407,col 9)-(line 407,col 55)",
+        "(line 408,col 9)-(line 408,col 49)",
+        "(line 409,col 9)-(line 409,col 35)",
+        "(line 410,col 9)-(line 410,col 55)",
+        "(line 411,col 9)-(line 411,col 47)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang.SystemUtilsTest.testJavaVersionAtLeastFloat()",
+      "begin_line": 414,
+      "end_line": 421,
+      "comment": "",
+      "child_ranges": [
+        "(line 415,col 9)-(line 415,col 55)",
+        "(line 416,col 9)-(line 416,col 70)",
+        "(line 417,col 9)-(line 417,col 24)",
+        "(line 418,col 9)-(line 418,col 70)",
+        "(line 419,col 9)-(line 419,col 24)",
+        "(line 420,col 9)-(line 420,col 71)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang.SystemUtilsTest.testJavaVersionAtLeastInt()",
+      "begin_line": 423,
+      "end_line": 430,
+      "comment": "",
+      "child_ranges": [
+        "(line 424,col 9)-(line 424,col 51)",
+        "(line 425,col 9)-(line 425,col 70)",
+        "(line 426,col 9)-(line 426,col 22)",
+        "(line 427,col 9)-(line 427,col 70)",
+        "(line 428,col 9)-(line 428,col 22)",
+        "(line 429,col 9)-(line 429,col 71)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang.SystemUtilsTest.testJavaVersionMatches()",
+      "begin_line": 433,
+      "end_line": 497,
+      "comment": "-----------------------------------------------------------------------",
+      "child_ranges": [
+        "(line 434,col 9)-(line 434,col 28)",
+        "(line 435,col 9)-(line 435,col 55)",
+        "(line 436,col 9)-(line 436,col 58)",
+        "(line 437,col 9)-(line 437,col 58)",
+        "(line 438,col 9)-(line 438,col 58)",
+        "(line 439,col 9)-(line 439,col 58)",
+        "(line 440,col 9)-(line 440,col 58)",
+        "(line 441,col 9)-(line 441,col 29)",
+        "(line 442,col 9)-(line 442,col 55)",
+        "(line 443,col 9)-(line 443,col 57)",
+        "(line 444,col 9)-(line 444,col 58)",
+        "(line 445,col 9)-(line 445,col 58)",
+        "(line 446,col 9)-(line 446,col 58)",
+        "(line 447,col 9)-(line 447,col 58)",
+        "(line 448,col 9)-(line 448,col 29)",
+        "(line 449,col 9)-(line 449,col 55)",
+        "(line 450,col 9)-(line 450,col 58)",
+        "(line 451,col 9)-(line 451,col 57)",
+        "(line 452,col 9)-(line 452,col 58)",
+        "(line 453,col 9)-(line 453,col 58)",
+        "(line 454,col 9)-(line 454,col 58)",
+        "(line 455,col 9)-(line 455,col 31)",
+        "(line 456,col 9)-(line 456,col 55)",
+        "(line 457,col 9)-(line 457,col 58)",
+        "(line 458,col 9)-(line 458,col 58)",
+        "(line 459,col 9)-(line 459,col 57)",
+        "(line 460,col 9)-(line 460,col 58)",
+        "(line 461,col 9)-(line 461,col 58)",
+        "(line 462,col 9)-(line 462,col 31)",
+        "(line 463,col 9)-(line 463,col 55)",
+        "(line 464,col 9)-(line 464,col 58)",
+        "(line 465,col 9)-(line 465,col 58)",
+        "(line 466,col 9)-(line 466,col 57)",
+        "(line 467,col 9)-(line 467,col 58)",
+        "(line 468,col 9)-(line 468,col 58)",
+        "(line 469,col 9)-(line 469,col 31)",
+        "(line 470,col 9)-(line 470,col 55)",
+        "(line 471,col 9)-(line 471,col 58)",
+        "(line 472,col 9)-(line 472,col 58)",
+        "(line 473,col 9)-(line 473,col 58)",
+        "(line 474,col 9)-(line 474,col 57)",
+        "(line 475,col 9)-(line 475,col 58)",
+        "(line 476,col 9)-(line 476,col 31)",
+        "(line 477,col 9)-(line 477,col 55)",
+        "(line 478,col 9)-(line 478,col 58)",
+        "(line 479,col 9)-(line 479,col 58)",
+        "(line 480,col 9)-(line 480,col 58)",
+        "(line 481,col 9)-(line 481,col 57)",
+        "(line 482,col 9)-(line 482,col 58)",
+        "(line 483,col 9)-(line 483,col 31)",
+        "(line 484,col 9)-(line 484,col 55)",
+        "(line 485,col 9)-(line 485,col 58)",
+        "(line 486,col 9)-(line 486,col 58)",
+        "(line 487,col 9)-(line 487,col 58)",
+        "(line 488,col 9)-(line 488,col 58)",
+        "(line 489,col 9)-(line 489,col 57)",
+        "(line 490,col 9)-(line 490,col 31)",
+        "(line 491,col 9)-(line 491,col 55)",
+        "(line 492,col 9)-(line 492,col 58)",
+        "(line 493,col 9)-(line 493,col 58)",
+        "(line 494,col 9)-(line 494,col 58)",
+        "(line 495,col 9)-(line 495,col 58)",
+        "(line 496,col 9)-(line 496,col 58)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang.SystemUtilsTest.testOSMatches()",
+      "begin_line": 499,
+      "end_line": 508,
+      "comment": "",
+      "child_ranges": [
+        "(line 500,col 9)-(line 500,col 23)",
+        "(line 501,col 9)-(line 501,col 53)",
+        "(line 502,col 9)-(line 502,col 31)",
+        "(line 503,col 9)-(line 503,col 52)",
+        "(line 504,col 9)-(line 504,col 31)",
+        "(line 505,col 9)-(line 505,col 52)",
+        "(line 506,col 9)-(line 506,col 25)",
+        "(line 507,col 9)-(line 507,col 53)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang.SystemUtilsTest.testOSMatches2()",
+      "begin_line": 510,
+      "end_line": 529,
+      "comment": "",
+      "child_ranges": [
+        "(line 511,col 9)-(line 511,col 23)",
+        "(line 512,col 9)-(line 512,col 26)",
+        "(line 513,col 9)-(line 513,col 62)",
+        "(line 514,col 9)-(line 514,col 31)",
+        "(line 515,col 9)-(line 515,col 27)",
+        "(line 516,col 9)-(line 516,col 62)",
+        "(line 517,col 9)-(line 517,col 31)",
+        "(line 518,col 9)-(line 518,col 27)",
+        "(line 519,col 9)-(line 519,col 61)",
+        "(line 520,col 9)-(line 520,col 31)",
+        "(line 521,col 9)-(line 521,col 27)",
+        "(line 522,col 9)-(line 522,col 61)",
+        "(line 523,col 9)-(line 523,col 31)",
+        "(line 524,col 9)-(line 524,col 27)",
+        "(line 525,col 9)-(line 525,col 62)",
+        "(line 526,col 9)-(line 526,col 25)",
+        "(line 527,col 9)-(line 527,col 27)",
+        "(line 528,col 9)-(line 528,col 62)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang.SystemUtilsTest.testJavaAwtHeadless()",
+      "begin_line": 531,
+      "end_line": 548,
+      "comment": "",
+      "child_ranges": [
+        "(line 532,col 9)-(line 532,col 70)",
+        "(line 533,col 9)-(line 533,col 77)",
+        "(line 534,col 9)-(line 534,col 97)",
+        "(line 535,col 9)-(line 535,col 54)",
+        "(line 536,col 9)-(line 546,col 9)",
+        "(line 547,col 9)-(line 547,col 91)"
+      ]
+    }
+  ]
+}

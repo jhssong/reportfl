@@ -1,0 +1,131 @@
+{
+  "filepath": "/tmp/Lang-15b/src/test/java/org/apache/commons/lang3/builder/ReflectionToStringBuilderConcurrencyTest.java",
+  "nodes": [
+    {
+      "type": "class_interface",
+      "name": "ReflectionToStringBuilderConcurrencyTest",
+      "is_interface": false,
+      "parent_types": [],
+      "begin_line": 51,
+      "end_line": 118,
+      "comment": "\r\n * Tests concurrent access for {@link ReflectionToStringBuilder}.\r\n * \u003cp\u003e\r\n * The {@link ToStringStyle} class includes a registry to avoid infinite loops for objects with circular references. We\r\n * want to make sure that we do not get concurrency exceptions accessing this registry.\r\n * \u003c/p\u003e\r\n * \u003cp\u003e\r\n * The tests on the non-thread-safe collections do not pass.\r\n * \u003c/p\u003e\r\n * \r\n * @see \u003ca href\u003d\"https://issues.apache.org/jira/browse/LANG-762\"\u003e[LANG-762] Handle or document ReflectionToStringBuilder\r\n *      and ToStringBuilder for collections that are not thread safe\u003c/a\u003e\r\n * @since 3.1\r\n * @version $Id$\r\n "
+    },
+    {
+      "type": "class_interface",
+      "name": "CollectionHolder",
+      "is_interface": false,
+      "parent_types": [],
+      "begin_line": 53,
+      "end_line": 59,
+      "comment": ""
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "collection"
+      ],
+      "begin_line": 54,
+      "end_line": 54,
+      "comment": ""
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.lang3.builder.ReflectionToStringBuilderConcurrencyTest.CollectionHolder.CollectionHolder(T)",
+      "begin_line": 56,
+      "end_line": 58,
+      "comment": "",
+      "child_ranges": [
+        "(line 57,col 13)-(line 57,col 41)"
+      ]
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "DATA_SIZE"
+      ],
+      "begin_line": 61,
+      "end_line": 61,
+      "comment": ""
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "REPEAT"
+      ],
+      "begin_line": 62,
+      "end_line": 62,
+      "comment": ""
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang3.builder.ReflectionToStringBuilderConcurrencyTest.testLinkedList()",
+      "begin_line": 64,
+      "end_line": 68,
+      "comment": "",
+      "child_ranges": [
+        "(line 67,col 9)-(line 67,col 93)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang3.builder.ReflectionToStringBuilderConcurrencyTest.testArrayList()",
+      "begin_line": 70,
+      "end_line": 74,
+      "comment": "",
+      "child_ranges": [
+        "(line 73,col 9)-(line 73,col 92)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang3.builder.ReflectionToStringBuilderConcurrencyTest.testCopyOnWriteArrayList()",
+      "begin_line": 76,
+      "end_line": 80,
+      "comment": "",
+      "child_ranges": [
+        "(line 79,col 9)-(line 79,col 103)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang3.builder.ReflectionToStringBuilderConcurrencyTest.testConcurrency(org.apache.commons.lang3.builder.ReflectionToStringBuilderConcurrencyTest.CollectionHolder\u003cjava.util.List\u003cjava.lang.Integer\u003e\u003e)",
+      "begin_line": 82,
+      "end_line": 117,
+      "comment": "",
+      "child_ranges": [
+        "(line 84,col 9)-(line 84,col 53)",
+        "(line 86,col 9)-(line 88,col 9)",
+        "(line 90,col 9)-(line 90,col 75)",
+        "(line 92,col 9)-(line 100,col 10)",
+        "(line 102,col 9)-(line 109,col 10)",
+        "(line 110,col 9)-(line 110,col 81)",
+        "(line 111,col 9)-(line 111,col 28)",
+        "(line 112,col 9)-(line 112,col 28)",
+        "(line 113,col 9)-(line 113,col 74)",
+        "(line 114,col 9)-(line 116,col 9)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang3.builder.ReflectionToStringBuilderConcurrencyTest.Anonymous-f7af8e17-62b8-491b-b7c6-3cdfffaf465e.call()",
+      "begin_line": 93,
+      "end_line": 99,
+      "comment": "",
+      "child_ranges": [
+        "(line 94,col 17)-(line 97,col 17)",
+        "(line 98,col 17)-(line 98,col 30)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang3.builder.ReflectionToStringBuilderConcurrencyTest.Anonymous-9be8616a-fd7b-4640-9637-e8008c78bd4c.call()",
+      "begin_line": 103,
+      "end_line": 108,
+      "comment": "",
+      "child_ranges": [
+        "(line 104,col 17)-(line 106,col 17)",
+        "(line 107,col 17)-(line 107,col 30)"
+      ]
+    }
+  ]
+}

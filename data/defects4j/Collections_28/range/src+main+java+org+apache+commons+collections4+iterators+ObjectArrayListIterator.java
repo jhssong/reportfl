@@ -1,0 +1,142 @@
+{
+  "filepath": "/tmp/Collections-28b/src/main/java/org/apache/commons/collections4/iterators/ObjectArrayListIterator.java",
+  "nodes": [
+    {
+      "type": "class_interface",
+      "name": "ObjectArrayListIterator",
+      "is_interface": false,
+      "parent_types": [
+        "org.apache.commons.collections4.iterators.ObjectArrayIterator\u003cE\u003e",
+        "org.apache.commons.collections4.ResettableListIterator\u003cE\u003e"
+      ],
+      "begin_line": 39,
+      "end_line": 200,
+      "comment": "\n * Implements a {@link ListIterator} over an array of objects.\n * \u003cp\u003e\n * This iterator does not support {@link #add} or {@link #remove}, as the object array\n * cannot be structurally modified. The {@link #set} method is supported however.\n * \u003cp\u003e\n * The iterator implements a {@link #reset} method, allowing the reset of the iterator\n * back to the start if required.\n *\n * @see org.apache.commons.collections4.iterators.ObjectArrayIterator\n * @see java.util.Iterator\n * @see java.util.ListIterator\n *\n * @since 3.0\n * @version $Id$\n "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "lastItemIndex"
+      ],
+      "begin_line": 48,
+      "end_line": 48,
+      "comment": "\n     * Holds the index of the last item returned by a call to \u003ccode\u003enext()\u003c/code\u003e\n     * or \u003ccode\u003eprevious()\u003c/code\u003e. This is set to \u003ccode\u003e-1\u003c/code\u003e if neither method\n     * has yet been invoked. \u003ccode\u003elastItemIndex\u003c/code\u003e is used to to implement the\n     * {@link #set} method.\n     "
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.collections4.iterators.ObjectArrayListIterator.ObjectArrayListIterator(E...)",
+      "begin_line": 58,
+      "end_line": 60,
+      "comment": "\n     * Constructs an ObjectArrayListIterator that will iterate over the values in the\n     * specified array.\n     *\n     * @param array the array to iterate over\n     * @throws NullPointerException if \u003ccode\u003earray\u003c/code\u003e is \u003ccode\u003enull\u003c/code\u003e\n     ",
+      "child_ranges": [
+        "(line 59,col 9)-(line 59,col 21)"
+      ]
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.collections4.iterators.ObjectArrayListIterator.ObjectArrayListIterator(E[], int)",
+      "begin_line": 71,
+      "end_line": 73,
+      "comment": "\n     * Constructs an ObjectArrayListIterator that will iterate over the values in the\n     * specified array from a specific start index.\n     *\n     * @param array  the array to iterate over\n     * @param start  the index to start iterating at\n     * @throws NullPointerException if \u003ccode\u003earray\u003c/code\u003e is \u003ccode\u003enull\u003c/code\u003e\n     * @throws IndexOutOfBoundsException if the start index is out of bounds\n     ",
+      "child_ranges": [
+        "(line 72,col 9)-(line 72,col 28)"
+      ]
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.collections4.iterators.ObjectArrayListIterator.ObjectArrayListIterator(E[], int, int)",
+      "begin_line": 86,
+      "end_line": 88,
+      "comment": "\n     * Construct an ObjectArrayListIterator that will iterate over a range of values\n     * in the specified array.\n     *\n     * @param array  the array to iterate over\n     * @param start  the index to start iterating at\n     * @param end  the index (exclusive) to finish iterating at\n     * @throws IndexOutOfBoundsException if the start or end index is out of bounds\n     * @throws IllegalArgumentException if end index is before the start\n     * @throws NullPointerException if \u003ccode\u003earray\u003c/code\u003e is \u003ccode\u003enull\u003c/code\u003e\n     ",
+      "child_ranges": [
+        "(line 87,col 9)-(line 87,col 33)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.collections4.iterators.ObjectArrayListIterator.hasPrevious()",
+      "begin_line": 98,
+      "end_line": 101,
+      "comment": "\n     * Returns true if there are previous elements to return from the array.\n     *\n     * @return true if there is a previous element to return\n     ",
+      "child_ranges": [
+        "(line 100,col 9)-(line 100,col 44)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.collections4.iterators.ObjectArrayListIterator.previous()",
+      "begin_line": 109,
+      "end_line": 116,
+      "comment": "\n     * Gets the previous element from the array.\n     *\n     * @return the previous element\n     * @throws NoSuchElementException if there is no previous element\n     ",
+      "child_ranges": [
+        "(line 111,col 9)-(line 113,col 9)",
+        "(line 114,col 9)-(line 114,col 42)",
+        "(line 115,col 9)-(line 115,col 38)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.collections4.iterators.ObjectArrayListIterator.next()",
+      "begin_line": 124,
+      "end_line": 131,
+      "comment": "\n     * Gets the next element from the array.\n     *\n     * @return the next element\n     * @throws NoSuchElementException if there is no next element\n     ",
+      "child_ranges": [
+        "(line 126,col 9)-(line 128,col 9)",
+        "(line 129,col 9)-(line 129,col 40)",
+        "(line 130,col 9)-(line 130,col 40)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.collections4.iterators.ObjectArrayListIterator.nextIndex()",
+      "begin_line": 138,
+      "end_line": 141,
+      "comment": "\n     * Gets the next index to be retrieved.\n     *\n     * @return the index of the item to be retrieved next\n     ",
+      "child_ranges": [
+        "(line 140,col 9)-(line 140,col 44)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.collections4.iterators.ObjectArrayListIterator.previousIndex()",
+      "begin_line": 148,
+      "end_line": 151,
+      "comment": "\n     * Gets the index of the item to be retrieved if {@link #previous()} is called.\n     *\n     * @return the index of the item to be retrieved next\n     ",
+      "child_ranges": [
+        "(line 150,col 9)-(line 150,col 48)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.collections4.iterators.ObjectArrayListIterator.add(E)",
+      "begin_line": 160,
+      "end_line": 163,
+      "comment": "\n     * This iterator does not support modification of its backing array\u0027s size, and so will\n     * always throw an {@link UnsupportedOperationException} when this method is invoked.\n     *\n     * @param obj  the object to add\n     * @throws UnsupportedOperationException always thrown.\n     ",
+      "child_ranges": [
+        "(line 162,col 9)-(line 162,col 81)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.collections4.iterators.ObjectArrayListIterator.set(E)",
+      "begin_line": 182,
+      "end_line": 189,
+      "comment": "\n     * Sets the element under the cursor.\n     * \u003cp\u003e\n     * This method sets the element that was returned by the last call\n     * to {@link #next()} of {@link #previous()}.\n     *\n     * \u003cb\u003eNote:\u003c/b\u003e {@link ListIterator} implementations that support \u003ccode\u003eadd()\u003c/code\u003e\n     * and \u003ccode\u003eremove()\u003c/code\u003e only allow \u003ccode\u003eset()\u003c/code\u003e to be called once per call\n     * to \u003ccode\u003enext()\u003c/code\u003e or \u003ccode\u003eprevious\u003c/code\u003e (see the {@link ListIterator}\n     * javadoc for more details). Since this implementation does not support\n     * \u003ccode\u003eadd()\u003c/code\u003e or \u003ccode\u003eremove()\u003c/code\u003e, \u003ccode\u003eset()\u003c/code\u003e may be\n     * called as often as desired.\n     *\n     * @param obj  the object to set into the array\n     * @throws IllegalStateException if next() has not yet been called.\n     * @throws ClassCastException if the object type is unsuitable for the array\n     ",
+      "child_ranges": [
+        "(line 184,col 9)-(line 186,col 9)",
+        "(line 188,col 9)-(line 188,col 45)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.collections4.iterators.ObjectArrayListIterator.reset()",
+      "begin_line": 194,
+      "end_line": 198,
+      "comment": "\n     * Resets the iterator back to the start index.\n     ",
+      "child_ranges": [
+        "(line 196,col 9)-(line 196,col 22)",
+        "(line 197,col 9)-(line 197,col 32)"
+      ]
+    }
+  ]
+}

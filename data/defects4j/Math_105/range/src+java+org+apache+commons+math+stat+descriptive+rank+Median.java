@@ -1,0 +1,36 @@
+{
+  "filepath": "/tmp/Math-105b/src/java/org/apache/commons/math/stat/descriptive/rank/Median.java",
+  "nodes": [
+    {
+      "type": "class_interface",
+      "name": "Median",
+      "is_interface": false,
+      "parent_types": [
+        "org.apache.commons.math.stat.descriptive.rank.Percentile",
+        "java.io.Serializable"
+      ],
+      "begin_line": 32,
+      "end_line": 44,
+      "comment": "\n * Returns the median of the available values.  This is the same as the 50th percentile.\n * See {@link Percentile} for a description of the algorithm used.\n * \u003cp\u003e\n * \u003cstrong\u003eNote that this implementation is not synchronized.\u003c/strong\u003e If \n * multiple threads access an instance of this class concurrently, and at least\n * one of the threads invokes the \u003ccode\u003eincrement()\u003c/code\u003e or \n * \u003ccode\u003eclear()\u003c/code\u003e method, it must be synchronized externally.\n * \n * @version $Revision$ $Date$\n "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "serialVersionUID"
+      ],
+      "begin_line": 35,
+      "end_line": 35,
+      "comment": " Serializable version identifier "
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.math.stat.descriptive.rank.Median.Median()",
+      "begin_line": 40,
+      "end_line": 42,
+      "comment": "\n     * Default constructor.\n     ",
+      "child_ranges": [
+        "(line 41,col 9)-(line 41,col 20)"
+      ]
+    }
+  ]
+}

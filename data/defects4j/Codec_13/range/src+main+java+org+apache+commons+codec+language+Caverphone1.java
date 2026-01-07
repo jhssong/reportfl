@@ -1,0 +1,93 @@
+{
+  "filepath": "/tmp/Codec-13b/src/main/java/org/apache/commons/codec/language/Caverphone1.java",
+  "nodes": [
+    {
+      "type": "class_interface",
+      "name": "Caverphone1",
+      "is_interface": false,
+      "parent_types": [
+        "org.apache.commons.codec.language.AbstractCaverphone"
+      ],
+      "begin_line": 33,
+      "end_line": 127,
+      "comment": "\n * Encodes a string into a Caverphone 1.0 value.\n *\n * This is an algorithm created by the Caversham Project at the University of Otago. It implements the Caverphone 1.0\n * algorithm:\n *\n * @version $Id: Caverphone.java 1075947 2011-03-01 17:56:14Z ggregory $\n * @see \u003ca href\u003d\"http://en.wikipedia.org/wiki/Caverphone\"\u003eWikipedia - Caverphone\u003c/a\u003e\n * @see \u003ca href\u003d\"http://caversham.otago.ac.nz/files/working/ctp060902.pdf\"\u003eCaverphone 1.0 specification\u003c/a\u003e\n * @since 1.5\n *\n * \u003cp\u003eThis class is immutable and thread-safe.\u003c/p\u003e\n "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "SIX_1"
+      ],
+      "begin_line": 35,
+      "end_line": 35,
+      "comment": ""
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.codec.language.Caverphone1.encode(java.lang.String)",
+      "begin_line": 44,
+      "end_line": 125,
+      "comment": "\n     * Encodes the given String into a Caverphone value.\n     *\n     * @param source\n     *            String the source string\n     * @return A caverphone code for the given String\n     ",
+      "child_ranges": [
+        "(line 46,col 9)-(line 46,col 28)",
+        "(line 47,col 9)-(line 49,col 9)",
+        "(line 52,col 9)-(line 52,col 56)",
+        "(line 55,col 9)-(line 55,col 43)",
+        "(line 59,col 9)-(line 59,col 48)",
+        "(line 60,col 9)-(line 60,col 48)",
+        "(line 61,col 9)-(line 61,col 48)",
+        "(line 62,col 9)-(line 62,col 50)",
+        "(line 63,col 9)-(line 63,col 42)",
+        "(line 66,col 9)-(line 66,col 42)",
+        "(line 69,col 9)-(line 69,col 41)",
+        "(line 70,col 9)-(line 70,col 41)",
+        "(line 71,col 9)-(line 71,col 41)",
+        "(line 72,col 9)-(line 72,col 41)",
+        "(line 73,col 9)-(line 73,col 43)",
+        "(line 74,col 9)-(line 74,col 39)",
+        "(line 75,col 9)-(line 75,col 39)",
+        "(line 76,col 9)-(line 76,col 39)",
+        "(line 77,col 9)-(line 77,col 39)",
+        "(line 78,col 9)-(line 78,col 41)",
+        "(line 79,col 9)-(line 79,col 43)",
+        "(line 80,col 9)-(line 80,col 43)",
+        "(line 81,col 9)-(line 81,col 39)",
+        "(line 82,col 9)-(line 82,col 41)",
+        "(line 83,col 9)-(line 83,col 39)",
+        "(line 84,col 9)-(line 84,col 41)",
+        "(line 85,col 9)-(line 85,col 39)",
+        "(line 86,col 9)-(line 86,col 46)",
+        "(line 88,col 9)-(line 88,col 45)",
+        "(line 89,col 9)-(line 89,col 45)",
+        "(line 90,col 9)-(line 90,col 41)",
+        "(line 91,col 9)-(line 91,col 39)",
+        "(line 92,col 9)-(line 92,col 40)",
+        "(line 93,col 9)-(line 93,col 40)",
+        "(line 94,col 9)-(line 94,col 40)",
+        "(line 95,col 9)-(line 95,col 40)",
+        "(line 96,col 9)-(line 96,col 40)",
+        "(line 97,col 9)-(line 97,col 40)",
+        "(line 98,col 9)-(line 98,col 40)",
+        "(line 99,col 9)-(line 99,col 41)",
+        "(line 100,col 9)-(line 100,col 41)",
+        "(line 101,col 9)-(line 101,col 43)",
+        "(line 102,col 9)-(line 102,col 43)",
+        "(line 103,col 9)-(line 103,col 39)",
+        "(line 104,col 9)-(line 104,col 40)",
+        "(line 105,col 9)-(line 105,col 39)",
+        "(line 106,col 9)-(line 106,col 41)",
+        "(line 107,col 9)-(line 107,col 41)",
+        "(line 108,col 9)-(line 108,col 39)",
+        "(line 109,col 9)-(line 109,col 41)",
+        "(line 110,col 9)-(line 110,col 41)",
+        "(line 111,col 9)-(line 111,col 39)",
+        "(line 112,col 9)-(line 112,col 39)",
+        "(line 113,col 9)-(line 113,col 41)",
+        "(line 114,col 9)-(line 114,col 39)",
+        "(line 117,col 9)-(line 117,col 38)",
+        "(line 118,col 9)-(line 118,col 38)",
+        "(line 121,col 9)-(line 121,col 26)",
+        "(line 124,col 9)-(line 124,col 48)"
+      ]
+    }
+  ]
+}

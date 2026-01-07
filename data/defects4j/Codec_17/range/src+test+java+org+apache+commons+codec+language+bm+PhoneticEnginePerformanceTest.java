@@ -1,0 +1,38 @@
+{
+  "filepath": "/tmp/Codec-17b/src/test/java/org/apache/commons/codec/language/bm/PhoneticEnginePerformanceTest.java",
+  "nodes": [
+    {
+      "type": "class_interface",
+      "name": "PhoneticEnginePerformanceTest",
+      "is_interface": false,
+      "parent_types": [],
+      "begin_line": 121,
+      "end_line": 137,
+      "comment": "\n * Tests performance for {@link PhoneticEngine}.\n * \u003cp\u003e\n * See \u003ca href\u003d\"https://issues.apache.org/jira/browse/CODEC-174\"\u003e[CODEC-174] Improve performance of Beider Morse\n * encoder\u003c/a\u003e.\n * \u003c/p\u003e\n * \u003cp\u003e\n * Results for November 7, 2013, project SVN revision 1539678.\n * \u003c/p\u003e\n * \u003cp\u003e\n * Environment:\n * \u003c/p\u003e\n * \u003cul\u003e\n * \u003cli\u003ejava version \"1.7.0_45\"\u003c/li\u003e\n * \u003cli\u003eJava(TM) SE Runtime Environment (build 1.7.0_45-b18)\u003c/li\u003e\n * \u003cli\u003eJava HotSpot(TM) 64-Bit Server VM (build 24.45-b08, mixed mode)\u003c/li\u003e\n * \u003cli\u003eOS name: \"windows 7\", version: \"6.1\", arch: \"amd64\", family: \"windows\")\u003c/li\u003e\n * \u003c/ul\u003e\n * \u003col\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 33,039 millis.\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 32,297 millis.\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 32,857 millis.\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: \u003cb\u003e31,561 millis.\u003c/b\u003e\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 32,665 millis.\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 32,215 millis.\u003c/li\u003e\n * \u003c/ol\u003e\n * \u003cp\u003e\n * On this file\u0027s revision 1539678, with patch \u003ca\n * href\u003d\"https://issues.apache.org/jira/secure/attachment/12611963/CODEC-174-change-rules-storage-to-Map.patch\"\n * \u003eCODEC-174-change-rules-storage-to-Map\u003c/a\u003e:\n * \u003c/p\u003e\n * \u003col\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 18,196 millis.\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 13,858 millis.\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 13,644 millis.\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: \u003cb\u003e13,591 millis.\u003c/b\u003e\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 13,861 millis.\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 13,696 millis.\u003c/li\u003e\n * \u003c/ol\u003e\n * \u003cp\u003e\n * Patch applied, committed revision 1539783.\n * \u003c/p\u003e\n * \u003cp\u003e\n * On this file\u0027s revision 1539783, with patch \u003ca\n * href\u003d\"https://issues.apache.org/jira/secure/attachment/12611962/CODEC-174-delete-subsequence-cache.patch\"\n * \u003eCODEC-174-delete-subsequence-cache.patch\u003c/a\u003e:\n * \u003c/p\u003e\n * \u003col\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 13,547 millis.\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: \u003cb\u003e13,501 millis.\u003c/b\u003e\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 13,528 millis.\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 17,110 millis.\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 13,910 millis.\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 16,969 millis.\u003c/li\u003e\n * \u003c/ol\u003e\n * \u003cp\u003e\n * Patch not applied.\n * \u003c/p\u003e\n * \u003cp\u003e\n * On this file\u0027s revision 1539787, with patch \u003ca\n * href\u003d\"https://issues.apache.org/jira/secure/attachment/12612178/CODEC-174-reuse-set-in-PhonemeBuilder.patch\"\n * \u003eCODEC-174-reuse-set-in-PhonemeBuilder.patch\u003c/a\u003e:\n * \u003c/p\u003e\n * \u003col\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 13,724 millis.\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 13,451 millis.\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 13,742 millis.\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: \u003cb\u003e13,186 millis.\u003c/b\u003e\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 13,600 millis.\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 16,405 millis.\u003c/li\u003e\n * \u003c/ol\u003e\n * \u003cp\u003e\n * Patch applied, committed revision 1539788.\n * \u003c/p\u003e\n * \u003cp\u003e\n * Before patch https://issues.apache.org/jira/secure/attachment/12613371/CODEC-174-refactor-restrictTo-method-in-SomeLanguages.patch\n * \u003c/p\u003e\n * \u003col\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 13,133 millis.\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 13,064 millis.\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: \u003cb\u003e12,838 millis.\u003c/b\u003e\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 12,970 millis.\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 13,122 millis.\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 13,293 millis.\u003c/li\u003e\n * \u003c/ol\u003e\n * \u003cp\u003e\n * After patch https://issues.apache.org/jira/secure/attachment/12613371/CODEC-174-refactor-restrictTo-method-in-SomeLanguages.patch\n * \u003c/p\u003e\n * \u003col\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 11,576 millis.\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 11,506 millis.\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 11,361 millis.\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: \u003cb\u003e11,142 millis.\u003c/b\u003e\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 11,430 millis.\u003c/li\u003e\n * \u003cli\u003eTime for encoding 80,000 times the input \u0027Angelo\u0027: 11,297 millis.\u003c/li\u003e\n * \u003c/ol\u003e\n * \u003cp\u003e\n * Patch applied, committed revision 1541234.\n * \u003c/p\u003e\n "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "LOOP"
+      ],
+      "begin_line": 123,
+      "end_line": 123,
+      "comment": ""
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.codec.language.bm.PhoneticEnginePerformanceTest.test()",
+      "begin_line": 125,
+      "end_line": 136,
+      "comment": "",
+      "child_ranges": [
+        "(line 127,col 9)-(line 127,col 98)",
+        "(line 128,col 9)-(line 128,col 38)",
+        "(line 129,col 9)-(line 129,col 60)",
+        "(line 130,col 9)-(line 132,col 9)",
+        "(line 133,col 9)-(line 133,col 74)",
+        "(line 134,col 9)-(line 135,col 30)"
+      ]
+    }
+  ]
+}

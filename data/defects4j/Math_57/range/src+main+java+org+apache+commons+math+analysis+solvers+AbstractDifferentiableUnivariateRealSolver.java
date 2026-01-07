@@ -1,0 +1,68 @@
+{
+  "filepath": "/tmp/Math-57b/src/main/java/org/apache/commons/math/analysis/solvers/AbstractDifferentiableUnivariateRealSolver.java",
+  "nodes": [
+    {
+      "type": "class_interface",
+      "name": "AbstractDifferentiableUnivariateRealSolver",
+      "is_interface": false,
+      "parent_types": [
+        "org.apache.commons.math.analysis.solvers.BaseAbstractUnivariateRealSolver\u003corg.apache.commons.math.analysis.DifferentiableUnivariateRealFunction\u003e",
+        "org.apache.commons.math.analysis.solvers.DifferentiableUnivariateRealSolver"
+      ],
+      "begin_line": 30,
+      "end_line": 80,
+      "comment": "\n * Provide a default implementation for several functions useful to generic\n * solvers.\n *\n * @version $Revision$ $Date$\n * @since 3.0\n "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "functionDerivative"
+      ],
+      "begin_line": 34,
+      "end_line": 34,
+      "comment": " Derivative of the function to solve. "
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.math.analysis.solvers.AbstractDifferentiableUnivariateRealSolver.AbstractDifferentiableUnivariateRealSolver(double)",
+      "begin_line": 41,
+      "end_line": 43,
+      "comment": "\n     * Construct a solver with given absolute accuracy.\n     *\n     * @param absoluteAccuracy Maximum absolute error.\n     ",
+      "child_ranges": [
+        "(line 42,col 9)-(line 42,col 32)"
+      ]
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.math.analysis.solvers.AbstractDifferentiableUnivariateRealSolver.AbstractDifferentiableUnivariateRealSolver(double, double, double)",
+      "begin_line": 52,
+      "end_line": 56,
+      "comment": "\n     * Construct a solver with given accuracies.\n     *\n     * @param relativeAccuracy Maximum relative error.\n     * @param absoluteAccuracy Maximum absolute error.\n     * @param functionValueAccuracy Maximum function value error.\n     ",
+      "child_ranges": [
+        "(line 55,col 9)-(line 55,col 73)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.solvers.AbstractDifferentiableUnivariateRealSolver.computeDerivativeObjectiveValue(double)",
+      "begin_line": 66,
+      "end_line": 69,
+      "comment": "\n     * Compute the objective function value.\n     *\n     * @param point Point at which the objective function must be evaluated.\n     * @return the objective function value at specified point.\n     * @throws org.apache.commons.math.exception.TooManyEvaluationsException\n     * if the maximal number of evaluations is exceeded.\n     ",
+      "child_ranges": [
+        "(line 67,col 9)-(line 67,col 35)",
+        "(line 68,col 9)-(line 68,col 47)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.solvers.AbstractDifferentiableUnivariateRealSolver.setup(int, org.apache.commons.math.analysis.DifferentiableUnivariateRealFunction, double, double, double)",
+      "begin_line": 74,
+      "end_line": 79,
+      "comment": "\n     * {@inheritDoc}\n     ",
+      "child_ranges": [
+        "(line 77,col 9)-(line 77,col 54)",
+        "(line 78,col 9)-(line 78,col 44)"
+      ]
+    }
+  ]
+}

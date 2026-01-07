@@ -1,0 +1,38 @@
+{
+  "filepath": "/tmp/Math-101b/src/java/org/apache/commons/math/ode/StepHandler.java",
+  "nodes": [
+    {
+      "type": "class_interface",
+      "name": "StepHandler",
+      "is_interface": true,
+      "parent_types": [],
+      "begin_line": 40,
+      "end_line": 77,
+      "comment": ""
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.ode.StepHandler.requiresDenseOutput()",
+      "begin_line": 50,
+      "end_line": 50,
+      "comment": " Determines whether this handler needs dense output.\n   * \u003cp\u003eThis method allows the integrator to avoid performing extra\n   * computation if the handler does not need dense output. If this\n   * method returns false, the integrator will call the {@link\n   * #handleStep} method with a {@link DummyStepInterpolator} rather\n   * than a custom interpolator.\u003c/p\u003e\n   * @return true if the handler needs dense output\n   ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.ode.StepHandler.reset()",
+      "begin_line": 56,
+      "end_line": 56,
+      "comment": " Reset the step handler.\n   * Initialize the internal data as required before the first step is\n   * handled.\n   ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.ode.StepHandler.handleStep(org.apache.commons.math.ode.StepInterpolator, boolean)",
+      "begin_line": 74,
+      "end_line": 75,
+      "comment": "\n   * Handle the last accepted step\n   * @param interpolator interpolator for the last accepted step. For\n   * efficiency purposes, the various integrators reuse the same\n   * object on each call, so if the instance wants to keep it across\n   * all calls (for example to provide at the end of the integration a\n   * continuous model valid throughout the integration range, as the\n   * {@link ContinuousOutputModel ContinuousOutputModel} class does),\n   * it should build a local copy using the clone method of the\n   * interpolator and store this copy. Keeping only a reference to the\n   * interpolator and reusing it will result in unpredictable\n   * behaviour (potentially crashing the application).\n   * @param isLast true if the step is the last one\n   * @throws DerivativeException this exception is propagated to the\n   * caller if the underlying user function triggers one\n   ",
+      "child_ranges": []
+    }
+  ]
+}

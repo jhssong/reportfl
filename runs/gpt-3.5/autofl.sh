@@ -1,0 +1,12 @@
+LABEL="autofl_new"
+REPETITION=5
+MODEL="gpt-3.5-turbo-0125"
+PROMPT_FILE="prompts/system_msg_expbug.txt"
+USE_PURE_AUTOFL=false
+USE_CURRENT_BUG_REPORT=false
+USE_RECENT_BUG_REPORT=false
+TIMEWINDOW=0
+
+
+bash runner.sh ${LABEL} ${REPETITION} ${MODEL} ${PROMPT_FILE} ${USE_PURE_AUTOFL} ${USE_CURRENT_BUG_REPORT} ${USE_RECENT_BUG_REPORT} ${TIMEWINDOW}
+bash runner-combined_results.sh ${LABEL} ${REPETITION} ${MODEL} ${USE_PURE_AUTOFL}

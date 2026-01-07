@@ -1,0 +1,16 @@
+{
+  "filepath": "/tmp/Math-38b/src/main/java/org/apache/commons/math/optimization/DifferentiableMultivariateVectorOptimizer.java",
+  "nodes": [
+    {
+      "type": "class_interface",
+      "name": "DifferentiableMultivariateVectorOptimizer",
+      "is_interface": true,
+      "parent_types": [
+        "org.apache.commons.math.optimization.BaseMultivariateVectorOptimizer\u003corg.apache.commons.math.analysis.DifferentiableMultivariateVectorFunction\u003e"
+      ],
+      "begin_line": 30,
+      "end_line": 31,
+      "comment": "\n * This interface represents an optimization algorithm for\n * {@link DifferentiableMultivariateVectorFunction vectorial differentiable\n * objective functions}.\n *\n * @version $Id$\n * @since 3.0\n "
+    }
+  ]
+}

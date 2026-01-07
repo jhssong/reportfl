@@ -1,0 +1,153 @@
+{
+  "filepath": "/tmp/Math-50b/src/main/java/org/apache/commons/math/stat/descriptive/AbstractUnivariateStatistic.java",
+  "nodes": [
+    {
+      "type": "class_interface",
+      "name": "AbstractUnivariateStatistic",
+      "is_interface": false,
+      "parent_types": [
+        "org.apache.commons.math.stat.descriptive.UnivariateStatistic"
+      ],
+      "begin_line": 39,
+      "end_line": 288,
+      "comment": "\n * Abstract base class for all implementations of the\n * {@link UnivariateStatistic} interface.\n * \u003cp\u003e\n * Provides a default implementation of \u003ccode\u003eevaluate(double[]),\u003c/code\u003e\n * delegating to \u003ccode\u003eevaluate(double[], int, int)\u003c/code\u003e in the natural way.\n * \u003c/p\u003e\n * \u003cp\u003e\n * Also includes a \u003ccode\u003etest\u003c/code\u003e method that performs generic parameter\n * validation for the \u003ccode\u003eevaluate\u003c/code\u003e methods.\u003c/p\u003e\n *\n * @version $Id$\n "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "storedData"
+      ],
+      "begin_line": 43,
+      "end_line": 43,
+      "comment": " Stored data. "
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.stat.descriptive.AbstractUnivariateStatistic.setData(double[])",
+      "begin_line": 53,
+      "end_line": 55,
+      "comment": "\n     * Set the data array.\n     * \u003cp\u003e\n     * The stored value is a copy of the parameter array, not the array itself\n     * \u003c/p\u003e\n     * @param values data array to store (may be null to remove stored data)\n     * @see #evaluate()\n     ",
+      "child_ranges": [
+        "(line 54,col 9)-(line 54,col 62)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.stat.descriptive.AbstractUnivariateStatistic.getData()",
+      "begin_line": 61,
+      "end_line": 63,
+      "comment": "\n     * Get a copy of the stored data array.\n     * @return copy of the stored data array (may be null)\n     ",
+      "child_ranges": [
+        "(line 62,col 9)-(line 62,col 64)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.stat.descriptive.AbstractUnivariateStatistic.getDataRef()",
+      "begin_line": 69,
+      "end_line": 71,
+      "comment": "\n     * Get a reference to the stored data array.\n     * @return reference to the stored data array (may be null)\n     ",
+      "child_ranges": [
+        "(line 70,col 9)-(line 70,col 26)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.stat.descriptive.AbstractUnivariateStatistic.setData(double[], int, int)",
+      "begin_line": 80,
+      "end_line": 83,
+      "comment": "\n     * Set the data array.\n     * @param values data array to store\n     * @param begin the index of the first element to include\n     * @param length the number of elements to include\n     * @see #evaluate()\n     ",
+      "child_ranges": [
+        "(line 81,col 9)-(line 81,col 40)",
+        "(line 82,col 9)-(line 82,col 63)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.stat.descriptive.AbstractUnivariateStatistic.evaluate()",
+      "begin_line": 92,
+      "end_line": 94,
+      "comment": "\n     * Returns the result of evaluating the statistic over the stored data.\n     * \u003cp\u003e\n     * The stored array is the one which was set by previous calls to\n     * \u003c/p\u003e\n     * @return the value of the statistic applied to the stored data\n     ",
+      "child_ranges": [
+        "(line 93,col 9)-(line 93,col 36)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.stat.descriptive.AbstractUnivariateStatistic.evaluate(double[])",
+      "begin_line": 99,
+      "end_line": 102,
+      "comment": "\n     * {@inheritDoc}\n     ",
+      "child_ranges": [
+        "(line 100,col 9)-(line 100,col 27)",
+        "(line 101,col 9)-(line 101,col 50)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.stat.descriptive.AbstractUnivariateStatistic.evaluate(double[], int, int)",
+      "begin_line": 107,
+      "end_line": 107,
+      "comment": "\n     * {@inheritDoc}\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.stat.descriptive.AbstractUnivariateStatistic.copy()",
+      "begin_line": 112,
+      "end_line": 112,
+      "comment": "\n     * {@inheritDoc}\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.stat.descriptive.AbstractUnivariateStatistic.test(double[], int, int)",
+      "begin_line": 133,
+      "end_line": 138,
+      "comment": "\n     * This method is used by \u003ccode\u003eevaluate(double[], int, int)\u003c/code\u003e methods\n     * to verify that the input parameters designate a subarray of positive length.\n     * \u003cp\u003e\n     * \u003cul\u003e\n     * \u003cli\u003ereturns \u003ccode\u003etrue\u003c/code\u003e iff the parameters designate a subarray of\n     * positive length\u003c/li\u003e\n     * \u003cli\u003ethrows \u003ccode\u003eIllegalArgumentException\u003c/code\u003e if the array is null or\n     * or the indices are invalid\u003c/li\u003e\n     * \u003cli\u003ereturns \u003ccode\u003efalse\u003c/li\u003e if the array is non-null, but\n     * \u003ccode\u003elength\u003c/code\u003e is 0.\n     * \u003c/ul\u003e\u003c/p\u003e\n     *\n     * @param values the input array\n     * @param begin index of the first array element to include\n     * @param length the number of elements to include\n     * @return true if the parameters are valid and designate a subarray of positive length\n     * @throws IllegalArgumentException if the indices are invalid or the array is null\n     ",
+      "child_ranges": [
+        "(line 137,col 9)-(line 137,col 50)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.stat.descriptive.AbstractUnivariateStatistic.test(double[], int, int, boolean)",
+      "begin_line": 161,
+      "end_line": 186,
+      "comment": "\n     * This method is used by \u003ccode\u003eevaluate(double[], int, int)\u003c/code\u003e methods\n     * to verify that the input parameters designate a subarray of positive length.\n     * \u003cp\u003e\n     * \u003cul\u003e\n     * \u003cli\u003ereturns \u003ccode\u003etrue\u003c/code\u003e iff the parameters designate a subarray of\n     * non-negative length\u003c/li\u003e\n     * \u003cli\u003ethrows \u003ccode\u003eIllegalArgumentException\u003c/code\u003e if the array is null or\n     * or the indices are invalid\u003c/li\u003e\n     * \u003cli\u003ereturns \u003ccode\u003efalse\u003c/li\u003e if the array is non-null, but\n     * \u003ccode\u003elength\u003c/code\u003e is 0 unless \u003ccode\u003eallowEmpty\u003c/code\u003e is \u003ccode\u003etrue\u003c/code\u003e\n     * \u003c/ul\u003e\u003c/p\u003e\n     *\n     * @param values the input array\n     * @param begin index of the first array element to include\n     * @param length the number of elements to include\n     * @param allowEmpty if \u003ccode\u003etrue\u003c/code\u003e then zero length arrays are allowed\n     * @return true if the parameters are valid\n     * @throws IllegalArgumentException if the indices are invalid or the array is null\n     * @since 3.0\n     ",
+      "child_ranges": [
+        "(line 163,col 9)-(line 165,col 9)",
+        "(line 167,col 9)-(line 169,col 9)",
+        "(line 171,col 9)-(line 173,col 9)",
+        "(line 175,col 9)-(line 178,col 9)",
+        "(line 180,col 9)-(line 182,col 9)",
+        "(line 184,col 9)-(line 184,col 20)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.stat.descriptive.AbstractUnivariateStatistic.test(double[], double[], int, int)",
+      "begin_line": 217,
+      "end_line": 223,
+      "comment": "\n     * This method is used by \u003ccode\u003eevaluate(double[], double[], int, int)\u003c/code\u003e methods\n     * to verify that the begin and length parameters designate a subarray of positive length\n     * and the weights are all non-negative, non-NaN, finite, and not all zero.\n     * \u003cp\u003e\n     * \u003cul\u003e\n     * \u003cli\u003ereturns \u003ccode\u003etrue\u003c/code\u003e iff the parameters designate a subarray of\n     * positive length and the weights array contains legitimate values.\u003c/li\u003e\n     * \u003cli\u003ethrows \u003ccode\u003eIllegalArgumentException\u003c/code\u003e if any of the following are true:\n     * \u003cul\u003e\u003cli\u003ethe values array is null\u003c/li\u003e\n     *     \u003cli\u003ethe weights array is null\u003c/li\u003e\n     *     \u003cli\u003ethe weights array does not have the same length as the values array\u003c/li\u003e\n     *     \u003cli\u003ethe weights array contains one or more infinite values\u003c/li\u003e\n     *     \u003cli\u003ethe weights array contains one or more NaN values\u003c/li\u003e\n     *     \u003cli\u003ethe weights array contains negative values\u003c/li\u003e\n     *     \u003cli\u003ethe start and length arguments do not determine a valid array\u003c/li\u003e\u003c/ul\u003e\n     * \u003c/li\u003e\n     * \u003cli\u003ereturns \u003ccode\u003efalse\u003c/li\u003e if the array is non-null, but\n     * \u003ccode\u003elength\u003c/code\u003e is 0.\n     * \u003c/ul\u003e\u003c/p\u003e\n     *\n     * @param values the input array\n     * @param weights the weights array\n     * @param begin index of the first array element to include\n     * @param length the number of elements to include\n     * @return true if the parameters are valid and designate a subarray of positive length\n     * @throws IllegalArgumentException if the indices are invalid or the array is null\n     * @since 2.1\n     ",
+      "child_ranges": [
+        "(line 222,col 9)-(line 222,col 59)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.stat.descriptive.AbstractUnivariateStatistic.test(double[], double[], int, int, boolean)",
+      "begin_line": 256,
+      "end_line": 287,
+      "comment": "\n     * This method is used by \u003ccode\u003eevaluate(double[], double[], int, int)\u003c/code\u003e methods\n     * to verify that the begin and length parameters designate a subarray of positive length\n     * and the weights are all non-negative, non-NaN, finite, and not all zero.\n     * \u003cp\u003e\n     * \u003cul\u003e\n     * \u003cli\u003ereturns \u003ccode\u003etrue\u003c/code\u003e iff the parameters designate a subarray of\n     * non-negative length and the weights array contains legitimate values.\u003c/li\u003e\n     * \u003cli\u003ethrows \u003ccode\u003eIllegalArgumentException\u003c/code\u003e if any of the following are true:\n     * \u003cul\u003e\u003cli\u003ethe values array is null\u003c/li\u003e\n     *     \u003cli\u003ethe weights array is null\u003c/li\u003e\n     *     \u003cli\u003ethe weights array does not have the same length as the values array\u003c/li\u003e\n     *     \u003cli\u003ethe weights array contains one or more infinite values\u003c/li\u003e\n     *     \u003cli\u003ethe weights array contains one or more NaN values\u003c/li\u003e\n     *     \u003cli\u003ethe weights array contains negative values\u003c/li\u003e\n     *     \u003cli\u003ethe start and length arguments do not determine a valid array\u003c/li\u003e\u003c/ul\u003e\n     * \u003c/li\u003e\n     * \u003cli\u003ereturns \u003ccode\u003efalse\u003c/li\u003e if the array is non-null, but\n     * \u003ccode\u003elength\u003c/code\u003e is 0 unless \u003ccode\u003eallowEmpty\u003c/code\u003e is \u003ccode\u003etrue\u003c/code\u003e.\n     * \u003c/ul\u003e\u003c/p\u003e\n     *\n     * @param values the input array.\n     * @param weights the weights array.\n     * @param begin index of the first array element to include.\n     * @param length the number of elements to include.\n     * @param allowEmpty if {@code true} than allow zero length arrays to pass.\n     * @return {@code true} if the parameters are valid.\n     * @throws IllegalArgumentException if the indices are invalid or the array\n     * is {@code null}.\n     * @since 3.0\n     ",
+      "child_ranges": [
+        "(line 258,col 9)-(line 260,col 9)",
+        "(line 262,col 9)-(line 264,col 9)",
+        "(line 266,col 9)-(line 266,col 47)",
+        "(line 267,col 9)-(line 280,col 9)",
+        "(line 282,col 9)-(line 284,col 9)",
+        "(line 286,col 9)-(line 286,col 55)"
+      ]
+    }
+  ]
+}

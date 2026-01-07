@@ -1,0 +1,147 @@
+{
+  "filepath": "/tmp/Math-87b/src/java/org/apache/commons/math/util/TransformerMap.java",
+  "nodes": [
+    {
+      "type": "class_interface",
+      "name": "TransformerMap",
+      "is_interface": false,
+      "parent_types": [
+        "org.apache.commons.math.util.NumberTransformer",
+        "java.io.Serializable"
+      ],
+      "begin_line": 34,
+      "end_line": 157,
+      "comment": "\n * This TansformerMap automates the transformation of mixed object types.\n * It provides a means to set NumberTransformers that will be selected \n * based on the Class of the object handed to the Maps\n * \u003ccode\u003edouble transform(Object o)\u003c/code\u003e method.\n * @version $Revision$ $Date$\n "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "serialVersionUID"
+      ],
+      "begin_line": 39,
+      "end_line": 39,
+      "comment": " Serializable version identifier "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "defaultTransformer"
+      ],
+      "begin_line": 44,
+      "end_line": 44,
+      "comment": "\n     * A default Number Transformer for Numbers and numeric Strings.\n     "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "map"
+      ],
+      "begin_line": 49,
+      "end_line": 49,
+      "comment": "\n     * The internal Map.\n     "
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.math.util.TransformerMap.TransformerMap()",
+      "begin_line": 54,
+      "end_line": 57,
+      "comment": "\n     * Build a map containing only the default transformer.\n     ",
+      "child_ranges": [
+        "(line 55,col 9)-(line 55,col 57)",
+        "(line 56,col 9)-(line 56,col 54)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.util.TransformerMap.containsClass(java.lang.Class\u003c?\u003e)",
+      "begin_line": 64,
+      "end_line": 66,
+      "comment": "\n     * Tests if a Class is present in the TransformerMap.\n     * @param key Class to check\n     * @return true|false\n     ",
+      "child_ranges": [
+        "(line 65,col 9)-(line 65,col 36)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.util.TransformerMap.containsTransformer(org.apache.commons.math.util.NumberTransformer)",
+      "begin_line": 73,
+      "end_line": 75,
+      "comment": "\n     * Tests if a NumberTransformer is present in the TransformerMap.\n     * @param value NumberTransformer to check\n     * @return true|false\n     ",
+      "child_ranges": [
+        "(line 74,col 9)-(line 74,col 40)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.util.TransformerMap.getTransformer(java.lang.Class\u003c?\u003e)",
+      "begin_line": 83,
+      "end_line": 85,
+      "comment": "\n     * Returns the Transformer that is mapped to a class\n     * if mapping is not present, this returns null.\n     * @param key The Class of the object\n     * @return the mapped NumberTransformer or null.\n     ",
+      "child_ranges": [
+        "(line 84,col 9)-(line 84,col 28)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.util.TransformerMap.putTransformer(java.lang.Class\u003c?\u003e, org.apache.commons.math.util.NumberTransformer)",
+      "begin_line": 95,
+      "end_line": 97,
+      "comment": "\n     * Sets a Class to Transformer Mapping in the Map. If\n     * the Class is already present, this overwrites that\n     * mapping.\n     * @param key The Class\n     * @param transformer The NumberTransformer\n     * @return the replaced transformer if one is present\n     ",
+      "child_ranges": [
+        "(line 96,col 9)-(line 96,col 41)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.util.TransformerMap.removeTransformer(java.lang.Class\u003c?\u003e)",
+      "begin_line": 105,
+      "end_line": 107,
+      "comment": "\n     * Removes a Class to Transformer Mapping in the Map.\n     * @param key The Class\n     * @return the removed transformer if one is present or\n     * null if none was present.\n     ",
+      "child_ranges": [
+        "(line 106,col 9)-(line 106,col 31)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.util.TransformerMap.clear()",
+      "begin_line": 112,
+      "end_line": 114,
+      "comment": "\n     * Clears all the Class to Transformer mappings.\n     ",
+      "child_ranges": [
+        "(line 113,col 9)-(line 113,col 20)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.util.TransformerMap.classes()",
+      "begin_line": 120,
+      "end_line": 122,
+      "comment": "\n     * Returns the Set of Classes used as keys in the map.\n     * @return Set of Classes\n     ",
+      "child_ranges": [
+        "(line 121,col 9)-(line 121,col 28)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.util.TransformerMap.transformers()",
+      "begin_line": 129,
+      "end_line": 131,
+      "comment": "\n     * Returns the Set of NumberTransformers used as values \n     * in the map.\n     * @return Set of NumberTransformers\n     ",
+      "child_ranges": [
+        "(line 130,col 9)-(line 130,col 28)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.util.TransformerMap.transform(java.lang.Object)",
+      "begin_line": 142,
+      "end_line": 155,
+      "comment": "\n     * Attempts to transform the Object against the map of\n     * NumberTransformers. Otherwise it returns Double.NaN.\n     * \n     * @param o the Object to be transformed.\n     * @return the double value of the Object.\n     * @throws MathException if the Object can not be transformed into a Double. \n     * @see org.apache.commons.math.util.NumberTransformer#transform(java.lang.Object)\n     ",
+      "child_ranges": [
+        "(line 143,col 9)-(line 143,col 34)",
+        "(line 145,col 9)-(line 152,col 9)",
+        "(line 154,col 9)-(line 154,col 21)"
+      ]
+    }
+  ]
+}

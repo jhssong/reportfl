@@ -1,0 +1,540 @@
+{
+  "filepath": "/tmp/Math-45b/src/test/java/org/apache/commons/math/fraction/FractionTest.java",
+  "nodes": [
+    {
+      "type": "class_interface",
+      "name": "FractionTest",
+      "is_interface": false,
+      "parent_types": [],
+      "begin_line": 31,
+      "end_line": 595,
+      "comment": "\n * @version $Id$\n "
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.fraction.FractionTest.assertFraction(int, int, org.apache.commons.math.fraction.Fraction)",
+      "begin_line": 33,
+      "end_line": 36,
+      "comment": "",
+      "child_ranges": [
+        "(line 34,col 9)-(line 34,col 70)",
+        "(line 35,col 9)-(line 35,col 74)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.fraction.FractionTest.testConstructor()",
+      "begin_line": 38,
+      "end_line": 66,
+      "comment": "",
+      "child_ranges": [
+        "(line 40,col 9)-(line 40,col 49)",
+        "(line 41,col 9)-(line 41,col 49)",
+        "(line 42,col 9)-(line 42,col 50)",
+        "(line 43,col 9)-(line 43,col 49)",
+        "(line 44,col 9)-(line 44,col 49)",
+        "(line 45,col 9)-(line 45,col 51)",
+        "(line 46,col 9)-(line 46,col 51)",
+        "(line 47,col 9)-(line 47,col 51)",
+        "(line 48,col 9)-(line 48,col 51)",
+        "(line 51,col 9)-(line 56,col 9)",
+        "(line 57,col 9)-(line 62,col 9)",
+        "(line 63,col 9)-(line 63,col 61)",
+        "(line 64,col 9)-(line 64,col 61)",
+        "(line 65,col 9)-(line 65,col 62)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.fraction.FractionTest.testGoldenRatio()",
+      "begin_line": 68,
+      "end_line": 72,
+      "comment": "",
+      "child_ranges": [
+        "(line 71,col 9)-(line 71,col 62)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.fraction.FractionTest.testDoubleConstructor()",
+      "begin_line": 75,
+      "end_line": 118,
+      "comment": " MATH-179",
+      "child_ranges": [
+        "(line 77,col 9)-(line 77,col 66)",
+        "(line 78,col 9)-(line 78,col 66)",
+        "(line 79,col 9)-(line 79,col 66)",
+        "(line 80,col 9)-(line 80,col 66)",
+        "(line 81,col 9)-(line 81,col 66)",
+        "(line 82,col 9)-(line 82,col 66)",
+        "(line 83,col 9)-(line 83,col 66)",
+        "(line 84,col 9)-(line 84,col 66)",
+        "(line 85,col 9)-(line 85,col 66)",
+        "(line 86,col 9)-(line 86,col 66)",
+        "(line 87,col 9)-(line 87,col 66)",
+        "(line 88,col 9)-(line 88,col 66)",
+        "(line 89,col 9)-(line 89,col 66)",
+        "(line 90,col 9)-(line 90,col 66)",
+        "(line 91,col 9)-(line 91,col 66)",
+        "(line 92,col 9)-(line 92,col 66)",
+        "(line 93,col 9)-(line 93,col 66)",
+        "(line 94,col 9)-(line 94,col 66)",
+        "(line 95,col 9)-(line 95,col 66)",
+        "(line 96,col 9)-(line 96,col 66)",
+        "(line 97,col 9)-(line 97,col 66)",
+        "(line 98,col 9)-(line 98,col 66)",
+        "(line 99,col 9)-(line 99,col 66)",
+        "(line 100,col 9)-(line 100,col 66)",
+        "(line 101,col 9)-(line 101,col 66)",
+        "(line 102,col 9)-(line 102,col 66)",
+        "(line 103,col 9)-(line 103,col 66)",
+        "(line 104,col 9)-(line 104,col 68)",
+        "(line 105,col 9)-(line 105,col 68)",
+        "(line 106,col 9)-(line 106,col 68)",
+        "(line 107,col 9)-(line 107,col 68)",
+        "(line 108,col 9)-(line 108,col 68)",
+        "(line 109,col 9)-(line 109,col 68)",
+        "(line 110,col 9)-(line 110,col 68)",
+        "(line 111,col 9)-(line 111,col 68)",
+        "(line 112,col 9)-(line 112,col 68)",
+        "(line 113,col 9)-(line 113,col 68)",
+        "(line 114,col 9)-(line 114,col 68)",
+        "(line 115,col 9)-(line 115,col 68)",
+        "(line 116,col 9)-(line 116,col 68)",
+        "(line 117,col 9)-(line 117,col 70)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.fraction.FractionTest.testDigitLimitConstructor()",
+      "begin_line": 121,
+      "end_line": 131,
+      "comment": " MATH-181",
+      "child_ranges": [
+        "(line 123,col 9)-(line 123,col 53)",
+        "(line 124,col 9)-(line 124,col 53)",
+        "(line 125,col 9)-(line 125,col 53)",
+        "(line 127,col 9)-(line 127,col 62)",
+        "(line 128,col 9)-(line 128,col 62)",
+        "(line 129,col 9)-(line 129,col 62)",
+        "(line 130,col 9)-(line 130,col 62)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.fraction.FractionTest.testIntegerOverflow()",
+      "begin_line": 133,
+      "end_line": 137,
+      "comment": "",
+      "child_ranges": [
+        "(line 135,col 9)-(line 135,col 50)",
+        "(line 136,col 9)-(line 136,col 37)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.fraction.FractionTest.checkIntegerOverflow(double)",
+      "begin_line": 139,
+      "end_line": 146,
+      "comment": "",
+      "child_ranges": [
+        "(line 140,col 9)-(line 145,col 9)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.fraction.FractionTest.testEpsilonLimitConstructor()",
+      "begin_line": 148,
+      "end_line": 158,
+      "comment": "",
+      "child_ranges": [
+        "(line 150,col 9)-(line 150,col 61)",
+        "(line 152,col 9)-(line 152,col 67)",
+        "(line 153,col 9)-(line 153,col 69)",
+        "(line 154,col 9)-(line 154,col 69)",
+        "(line 155,col 9)-(line 155,col 69)",
+        "(line 156,col 9)-(line 156,col 69)",
+        "(line 157,col 9)-(line 157,col 69)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.fraction.FractionTest.testCompareTo()",
+      "begin_line": 160,
+      "end_line": 179,
+      "comment": "",
+      "child_ranges": [
+        "(line 162,col 9)-(line 162,col 44)",
+        "(line 163,col 9)-(line 163,col 45)",
+        "(line 164,col 9)-(line 164,col 44)",
+        "(line 166,col 9)-(line 166,col 55)",
+        "(line 167,col 9)-(line 167,col 55)",
+        "(line 168,col 9)-(line 168,col 56)",
+        "(line 169,col 9)-(line 169,col 57)",
+        "(line 174,col 9)-(line 174,col 59)",
+        "(line 175,col 9)-(line 175,col 59)",
+        "(line 176,col 9)-(line 176,col 52)",
+        "(line 177,col 9)-(line 177,col 52)",
+        "(line 178,col 9)-(line 178,col 81)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.fraction.FractionTest.testDoubleValue()",
+      "begin_line": 181,
+      "end_line": 188,
+      "comment": "",
+      "child_ranges": [
+        "(line 183,col 9)-(line 183,col 44)",
+        "(line 184,col 9)-(line 184,col 45)",
+        "(line 186,col 9)-(line 186,col 59)",
+        "(line 187,col 9)-(line 187,col 66)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.fraction.FractionTest.testFloatValue()",
+      "begin_line": 190,
+      "end_line": 197,
+      "comment": "",
+      "child_ranges": [
+        "(line 192,col 9)-(line 192,col 44)",
+        "(line 193,col 9)-(line 193,col 45)",
+        "(line 195,col 9)-(line 195,col 60)",
+        "(line 196,col 9)-(line 196,col 75)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.fraction.FractionTest.testIntValue()",
+      "begin_line": 199,
+      "end_line": 206,
+      "comment": "",
+      "child_ranges": [
+        "(line 201,col 9)-(line 201,col 44)",
+        "(line 202,col 9)-(line 202,col 45)",
+        "(line 204,col 9)-(line 204,col 49)",
+        "(line 205,col 9)-(line 205,col 50)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.fraction.FractionTest.testLongValue()",
+      "begin_line": 208,
+      "end_line": 215,
+      "comment": "",
+      "child_ranges": [
+        "(line 210,col 9)-(line 210,col 44)",
+        "(line 211,col 9)-(line 211,col 45)",
+        "(line 213,col 9)-(line 213,col 51)",
+        "(line 214,col 9)-(line 214,col 52)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.fraction.FractionTest.testConstructorDouble()",
+      "begin_line": 217,
+      "end_line": 227,
+      "comment": "",
+      "child_ranges": [
+        "(line 219,col 9)-(line 219,col 48)",
+        "(line 220,col 9)-(line 220,col 54)",
+        "(line 221,col 9)-(line 221,col 60)",
+        "(line 222,col 9)-(line 222,col 62)",
+        "(line 223,col 9)-(line 223,col 50)",
+        "(line 224,col 9)-(line 224,col 56)",
+        "(line 225,col 9)-(line 225,col 62)",
+        "(line 226,col 9)-(line 226,col 64)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.fraction.FractionTest.testAbs()",
+      "begin_line": 229,
+      "end_line": 238,
+      "comment": "",
+      "child_ranges": [
+        "(line 231,col 9)-(line 231,col 42)",
+        "(line 232,col 9)-(line 232,col 43)",
+        "(line 233,col 9)-(line 233,col 43)",
+        "(line 235,col 9)-(line 235,col 40)",
+        "(line 236,col 9)-(line 236,col 40)",
+        "(line 237,col 9)-(line 237,col 40)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.fraction.FractionTest.testReciprocal()",
+      "begin_line": 240,
+      "end_line": 270,
+      "comment": "",
+      "child_ranges": [
+        "(line 242,col 9)-(line 242,col 26)",
+        "(line 244,col 9)-(line 244,col 33)",
+        "(line 245,col 9)-(line 245,col 27)",
+        "(line 246,col 9)-(line 246,col 49)",
+        "(line 247,col 9)-(line 247,col 51)",
+        "(line 249,col 9)-(line 249,col 31)",
+        "(line 250,col 9)-(line 250,col 27)",
+        "(line 251,col 9)-(line 251,col 49)",
+        "(line 252,col 9)-(line 252,col 51)",
+        "(line 254,col 9)-(line 254,col 34)",
+        "(line 255,col 9)-(line 255,col 27)",
+        "(line 256,col 9)-(line 256,col 51)",
+        "(line 257,col 9)-(line 257,col 52)",
+        "(line 259,col 9)-(line 259,col 31)",
+        "(line 260,col 9)-(line 263,col 47)",
+        "(line 266,col 9)-(line 266,col 47)",
+        "(line 267,col 9)-(line 267,col 27)",
+        "(line 268,col 9)-(line 268,col 49)",
+        "(line 269,col 9)-(line 269,col 67)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.fraction.FractionTest.testNegate()",
+      "begin_line": 272,
+      "end_line": 297,
+      "comment": "",
+      "child_ranges": [
+        "(line 274,col 9)-(line 274,col 26)",
+        "(line 276,col 9)-(line 276,col 33)",
+        "(line 277,col 9)-(line 277,col 23)",
+        "(line 278,col 9)-(line 278,col 50)",
+        "(line 279,col 9)-(line 279,col 51)",
+        "(line 281,col 9)-(line 281,col 34)",
+        "(line 282,col 9)-(line 282,col 23)",
+        "(line 283,col 9)-(line 283,col 49)",
+        "(line 284,col 9)-(line 284,col 51)",
+        "(line 287,col 9)-(line 287,col 65)",
+        "(line 288,col 9)-(line 288,col 23)",
+        "(line 289,col 9)-(line 289,col 67)",
+        "(line 290,col 9)-(line 290,col 67)",
+        "(line 292,col 9)-(line 292,col 47)",
+        "(line 293,col 9)-(line 296,col 47)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.fraction.FractionTest.testAdd()",
+      "begin_line": 299,
+      "end_line": 380,
+      "comment": "",
+      "child_ranges": [
+        "(line 301,col 9)-(line 301,col 40)",
+        "(line 302,col 9)-(line 302,col 40)",
+        "(line 304,col 9)-(line 304,col 39)",
+        "(line 305,col 9)-(line 305,col 39)",
+        "(line 306,col 9)-(line 306,col 39)",
+        "(line 307,col 9)-(line 307,col 39)",
+        "(line 309,col 9)-(line 309,col 61)",
+        "(line 310,col 9)-(line 310,col 35)",
+        "(line 311,col 9)-(line 311,col 32)",
+        "(line 312,col 9)-(line 312,col 65)",
+        "(line 313,col 9)-(line 313,col 51)",
+        "(line 314,col 9)-(line 314,col 22)",
+        "(line 315,col 9)-(line 315,col 65)",
+        "(line 316,col 9)-(line 316,col 51)",
+        "(line 318,col 9)-(line 318,col 41)",
+        "(line 319,col 9)-(line 319,col 39)",
+        "(line 320,col 9)-(line 320,col 23)",
+        "(line 321,col 9)-(line 321,col 62)",
+        "(line 322,col 9)-(line 322,col 60)",
+        "(line 324,col 9)-(line 327,col 52)",
+        "(line 331,col 9)-(line 331,col 37)",
+        "(line 332,col 9)-(line 332,col 35)",
+        "(line 333,col 9)-(line 333,col 23)",
+        "(line 334,col 9)-(line 334,col 53)",
+        "(line 335,col 9)-(line 335,col 60)",
+        "(line 337,col 9)-(line 337,col 48)",
+        "(line 338,col 9)-(line 338,col 31)",
+        "(line 339,col 9)-(line 339,col 23)",
+        "(line 340,col 9)-(line 340,col 67)",
+        "(line 341,col 9)-(line 341,col 51)",
+        "(line 343,col 9)-(line 343,col 52)",
+        "(line 344,col 9)-(line 344,col 26)",
+        "(line 345,col 9)-(line 345,col 23)",
+        "(line 346,col 9)-(line 346,col 65)",
+        "(line 347,col 9)-(line 347,col 51)",
+        "(line 349,col 9)-(line 352,col 47)",
+        "(line 355,col 9)-(line 355,col 48)",
+        "(line 356,col 9)-(line 356,col 32)",
+        "(line 357,col 9)-(line 360,col 47)",
+        "(line 362,col 9)-(line 366,col 47)",
+        "(line 368,col 9)-(line 372,col 47)",
+        "(line 374,col 9)-(line 374,col 36)",
+        "(line 375,col 9)-(line 375,col 35)",
+        "(line 376,col 9)-(line 379,col 47)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.fraction.FractionTest.testDivide()",
+      "begin_line": 382,
+      "end_line": 442,
+      "comment": "",
+      "child_ranges": [
+        "(line 384,col 9)-(line 384,col 40)",
+        "(line 385,col 9)-(line 385,col 40)",
+        "(line 387,col 9)-(line 387,col 42)",
+        "(line 388,col 9)-(line 388,col 42)",
+        "(line 389,col 9)-(line 389,col 42)",
+        "(line 390,col 9)-(line 390,col 42)",
+        "(line 392,col 9)-(line 392,col 41)",
+        "(line 393,col 9)-(line 393,col 36)",
+        "(line 394,col 9)-(line 397,col 47)",
+        "(line 399,col 9)-(line 399,col 32)",
+        "(line 400,col 9)-(line 400,col 32)",
+        "(line 401,col 9)-(line 401,col 35)",
+        "(line 402,col 9)-(line 402,col 44)",
+        "(line 404,col 9)-(line 404,col 32)",
+        "(line 405,col 9)-(line 405,col 26)",
+        "(line 406,col 9)-(line 406,col 26)",
+        "(line 407,col 9)-(line 407,col 49)",
+        "(line 408,col 9)-(line 408,col 51)",
+        "(line 410,col 9)-(line 410,col 48)",
+        "(line 411,col 9)-(line 411,col 26)",
+        "(line 412,col 9)-(line 412,col 49)",
+        "(line 413,col 9)-(line 413,col 51)",
+        "(line 415,col 9)-(line 415,col 64)",
+        "(line 416,col 9)-(line 416,col 48)",
+        "(line 417,col 9)-(line 417,col 26)",
+        "(line 418,col 9)-(line 418,col 65)",
+        "(line 419,col 9)-(line 419,col 51)",
+        "(line 421,col 9)-(line 424,col 52)",
+        "(line 426,col 9)-(line 430,col 47)",
+        "(line 431,col 9)-(line 435,col 47)",
+        "(line 437,col 9)-(line 437,col 33)",
+        "(line 438,col 9)-(line 438,col 27)",
+        "(line 439,col 9)-(line 439,col 49)",
+        "(line 440,col 9)-(line 440,col 53)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.fraction.FractionTest.testMultiply()",
+      "begin_line": 444,
+      "end_line": 469,
+      "comment": "",
+      "child_ranges": [
+        "(line 446,col 9)-(line 446,col 40)",
+        "(line 447,col 9)-(line 447,col 40)",
+        "(line 449,col 9)-(line 449,col 44)",
+        "(line 450,col 9)-(line 450,col 44)",
+        "(line 451,col 9)-(line 451,col 44)",
+        "(line 452,col 9)-(line 452,col 44)",
+        "(line 454,col 9)-(line 454,col 57)",
+        "(line 455,col 9)-(line 455,col 73)",
+        "(line 456,col 9)-(line 456,col 37)",
+        "(line 457,col 9)-(line 457,col 65)",
+        "(line 458,col 9)-(line 458,col 51)",
+        "(line 460,col 9)-(line 463,col 52)",
+        "(line 465,col 9)-(line 465,col 33)",
+        "(line 466,col 9)-(line 466,col 29)",
+        "(line 467,col 9)-(line 467,col 50)",
+        "(line 468,col 9)-(line 468,col 51)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.fraction.FractionTest.testSubtract()",
+      "begin_line": 471,
+      "end_line": 543,
+      "comment": "",
+      "child_ranges": [
+        "(line 473,col 9)-(line 473,col 40)",
+        "(line 474,col 9)-(line 474,col 40)",
+        "(line 476,col 9)-(line 476,col 44)",
+        "(line 477,col 9)-(line 477,col 45)",
+        "(line 478,col 9)-(line 478,col 44)",
+        "(line 479,col 9)-(line 479,col 44)",
+        "(line 481,col 9)-(line 481,col 39)",
+        "(line 482,col 9)-(line 485,col 52)",
+        "(line 489,col 9)-(line 489,col 46)",
+        "(line 490,col 9)-(line 490,col 44)",
+        "(line 491,col 9)-(line 491,col 28)",
+        "(line 492,col 9)-(line 492,col 54)",
+        "(line 493,col 9)-(line 493,col 60)",
+        "(line 495,col 9)-(line 495,col 48)",
+        "(line 496,col 9)-(line 496,col 40)",
+        "(line 497,col 9)-(line 497,col 28)",
+        "(line 498,col 9)-(line 498,col 67)",
+        "(line 499,col 9)-(line 499,col 51)",
+        "(line 501,col 9)-(line 501,col 48)",
+        "(line 502,col 9)-(line 502,col 26)",
+        "(line 503,col 9)-(line 503,col 28)",
+        "(line 504,col 9)-(line 504,col 67)",
+        "(line 505,col 9)-(line 505,col 51)",
+        "(line 506,col 9)-(line 506,col 27)",
+        "(line 507,col 9)-(line 507,col 67)",
+        "(line 508,col 9)-(line 508,col 51)",
+        "(line 510,col 9)-(line 515,col 47)",
+        "(line 518,col 9)-(line 518,col 48)",
+        "(line 519,col 9)-(line 519,col 31)",
+        "(line 520,col 9)-(line 523,col 47)",
+        "(line 525,col 9)-(line 529,col 47)",
+        "(line 531,col 9)-(line 535,col 47)",
+        "(line 537,col 9)-(line 537,col 36)",
+        "(line 538,col 9)-(line 538,col 35)",
+        "(line 539,col 9)-(line 542,col 47)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.fraction.FractionTest.testEqualsAndHashCode()",
+      "begin_line": 545,
+      "end_line": 557,
+      "comment": "",
+      "child_ranges": [
+        "(line 547,col 9)-(line 547,col 43)",
+        "(line 548,col 9)-(line 548,col 37)",
+        "(line 549,col 9)-(line 549,col 46)",
+        "(line 550,col 9)-(line 550,col 54)",
+        "(line 551,col 9)-(line 551,col 59)",
+        "(line 552,col 9)-(line 552,col 43)",
+        "(line 553,col 9)-(line 553,col 46)",
+        "(line 554,col 9)-(line 554,col 63)",
+        "(line 555,col 9)-(line 555,col 41)",
+        "(line 556,col 9)-(line 556,col 66)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.fraction.FractionTest.testGetReducedFraction()",
+      "begin_line": 559,
+      "end_line": 574,
+      "comment": "",
+      "child_ranges": [
+        "(line 561,col 9)-(line 561,col 51)",
+        "(line 562,col 9)-(line 562,col 82)",
+        "(line 563,col 9)-(line 563,col 84)",
+        "(line 564,col 9)-(line 569,col 9)",
+        "(line 570,col 9)-(line 571,col 58)",
+        "(line 572,col 9)-(line 573,col 44)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.fraction.FractionTest.testToString()",
+      "begin_line": 576,
+      "end_line": 581,
+      "comment": "",
+      "child_ranges": [
+        "(line 578,col 9)-(line 578,col 64)",
+        "(line 579,col 9)-(line 579,col 64)",
+        "(line 580,col 9)-(line 580,col 70)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.fraction.FractionTest.testSerial()",
+      "begin_line": 583,
+      "end_line": 593,
+      "comment": "",
+      "child_ranges": [
+        "(line 585,col 9)-(line 589,col 10)",
+        "(line 590,col 9)-(line 592,col 9)"
+      ]
+    }
+  ]
+}

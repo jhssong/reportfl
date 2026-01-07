@@ -1,0 +1,46 @@
+{
+  "filepath": "/tmp/Math-4b/src/main/java/org/apache/commons/math3/ode/events/EventHandler.java",
+  "nodes": [
+    {
+      "type": "class_interface",
+      "name": "EventHandler",
+      "is_interface": true,
+      "parent_types": [],
+      "begin_line": 51,
+      "end_line": 220,
+      "comment": ""
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math3.ode.events.EventHandler.init(double, double[], double)",
+      "begin_line": 101,
+      "end_line": 101,
+      "comment": " Initialize event handler at the start of an ODE integration.\n     * \u003cp\u003e\n     * This method is called once at the start of the integration. It\n     * may be used by the event handler to initialize some internal data\n     * if needed.\n     * \u003c/p\u003e\n     * @param t0 start value of the independent \u003ci\u003etime\u003c/i\u003e variable\n     * @param y0 array containing the start value of the state vector\n     * @param t target time for the integration\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math3.ode.events.EventHandler.g(double, double[])",
+      "begin_line": 138,
+      "end_line": 138,
+      "comment": " Compute the value of the switching function.\n\n   * \u003cp\u003eThe discrete events are generated when the sign of this\n   * switching function changes. The integrator will take care to change\n   * the stepsize in such a way these events occur exactly at step boundaries.\n   * The switching function must be continuous in its roots neighborhood\n   * (but not necessarily smooth), as the integrator will need to find its\n   * roots to locate precisely the events.\u003c/p\u003e\n   * \u003cp\u003eAlso note that the integrator expect that once an event has occurred,\n   * the sign of the switching function at the start of the next step (i.e.\n   * just after the event) is the opposite of the sign just before the event.\n   * This consistency between the steps \u003cstring\u003emust\u003c/strong\u003e be preserved,\n   * otherwise {@link org.apache.commons.math3.exception.NoBracketingException\n   * exceptions} related to root not being bracketed will occur.\u003c/p\u003e\n   * \u003cp\u003eThis need for consistency is sometimes tricky to achieve. A typical\n   * example is using an event to model a ball bouncing on the floor. The first\n   * idea to represent this would be to have {@code g(t) \u003d h(t)} where h is the\n   * height above the floor at time {@code t}. When {@code g(t)} reaches 0, the\n   * ball is on the floor, so it should bounce and the typical way to do this is\n   * to reverse its vertical velocity. However, this would mean that before the\n   * event {@code g(t)} was decreasing from positive values to 0, and after the\n   * event {@code g(t)} would be increasing from 0 to positive values again.\n   * Consistency is broken here! The solution here is to have {@code g(t) \u003d sign\n   * * h(t)}, where sign is a variable with initial value set to {@code +1}. Each\n   * time {@link #eventOccurred(double, double[], boolean) eventOccurred} is called,\n   * {@code sign} is reset to {@code -sign}. This allows the {@code g(t)}\n   * function to remain continuous (and even smooth) even across events, despite\n   * {@code h(t)} is not. Basically, the event is used to \u003cem\u003efold\u003c/em\u003e {@code h(t)}\n   * at bounce points, and {@code sign} is used to \u003cem\u003eunfold\u003c/em\u003e it back, so the\n   * solvers sees a {@code g(t)} function which behaves smoothly even across events.\u003c/p\u003e\n\n   * @param t current value of the independent \u003ci\u003etime\u003c/i\u003e variable\n   * @param y array containing the current value of the state vector\n   * @return value of the g switching function\n   ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math3.ode.events.EventHandler.eventOccurred(double, double[], boolean)",
+      "begin_line": 201,
+      "end_line": 201,
+      "comment": " Handle an event and choose what to do next.\n\n   * \u003cp\u003eThis method is called when the integrator has accepted a step\n   * ending exactly on a sign change of the function, just \u003cem\u003ebefore\u003c/em\u003e\n   * the step handler itself is called (see below for scheduling). It\n   * allows the user to update his internal data to acknowledge the fact\n   * the event has been handled (for example setting a flag in the {@link\n   * org.apache.commons.math3.ode.FirstOrderDifferentialEquations\n   * differential equations} to switch the derivatives computation in\n   * case of discontinuity), or to direct the integrator to either stop\n   * or continue integration, possibly with a reset state or derivatives.\u003c/p\u003e\n\n   * \u003cul\u003e\n   *   \u003cli\u003eif {@link Action#STOP} is returned, the step handler will be called\n   *   with the \u003ccode\u003eisLast\u003c/code\u003e flag of the {@link\n   *   org.apache.commons.math3.ode.sampling.StepHandler#handleStep handleStep}\n   *   method set to true and the integration will be stopped,\u003c/li\u003e\n   *   \u003cli\u003eif {@link Action#RESET_STATE} is returned, the {@link #resetState\n   *   resetState} method will be called once the step handler has\n   *   finished its task, and the integrator will also recompute the\n   *   derivatives,\u003c/li\u003e\n   *   \u003cli\u003eif {@link Action#RESET_DERIVATIVES} is returned, the integrator\n   *   will recompute the derivatives,\n   *   \u003cli\u003eif {@link Action#CONTINUE} is returned, no specific action will\n   *   be taken (apart from having called this method) and integration\n   *   will continue.\u003c/li\u003e\n   * \u003c/ul\u003e\n\n   * \u003cp\u003eThe scheduling between this method and the {@link\n   * org.apache.commons.math3.ode.sampling.StepHandler StepHandler} method {@link\n   * org.apache.commons.math3.ode.sampling.StepHandler#handleStep(\n   * org.apache.commons.math3.ode.sampling.StepInterpolator, boolean)\n   * handleStep(interpolator, isLast)} is to call this method first and\n   * \u003ccode\u003ehandleStep\u003c/code\u003e afterwards. This scheduling allows the integrator to\n   * pass \u003ccode\u003etrue\u003c/code\u003e as the \u003ccode\u003eisLast\u003c/code\u003e parameter to the step\n   * handler to make it aware the step will be the last one if this method\n   * returns {@link Action#STOP}. As the interpolator may be used to navigate back\n   * throughout the last step (as {@link\n   * org.apache.commons.math3.ode.sampling.StepNormalizer StepNormalizer}\n   * does for example), user code called by this method and user\n   * code called by step handlers may experience apparently out of order values\n   * of the independent time variable. As an example, if the same user object\n   * implements both this {@link EventHandler EventHandler} interface and the\n   * {@link org.apache.commons.math3.ode.sampling.FixedStepHandler FixedStepHandler}\n   * interface, a \u003cem\u003eforward\u003c/em\u003e integration may call its\n   * \u003ccode\u003eeventOccurred\u003c/code\u003e method with t \u003d 10 first and call its\n   * \u003ccode\u003ehandleStep\u003c/code\u003e method with t \u003d 9 afterwards. Such out of order\n   * calls are limited to the size of the integration step for {@link\n   * org.apache.commons.math3.ode.sampling.StepHandler variable step handlers} and\n   * to the size of the fixed step for {@link\n   * org.apache.commons.math3.ode.sampling.FixedStepHandler fixed step handlers}.\u003c/p\u003e\n\n   * @param t current value of the independent \u003ci\u003etime\u003c/i\u003e variable\n   * @param y array containing the current value of the state vector\n   * @param increasing if true, the value of the switching function increases\n   * when times increases around event (note that increase is measured with respect\n   * to physical time, not with respect to integration which may go backward in time)\n   * @return indication of what the integrator should do next, this\n   * value must be one of {@link Action#STOP}, {@link Action#RESET_STATE},\n   * {@link Action#RESET_DERIVATIVES} or {@link Action#CONTINUE}\n   ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math3.ode.events.EventHandler.resetState(double, double[])",
+      "begin_line": 218,
+      "end_line": 218,
+      "comment": " Reset the state prior to continue the integration.\n\n   * \u003cp\u003eThis method is called after the step handler has returned and\n   * before the next step is started, but only when {@link\n   * #eventOccurred} has itself returned the {@link Action#RESET_STATE}\n   * indicator. It allows the user to reset the state vector for the\n   * next step, without perturbing the step handler of the finishing\n   * step. If the {@link #eventOccurred} never returns the {@link\n   * Action#RESET_STATE} indicator, this function will never be called, and it is\n   * safe to leave its body empty.\u003c/p\u003e\n\n   * @param t current value of the independent \u003ci\u003etime\u003c/i\u003e variable\n   * @param y array containing the current value of the state vector\n   * the new state should be put in the same array\n   ",
+      "child_ranges": []
+    }
+  ]
+}

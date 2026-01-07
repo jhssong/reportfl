@@ -1,0 +1,78 @@
+{
+  "filepath": "/tmp/Math-54b/src/main/java/org/apache/commons/math/analysis/solvers/BaseUnivariateRealSolver.java",
+  "nodes": [
+    {
+      "type": "class_interface",
+      "name": "BaseUnivariateRealSolver",
+      "is_interface": true,
+      "parent_types": [],
+      "begin_line": 31,
+      "end_line": 112,
+      "comment": "\n * Interface for (univariate real) rootfinding algorithms.\n * Implementations will search for only one zero in the given interval.\n *\n * @param \u003cFUNC\u003e Type of function to solve.\n *\n * @version $Revision$ $Date$\n * @since 3.0\n "
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.solvers.BaseUnivariateRealSolver.getMaxEvaluations()",
+      "begin_line": 37,
+      "end_line": 37,
+      "comment": "\n     * Get the maximal number of function evaluations.\n     *\n     * @return the maximal number of function evaluations.\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.solvers.BaseUnivariateRealSolver.getEvaluations()",
+      "begin_line": 47,
+      "end_line": 47,
+      "comment": "\n     * Get the number of evaluations of the objective function.\n     * The number of evaluations corresponds to the last call to the\n     * {@code optimize} method. It is 0 if the method has not been\n     * called yet.\n     *\n     * @return the number of evaluations of the objective function.\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.solvers.BaseUnivariateRealSolver.getAbsoluteAccuracy()",
+      "begin_line": 52,
+      "end_line": 52,
+      "comment": "\n     * @return the absolute accuracy.\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.solvers.BaseUnivariateRealSolver.getRelativeAccuracy()",
+      "begin_line": 56,
+      "end_line": 56,
+      "comment": "\n     * @return the relative accuracy.\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.solvers.BaseUnivariateRealSolver.getFunctionValueAccuracy()",
+      "begin_line": 60,
+      "end_line": 60,
+      "comment": "\n     * @return the function value accuracy.\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.solvers.BaseUnivariateRealSolver.solve(int, FUNC, double, double)",
+      "begin_line": 78,
+      "end_line": 78,
+      "comment": "\n     * Solve for a zero root in the given interval.\n     * A solver may require that the interval brackets a single zero root.\n     * Solvers that do require bracketing should be able to handle the case\n     * where one of the endpoints is itself a root.\n     *\n     * @param f Function to solve.\n     * @param min Lower bound for the interval.\n     * @param max Upper bound for the interval.\n     * @param maxEval Maximum number of evaluations.\n     * @return a value where the function is zero.\n     * @throws org.apache.commons.math.exception.MathIllegalArgumentException\n     * if the arguments do not satisfy the requirements specified by the solver.\n     * @throws org.apache.commons.math.exception.TooManyEvaluationsException if\n     * the allowed number of evaluations is exceeded.\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.solvers.BaseUnivariateRealSolver.solve(int, FUNC, double, double, double)",
+      "begin_line": 97,
+      "end_line": 97,
+      "comment": "\n     * Solve for a zero in the given interval, start at {@code startValue}.\n     * A solver may require that the interval brackets a single zero root.\n     * Solvers that do require bracketing should be able to handle the case\n     * where one of the endpoints is itself a root.\n     *\n     * @param f Function to solve.\n     * @param min Lower bound for the interval.\n     * @param max Upper bound for the interval.\n     * @param startValue Start value to use.\n     * @param maxEval Maximum number of evaluations.\n     * @return a value where the function is zero.\n     * @throws org.apache.commons.math.exception.MathIllegalArgumentException\n     * if the arguments do not satisfy the requirements specified by the solver.\n     * @throws org.apache.commons.math.exception.TooManyEvaluationsException if\n     * the allowed number of evaluations is exceeded.\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.solvers.BaseUnivariateRealSolver.solve(int, FUNC, double)",
+      "begin_line": 111,
+      "end_line": 111,
+      "comment": "\n     * Solve for a zero in the vicinity of {@code startValue}.\n     *\n     * @param f Function to solve.\n     * @param startValue Start value to use.\n     * @return a value where the function is zero.\n     * @param maxEval Maximum number of evaluations.\n     * @throws org.apache.commons.math.exception.MathIllegalArgumentException\n     * if the arguments do not satisfy the requirements specified by the solver.\n     * @throws org.apache.commons.math.exception.TooManyEvaluationsException if\n     * the allowed number of evaluations is exceeded.\n     ",
+      "child_ranges": []
+    }
+  ]
+}

@@ -1,0 +1,613 @@
+{
+  "filepath": "/tmp/Cli-26b/src/java/org/apache/commons/cli/HelpFormatter.java",
+  "nodes": [
+    {
+      "type": "class_interface",
+      "name": "HelpFormatter",
+      "is_interface": false,
+      "parent_types": [],
+      "begin_line": 35,
+      "end_line": 984,
+      "comment": " \n * A formatter of help messages for the current command line options\n *\n * @author Slawek Zachcial\n * @author John Keyes (john at integralsource.com)\n * @version $Revision$, $Date$\n "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "DEFAULT_WIDTH"
+      ],
+      "begin_line": 40,
+      "end_line": 40,
+      "comment": " default number of characters per line "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "DEFAULT_LEFT_PAD"
+      ],
+      "begin_line": 43,
+      "end_line": 43,
+      "comment": " default padding to the left of each line "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "DEFAULT_DESC_PAD"
+      ],
+      "begin_line": 49,
+      "end_line": 49,
+      "comment": "\n     * the number of characters of padding to be prefixed\n     * to each description line\n     "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "DEFAULT_SYNTAX_PREFIX"
+      ],
+      "begin_line": 52,
+      "end_line": 52,
+      "comment": " the string to display at the beginning of the usage statement "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "DEFAULT_OPT_PREFIX"
+      ],
+      "begin_line": 55,
+      "end_line": 55,
+      "comment": " default prefix for shortOpts "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "DEFAULT_LONG_OPT_PREFIX"
+      ],
+      "begin_line": 58,
+      "end_line": 58,
+      "comment": " default prefix for long Option "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "DEFAULT_ARG_NAME"
+      ],
+      "begin_line": 61,
+      "end_line": 61,
+      "comment": " default name for an argument "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "defaultWidth"
+      ],
+      "begin_line": 71,
+      "end_line": 71,
+      "comment": "\n     * number of characters per line\n     *\n     * @deprecated Scope will be made private for next major version\n     * - use get/setWidth methods instead.\n     "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "defaultLeftPad"
+      ],
+      "begin_line": 79,
+      "end_line": 79,
+      "comment": "\n     * amount of padding to the left of each line\n     *\n     * @deprecated Scope will be made private for next major version\n     * - use get/setLeftPadding methods instead.\n     "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "defaultDescPad"
+      ],
+      "begin_line": 88,
+      "end_line": 88,
+      "comment": "\n     * the number of characters of padding to be prefixed\n     * to each description line\n     *\n     * @deprecated Scope will be made private for next major version\n     * - use get/setDescPadding methods instead.\n     "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "defaultSyntaxPrefix"
+      ],
+      "begin_line": 96,
+      "end_line": 96,
+      "comment": "\n     * the string to display at the begining of the usage statement\n     *\n     * @deprecated Scope will be made private for next major version\n     * - use get/setSyntaxPrefix methods instead.\n     "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "defaultNewLine"
+      ],
+      "begin_line": 104,
+      "end_line": 104,
+      "comment": "\n     * the new line string\n     *\n     * @deprecated Scope will be made private for next major version\n     * - use get/setNewLine methods instead.\n     "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "defaultOptPrefix"
+      ],
+      "begin_line": 112,
+      "end_line": 112,
+      "comment": "\n     * the shortOpt prefix\n     *\n     * @deprecated Scope will be made private for next major version\n     * - use get/setOptPrefix methods instead.\n     "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "defaultLongOptPrefix"
+      ],
+      "begin_line": 120,
+      "end_line": 120,
+      "comment": "\n     * the long Opt prefix\n     *\n     * @deprecated Scope will be made private for next major version\n     * - use get/setLongOptPrefix methods instead.\n     "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "defaultArgName"
+      ],
+      "begin_line": 128,
+      "end_line": 128,
+      "comment": "\n     * the name of the argument\n     *\n     * @deprecated Scope will be made private for next major version\n     * - use get/setArgName methods instead.\n     "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "optionComparator"
+      ],
+      "begin_line": 135,
+      "end_line": 135,
+      "comment": "\n     * Comparator used to sort the options when they output in help text\n     * \n     * Defaults to case-insensitive alphabetical sorting by option key\n     "
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.setWidth(int)",
+      "begin_line": 142,
+      "end_line": 145,
+      "comment": "\n     * Sets the \u0027width\u0027.\n     *\n     * @param width the new value of \u0027width\u0027\n     ",
+      "child_ranges": [
+        "(line 144,col 9)-(line 144,col 34)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.getWidth()",
+      "begin_line": 152,
+      "end_line": 155,
+      "comment": "\n     * Returns the \u0027width\u0027.\n     *\n     * @return the \u0027width\u0027\n     ",
+      "child_ranges": [
+        "(line 154,col 9)-(line 154,col 28)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.setLeftPadding(int)",
+      "begin_line": 162,
+      "end_line": 165,
+      "comment": "\n     * Sets the \u0027leftPadding\u0027.\n     *\n     * @param padding the new value of \u0027leftPadding\u0027\n     ",
+      "child_ranges": [
+        "(line 164,col 9)-(line 164,col 38)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.getLeftPadding()",
+      "begin_line": 172,
+      "end_line": 175,
+      "comment": "\n     * Returns the \u0027leftPadding\u0027.\n     *\n     * @return the \u0027leftPadding\u0027\n     ",
+      "child_ranges": [
+        "(line 174,col 9)-(line 174,col 30)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.setDescPadding(int)",
+      "begin_line": 182,
+      "end_line": 185,
+      "comment": "\n     * Sets the \u0027descPadding\u0027.\n     *\n     * @param padding the new value of \u0027descPadding\u0027\n     ",
+      "child_ranges": [
+        "(line 184,col 9)-(line 184,col 38)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.getDescPadding()",
+      "begin_line": 192,
+      "end_line": 195,
+      "comment": "\n     * Returns the \u0027descPadding\u0027.\n     *\n     * @return the \u0027descPadding\u0027\n     ",
+      "child_ranges": [
+        "(line 194,col 9)-(line 194,col 30)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.setSyntaxPrefix(java.lang.String)",
+      "begin_line": 202,
+      "end_line": 205,
+      "comment": "\n     * Sets the \u0027syntaxPrefix\u0027.\n     *\n     * @param prefix the new value of \u0027syntaxPrefix\u0027\n     ",
+      "child_ranges": [
+        "(line 204,col 9)-(line 204,col 42)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.getSyntaxPrefix()",
+      "begin_line": 212,
+      "end_line": 215,
+      "comment": "\n     * Returns the \u0027syntaxPrefix\u0027.\n     *\n     * @return the \u0027syntaxPrefix\u0027\n     ",
+      "child_ranges": [
+        "(line 214,col 9)-(line 214,col 35)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.setNewLine(java.lang.String)",
+      "begin_line": 222,
+      "end_line": 225,
+      "comment": "\n     * Sets the \u0027newLine\u0027.\n     *\n     * @param newline the new value of \u0027newLine\u0027\n     ",
+      "child_ranges": [
+        "(line 224,col 9)-(line 224,col 38)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.getNewLine()",
+      "begin_line": 232,
+      "end_line": 235,
+      "comment": "\n     * Returns the \u0027newLine\u0027.\n     *\n     * @return the \u0027newLine\u0027\n     ",
+      "child_ranges": [
+        "(line 234,col 9)-(line 234,col 30)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.setOptPrefix(java.lang.String)",
+      "begin_line": 242,
+      "end_line": 245,
+      "comment": "\n     * Sets the \u0027optPrefix\u0027.\n     *\n     * @param prefix the new value of \u0027optPrefix\u0027\n     ",
+      "child_ranges": [
+        "(line 244,col 9)-(line 244,col 39)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.getOptPrefix()",
+      "begin_line": 252,
+      "end_line": 255,
+      "comment": "\n     * Returns the \u0027optPrefix\u0027.\n     *\n     * @return the \u0027optPrefix\u0027\n     ",
+      "child_ranges": [
+        "(line 254,col 9)-(line 254,col 32)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.setLongOptPrefix(java.lang.String)",
+      "begin_line": 262,
+      "end_line": 265,
+      "comment": "\n     * Sets the \u0027longOptPrefix\u0027.\n     *\n     * @param prefix the new value of \u0027longOptPrefix\u0027\n     ",
+      "child_ranges": [
+        "(line 264,col 9)-(line 264,col 43)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.getLongOptPrefix()",
+      "begin_line": 272,
+      "end_line": 275,
+      "comment": "\n     * Returns the \u0027longOptPrefix\u0027.\n     *\n     * @return the \u0027longOptPrefix\u0027\n     ",
+      "child_ranges": [
+        "(line 274,col 9)-(line 274,col 36)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.setArgName(java.lang.String)",
+      "begin_line": 282,
+      "end_line": 285,
+      "comment": "\n     * Sets the \u0027argName\u0027.\n     *\n     * @param name the new value of \u0027argName\u0027\n     ",
+      "child_ranges": [
+        "(line 284,col 9)-(line 284,col 35)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.getArgName()",
+      "begin_line": 292,
+      "end_line": 295,
+      "comment": "\n     * Returns the \u0027argName\u0027.\n     *\n     * @return the \u0027argName\u0027\n     ",
+      "child_ranges": [
+        "(line 294,col 9)-(line 294,col 30)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.getOptionComparator()",
+      "begin_line": 302,
+      "end_line": 305,
+      "comment": "\n     * Comparator used to sort the options when they output in help text\n     * \n     * Defaults to case-insensitive alphabetical sorting by option key\n     ",
+      "child_ranges": [
+        "(line 304,col 9)-(line 304,col 32)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.setOptionComparator(java.util.Comparator)",
+      "begin_line": 312,
+      "end_line": 322,
+      "comment": "\n     * Set the comparator used to sort the options when they output in help text\n     * \n     * Passing in a null parameter will set the ordering to the default mode\n     ",
+      "child_ranges": [
+        "(line 314,col 9)-(line 321,col 9)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.printHelp(java.lang.String, org.apache.commons.cli.Options)",
+      "begin_line": 332,
+      "end_line": 335,
+      "comment": "\n     * Print the help for \u003ccode\u003eoptions\u003c/code\u003e with the specified\n     * command line syntax.  This method prints help information to\n     * System.out.\n     *\n     * @param cmdLineSyntax the syntax for this application\n     * @param options the Options instance\n     ",
+      "child_ranges": [
+        "(line 334,col 9)-(line 334,col 75)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.printHelp(java.lang.String, org.apache.commons.cli.Options, boolean)",
+      "begin_line": 347,
+      "end_line": 350,
+      "comment": "\n     * Print the help for \u003ccode\u003eoptions\u003c/code\u003e with the specified\n     * command line syntax.  This method prints help information to \n     * System.out.\n     *\n     * @param cmdLineSyntax the syntax for this application\n     * @param options the Options instance\n     * @param autoUsage whether to print an automatically generated\n     * usage statement\n     ",
+      "child_ranges": [
+        "(line 349,col 9)-(line 349,col 79)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.printHelp(java.lang.String, java.lang.String, org.apache.commons.cli.Options, java.lang.String)",
+      "begin_line": 362,
+      "end_line": 365,
+      "comment": "\n     * Print the help for \u003ccode\u003eoptions\u003c/code\u003e with the specified\n     * command line syntax.  This method prints help information to\n     * System.out.\n     *\n     * @param cmdLineSyntax the syntax for this application\n     * @param header the banner to display at the begining of the help\n     * @param options the Options instance\n     * @param footer the banner to display at the end of the help\n     ",
+      "child_ranges": [
+        "(line 364,col 9)-(line 364,col 65)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.printHelp(java.lang.String, java.lang.String, org.apache.commons.cli.Options, java.lang.String, boolean)",
+      "begin_line": 379,
+      "end_line": 382,
+      "comment": "\n     * Print the help for \u003ccode\u003eoptions\u003c/code\u003e with the specified\n     * command line syntax.  This method prints help information to \n     * System.out.\n     *\n     * @param cmdLineSyntax the syntax for this application\n     * @param header the banner to display at the begining of the help\n     * @param options the Options instance\n     * @param footer the banner to display at the end of the help\n     * @param autoUsage whether to print an automatically generated\n     * usage statement\n     ",
+      "child_ranges": [
+        "(line 381,col 9)-(line 381,col 83)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.printHelp(int, java.lang.String, java.lang.String, org.apache.commons.cli.Options, java.lang.String)",
+      "begin_line": 395,
+      "end_line": 398,
+      "comment": "\n     * Print the help for \u003ccode\u003eoptions\u003c/code\u003e with the specified\n     * command line syntax.  This method prints help information to\n     * System.out.\n     *\n     * @param width the number of characters to be displayed on each line\n     * @param cmdLineSyntax the syntax for this application\n     * @param header the banner to display at the beginning of the help\n     * @param options the Options instance\n     * @param footer the banner to display at the end of the help\n     ",
+      "child_ranges": [
+        "(line 397,col 9)-(line 397,col 72)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.printHelp(int, java.lang.String, java.lang.String, org.apache.commons.cli.Options, java.lang.String, boolean)",
+      "begin_line": 413,
+      "end_line": 420,
+      "comment": "\n     * Print the help for \u003ccode\u003eoptions\u003c/code\u003e with the specified\n     * command line syntax.  This method prints help information to\n     * System.out.\n     *\n     * @param width the number of characters to be displayed on each line\n     * @param cmdLineSyntax the syntax for this application\n     * @param header the banner to display at the begining of the help\n     * @param options the Options instance\n     * @param footer the banner to display at the end of the help\n     * @param autoUsage whether to print an automatically generated \n     * usage statement\n     ",
+      "child_ranges": [
+        "(line 416,col 9)-(line 416,col 53)",
+        "(line 418,col 9)-(line 418,col 112)",
+        "(line 419,col 9)-(line 419,col 19)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.printHelp(java.io.PrintWriter, int, java.lang.String, java.lang.String, org.apache.commons.cli.Options, int, int, java.lang.String)",
+      "begin_line": 439,
+      "end_line": 444,
+      "comment": "\n     * Print the help for \u003ccode\u003eoptions\u003c/code\u003e with the specified\n     * command line syntax.\n     *\n     * @param pw the writer to which the help will be written\n     * @param width the number of characters to be displayed on each line\n     * @param cmdLineSyntax the syntax for this application\n     * @param header the banner to display at the begining of the help\n     * @param options the Options instance\n     * @param leftPad the number of characters of padding to be prefixed\n     * to each line\n     * @param descPad the number of characters of padding to be prefixed\n     * to each description line\n     * @param footer the banner to display at the end of the help\n     *\n     * @throws IllegalStateException if there is no room to print a line\n     ",
+      "child_ranges": [
+        "(line 443,col 9)-(line 443,col 94)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.printHelp(java.io.PrintWriter, int, java.lang.String, java.lang.String, org.apache.commons.cli.Options, int, int, java.lang.String, boolean)",
+      "begin_line": 466,
+      "end_line": 495,
+      "comment": "\n     * Print the help for \u003ccode\u003eoptions\u003c/code\u003e with the specified\n     * command line syntax.\n     *\n     * @param pw the writer to which the help will be written\n     * @param width the number of characters to be displayed on each line\n     * @param cmdLineSyntax the syntax for this application\n     * @param header the banner to display at the begining of the help\n     * @param options the Options instance\n     * @param leftPad the number of characters of padding to be prefixed\n     * to each line\n     * @param descPad the number of characters of padding to be prefixed\n     * to each description line\n     * @param footer the banner to display at the end of the help\n     * @param autoUsage whether to print an automatically generated\n     * usage statement\n     *\n     * @throws IllegalStateException if there is no room to print a line\n     ",
+      "child_ranges": [
+        "(line 470,col 9)-(line 473,col 9)",
+        "(line 475,col 9)-(line 482,col 9)",
+        "(line 484,col 9)-(line 487,col 9)",
+        "(line 489,col 9)-(line 489,col 59)",
+        "(line 491,col 9)-(line 494,col 9)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.printUsage(java.io.PrintWriter, int, java.lang.String, org.apache.commons.cli.Options)",
+      "begin_line": 506,
+      "end_line": 561,
+      "comment": "\n     * \u003cp\u003ePrints the usage statement for the specified application.\u003c/p\u003e\n     *\n     * @param pw The PrintWriter to print the usage statement \n     * @param width The number of characters to display per line\n     * @param app The application name\n     * @param options The command line Options\n     *\n     ",
+      "child_ranges": [
+        "(line 509,col 9)-(line 509,col 90)",
+        "(line 512,col 9)-(line 512,col 59)",
+        "(line 515,col 9)-(line 515,col 22)",
+        "(line 517,col 9)-(line 517,col 59)",
+        "(line 518,col 9)-(line 518,col 57)",
+        "(line 520,col 9)-(line 556,col 9)",
+        "(line 560,col 9)-(line 560,col 83)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.appendOptionGroup(java.lang.StringBuffer, org.apache.commons.cli.OptionGroup)",
+      "begin_line": 571,
+      "end_line": 596,
+      "comment": "\n     * Appends the usage clause for an OptionGroup to a StringBuffer.  \n     * The clause is wrapped in square brackets if the group is required.\n     * The display of the options is handled by appendOption\n     * @param buff the StringBuffer to append to\n     * @param group the group to append\n     * @see #appendOption(StringBuffer,Option,boolean)\n     ",
+      "child_ranges": [
+        "(line 573,col 9)-(line 576,col 9)",
+        "(line 578,col 9)-(line 578,col 57)",
+        "(line 579,col 9)-(line 579,col 57)",
+        "(line 581,col 9)-(line 590,col 9)",
+        "(line 592,col 9)-(line 595,col 9)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.appendOption(java.lang.StringBuffer, org.apache.commons.cli.Option, boolean)",
+      "begin_line": 605,
+      "end_line": 632,
+      "comment": "\n     * Appends the usage clause for an Option to a StringBuffer.  \n     *\n     * @param buff the StringBuffer to append to\n     * @param option the Option to append\n     * @param required whether the Option is required or not\n     ",
+      "child_ranges": [
+        "(line 607,col 9)-(line 610,col 9)",
+        "(line 612,col 9)-(line 619,col 9)",
+        "(line 622,col 9)-(line 625,col 9)",
+        "(line 628,col 9)-(line 631,col 9)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.printUsage(java.io.PrintWriter, int, java.lang.String)",
+      "begin_line": 642,
+      "end_line": 647,
+      "comment": "\n     * Print the cmdLineSyntax to the specified writer, using the\n     * specified width.\n     *\n     * @param pw The printWriter to write the help to\n     * @param width The number of characters per line for the usage statement.\n     * @param cmdLineSyntax The usage statement.\n     ",
+      "child_ranges": [
+        "(line 644,col 9)-(line 644,col 52)",
+        "(line 646,col 9)-(line 646,col 108)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.printOptions(java.io.PrintWriter, int, org.apache.commons.cli.Options, int, int)",
+      "begin_line": 661,
+      "end_line": 668,
+      "comment": "\n     * \u003cp\u003ePrint the help for the specified Options to the specified writer, \n     * using the specified width, left padding and description padding.\u003c/p\u003e\n     *\n     * @param pw The printWriter to write the help to\n     * @param width The number of characters to display per line\n     * @param options The command line Options\n     * @param leftPad the number of characters of padding to be prefixed\n     * to each line\n     * @param descPad the number of characters of padding to be prefixed\n     * to each description line\n     ",
+      "child_ranges": [
+        "(line 664,col 9)-(line 664,col 45)",
+        "(line 666,col 9)-(line 666,col 60)",
+        "(line 667,col 9)-(line 667,col 34)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.printWrapped(java.io.PrintWriter, int, java.lang.String)",
+      "begin_line": 677,
+      "end_line": 680,
+      "comment": "\n     * Print the specified text to the specified PrintWriter.\n     *\n     * @param pw The printWriter to write the help to\n     * @param width The number of characters to display per line\n     * @param text The text to be written to the PrintWriter\n     ",
+      "child_ranges": [
+        "(line 679,col 9)-(line 679,col 41)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.printWrapped(java.io.PrintWriter, int, int, java.lang.String)",
+      "begin_line": 690,
+      "end_line": 696,
+      "comment": "\n     * Print the specified text to the specified PrintWriter.\n     *\n     * @param pw The printWriter to write the help to\n     * @param width The number of characters to display per line\n     * @param nextLineTabStop The position on the next line for the first tab.\n     * @param text The text to be written to the PrintWriter\n     ",
+      "child_ranges": [
+        "(line 692,col 9)-(line 692,col 58)",
+        "(line 694,col 9)-(line 694,col 60)",
+        "(line 695,col 9)-(line 695,col 34)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.renderOptions(java.lang.StringBuffer, int, org.apache.commons.cli.Options, int, int)",
+      "begin_line": 714,
+      "end_line": 796,
+      "comment": "\n     * Render the specified Options and return the rendered Options\n     * in a StringBuffer.\n     *\n     * @param sb The StringBuffer to place the rendered Options into.\n     * @param width The number of characters to display per line\n     * @param options The command line Options\n     * @param leftPad the number of characters of padding to be prefixed\n     * to each line\n     * @param descPad the number of characters of padding to be prefixed\n     * to each description line\n     *\n     * @return the StringBuffer with the rendered Options contents.\n     ",
+      "child_ranges": [
+        "(line 716,col 9)-(line 716,col 51)",
+        "(line 717,col 9)-(line 717,col 51)",
+        "(line 723,col 9)-(line 723,col 20)",
+        "(line 724,col 9)-(line 724,col 28)",
+        "(line 725,col 9)-(line 725,col 42)",
+        "(line 727,col 9)-(line 727,col 45)",
+        "(line 729,col 9)-(line 729,col 57)",
+        "(line 731,col 9)-(line 764,col 9)",
+        "(line 766,col 9)-(line 766,col 18)",
+        "(line 768,col 9)-(line 793,col 9)",
+        "(line 795,col 9)-(line 795,col 18)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.renderWrappedText(java.lang.StringBuffer, int, int, java.lang.String)",
+      "begin_line": 809,
+      "end_line": 851,
+      "comment": "\n     * Render the specified text and return the rendered Options\n     * in a StringBuffer.\n     *\n     * @param sb The StringBuffer to place the rendered text into.\n     * @param width The number of characters to display per line\n     * @param nextLineTabStop The position on the next line for the first tab.\n     * @param text The text to be rendered.\n     *\n     * @return the StringBuffer with the rendered Options contents.\n     ",
+      "child_ranges": [
+        "(line 812,col 9)-(line 812,col 46)",
+        "(line 814,col 9)-(line 819,col 9)",
+        "(line 820,col 9)-(line 820,col 72)",
+        "(line 822,col 9)-(line 826,col 9)",
+        "(line 830,col 9)-(line 830,col 62)",
+        "(line 832,col 9)-(line 850,col 9)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.findWrapPos(java.lang.String, int, int)",
+      "begin_line": 866,
+      "end_line": 910,
+      "comment": "\n     * Finds the next text wrap position after \u003ccode\u003estartPos\u003c/code\u003e for the\n     * text in \u003ccode\u003etext\u003c/code\u003e with the column width \u003ccode\u003ewidth\u003c/code\u003e.\n     * The wrap point is the last postion before startPos+width having a \n     * whitespace character (space, \\n, \\r).\n     *\n     * @param text The text being searched for the wrap position\n     * @param width width of the wrapped text\n     * @param startPos position from which to start the lookup whitespace\n     * character\n     * @return postion on which the text must be wrapped or -1 if the wrap\n     * position is at the end of the text\n     ",
+      "child_ranges": [
+        "(line 868,col 9)-(line 868,col 21)",
+        "(line 871,col 9)-(line 879,col 9)",
+        "(line 883,col 9)-(line 883,col 31)",
+        "(line 885,col 9)-(line 885,col 15)",
+        "(line 887,col 9)-(line 891,col 9)",
+        "(line 894,col 9)-(line 897,col 9)",
+        "(line 901,col 9)-(line 901,col 31)",
+        "(line 903,col 9)-(line 907,col 9)",
+        "(line 909,col 9)-(line 909,col 51)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.createPadding(int)",
+      "begin_line": 919,
+      "end_line": 929,
+      "comment": "\n     * Return a String of padding of length \u003ccode\u003elen\u003c/code\u003e.\n     *\n     * @param len The length of the String of padding to create.\n     *\n     * @return The String of padding\n     ",
+      "child_ranges": [
+        "(line 921,col 9)-(line 921,col 48)",
+        "(line 923,col 9)-(line 926,col 9)",
+        "(line 928,col 9)-(line 928,col 29)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.rtrim(java.lang.String)",
+      "begin_line": 938,
+      "end_line": 953,
+      "comment": "\n     * Remove the trailing whitespace from the specified String.\n     *\n     * @param s The String to remove the trailing padding from.\n     *\n     * @return The String of without the trailing padding\n     ",
+      "child_ranges": [
+        "(line 940,col 9)-(line 943,col 9)",
+        "(line 945,col 9)-(line 945,col 29)",
+        "(line 947,col 9)-(line 950,col 9)",
+        "(line 952,col 9)-(line 952,col 35)"
+      ]
+    },
+    {
+      "type": "class_interface",
+      "name": "OptionComparator",
+      "is_interface": false,
+      "parent_types": [
+        "java.util.Comparator"
+      ],
+      "begin_line": 962,
+      "end_line": 983,
+      "comment": "\n     * This class implements the \u003ccode\u003eComparator\u003c/code\u003e interface\n     * for comparing Options.\n     "
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.cli.HelpFormatter.OptionComparator.compare(java.lang.Object, java.lang.Object)",
+      "begin_line": 976,
+      "end_line": 982,
+      "comment": "\n         * Compares its two arguments for order. Returns a negative\n         * integer, zero, or a positive integer as the first argument\n         * is less than, equal to, or greater than the second.\n         *\n         * @param o1 The first Option to be compared.\n         * @param o2 The second Option to be compared.\n         * @return a negative integer, zero, or a positive integer as\n         *         the first argument is less than, equal to, or greater than the\n         *         second.\n         ",
+      "child_ranges": [
+        "(line 978,col 13)-(line 978,col 38)",
+        "(line 979,col 13)-(line 979,col 38)",
+        "(line 981,col 13)-(line 981,col 68)"
+      ]
+    }
+  ]
+}

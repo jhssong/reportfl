@@ -1,0 +1,517 @@
+{
+  "filepath": "/tmp/JxPath-1b/src/test/org/apache/commons/jxpath/ri/model/XMLModelTestCase.java",
+  "nodes": [
+    {
+      "type": "class_interface",
+      "name": "XMLModelTestCase",
+      "is_interface": false,
+      "parent_types": [
+        "JXPathTestCase"
+      ],
+      "begin_line": 37,
+      "end_line": 828,
+      "comment": ""
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "context"
+      ],
+      "begin_line": 38,
+      "end_line": 38,
+      "comment": ""
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.XMLModelTestCase(java.lang.String)",
+      "begin_line": 45,
+      "end_line": 47,
+      "comment": "\n     * Construct a new instance of this test case.\n     *\n     * @param name Name of the test case\n     ",
+      "child_ranges": [
+        "(line 46,col 9)-(line 46,col 20)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.setUp()",
+      "begin_line": 49,
+      "end_line": 60,
+      "comment": "",
+      "child_ranges": [
+        "(line 50,col 9)-(line 59,col 9)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.getModel()",
+      "begin_line": 62,
+      "end_line": 62,
+      "comment": "",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.createDocumentContainer()",
+      "begin_line": 64,
+      "end_line": 68,
+      "comment": "",
+      "child_ranges": [
+        "(line 65,col 9)-(line 67,col 28)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.getAbstractFactory()",
+      "begin_line": 70,
+      "end_line": 70,
+      "comment": "",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.createContext()",
+      "begin_line": 72,
+      "end_line": 78,
+      "comment": "",
+      "child_ranges": [
+        "(line 73,col 9)-(line 74,col 64)",
+        "(line 75,col 9)-(line 75,col 49)",
+        "(line 76,col 9)-(line 76,col 58)",
+        "(line 77,col 9)-(line 77,col 23)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.getXMLSignature(java.lang.Object, boolean, boolean, boolean, boolean)",
+      "begin_line": 85,
+      "end_line": 90,
+      "comment": "\n     * An XML signature is used to determine if we have the right result\n     * after a modification of XML by JXPath.  It is basically a piece\n     * of simplified XML.\n     ",
+      "child_ranges": []
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.assertXMLSignature(org.apache.commons.jxpath.JXPathContext, java.lang.String, java.lang.String, boolean, boolean, boolean, boolean)",
+      "begin_line": 92,
+      "end_line": 104,
+      "comment": "",
+      "child_ranges": [
+        "(line 101,col 9)-(line 101,col 57)",
+        "(line 102,col 9)-(line 102,col 75)",
+        "(line 103,col 9)-(line 103,col 65)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testDocumentOrder()",
+      "begin_line": 108,
+      "end_line": 126,
+      "comment": "",
+      "child_ranges": [
+        "(line 109,col 9)-(line 113,col 16)",
+        "(line 115,col 9)-(line 119,col 16)",
+        "(line 121,col 9)-(line 125,col 15)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testSetValue()",
+      "begin_line": 129,
+      "end_line": 157,
+      "comment": "",
+      "child_ranges": [
+        "(line 130,col 9)-(line 133,col 24)",
+        "(line 135,col 9)-(line 142,col 19)",
+        "(line 144,col 9)-(line 147,col 32)",
+        "(line 149,col 9)-(line 156,col 19)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testCreatePath()",
+      "begin_line": 162,
+      "end_line": 204,
+      "comment": "\n     * Test JXPathContext.createPath() with various arguments\n     ",
+      "child_ranges": [
+        "(line 164,col 9)-(line 168,col 38)",
+        "(line 171,col 9)-(line 175,col 59)",
+        "(line 178,col 9)-(line 182,col 47)",
+        "(line 184,col 9)-(line 188,col 44)",
+        "(line 190,col 10)-(line 194,col 47)",
+        "(line 196,col 10)-(line 196,col 55)",
+        "(line 199,col 10)-(line 203,col 53)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testCreatePathAndSetValue()",
+      "begin_line": 209,
+      "end_line": 257,
+      "comment": "\n     * Test JXPath.createPathAndSetValue() with various arguments\n     ",
+      "child_ranges": [
+        "(line 211,col 9)-(line 215,col 38)",
+        "(line 218,col 9)-(line 222,col 59)",
+        "(line 225,col 9)-(line 229,col 47)",
+        "(line 231,col 9)-(line 235,col 47)",
+        "(line 237,col 9)-(line 241,col 47)",
+        "(line 243,col 9)-(line 247,col 69)",
+        "(line 249,col 9)-(line 249,col 54)",
+        "(line 252,col 9)-(line 256,col 52)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testRemovePath()",
+      "begin_line": 262,
+      "end_line": 281,
+      "comment": "\n     * Test JXPathContext.removePath() with various arguments\n     ",
+      "child_ranges": [
+        "(line 264,col 9)-(line 264,col 74)",
+        "(line 265,col 9)-(line 268,col 70)",
+        "(line 270,col 9)-(line 270,col 67)",
+        "(line 271,col 9)-(line 274,col 77)",
+        "(line 276,col 9)-(line 276,col 65)",
+        "(line 277,col 9)-(line 280,col 75)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testID()",
+      "begin_line": 283,
+      "end_line": 302,
+      "comment": "",
+      "child_ranges": [
+        "(line 284,col 9)-(line 290,col 11)",
+        "(line 292,col 9)-(line 296,col 46)",
+        "(line 298,col 9)-(line 301,col 38)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.Anonymous-eb2a3429-6ca3-49bc-a45c-e1cd95175ef5.getPointerByID(org.apache.commons.jxpath.JXPathContext, java.lang.String)",
+      "begin_line": 285,
+      "end_line": 289,
+      "comment": "",
+      "child_ranges": [
+        "(line 286,col 17)-(line 286,col 72)",
+        "(line 287,col 17)-(line 287,col 44)",
+        "(line 288,col 17)-(line 288,col 55)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testAxisChild()",
+      "begin_line": 304,
+      "end_line": 383,
+      "comment": "",
+      "child_ranges": [
+        "(line 305,col 9)-(line 308,col 28)",
+        "(line 311,col 9)-(line 314,col 28)",
+        "(line 317,col 9)-(line 320,col 22)",
+        "(line 323,col 9)-(line 323,col 77)",
+        "(line 326,col 9)-(line 329,col 28)",
+        "(line 332,col 9)-(line 335,col 24)",
+        "(line 338,col 9)-(line 341,col 23)",
+        "(line 344,col 9)-(line 344,col 67)",
+        "(line 346,col 9)-(line 346,col 73)",
+        "(line 348,col 9)-(line 348,col 28)",
+        "(line 349,col 9)-(line 355,col 9)",
+        "(line 356,col 9)-(line 356,col 71)",
+        "(line 358,col 9)-(line 358,col 20)",
+        "(line 359,col 9)-(line 365,col 9)",
+        "(line 366,col 9)-(line 366,col 74)",
+        "(line 369,col 9)-(line 372,col 27)",
+        "(line 375,col 9)-(line 375,col 76)",
+        "(line 378,col 9)-(line 378,col 74)",
+        "(line 381,col 9)-(line 381,col 47)",
+        "(line 382,col 9)-(line 382,col 65)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testDefaultNamespaceIgnored()",
+      "begin_line": 385,
+      "end_line": 390,
+      "comment": "",
+      "child_ranges": [
+        "(line 386,col 9)-(line 386,col 49)",
+        "(line 387,col 9)-(line 388,col 59)",
+        "(line 389,col 9)-(line 389,col 47)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testAxisChildIndexPredicate()",
+      "begin_line": 392,
+      "end_line": 397,
+      "comment": "",
+      "child_ranges": [
+        "(line 393,col 9)-(line 396,col 31)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testAxisDescendant()",
+      "begin_line": 399,
+      "end_line": 419,
+      "comment": "",
+      "child_ranges": [
+        "(line 401,col 9)-(line 401,col 62)",
+        "(line 404,col 9)-(line 404,col 69)",
+        "(line 406,col 9)-(line 406,col 77)",
+        "(line 408,col 9)-(line 408,col 73)",
+        "(line 410,col 9)-(line 413,col 27)",
+        "(line 415,col 9)-(line 418,col 22)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testAxisParent()",
+      "begin_line": 428,
+      "end_line": 448,
+      "comment": "",
+      "child_ranges": [
+        "(line 430,col 9)-(line 433,col 49)",
+        "(line 436,col 9)-(line 441,col 54)",
+        "(line 444,col 9)-(line 447,col 21)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testAxisFollowingSibling()",
+      "begin_line": 450,
+      "end_line": 464,
+      "comment": "",
+      "child_ranges": [
+        "(line 452,col 9)-(line 456,col 31)",
+        "(line 459,col 9)-(line 463,col 59)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testAxisPrecedingSibling()",
+      "begin_line": 466,
+      "end_line": 472,
+      "comment": "",
+      "child_ranges": [
+        "(line 468,col 9)-(line 471,col 59)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testAxisAttribute()",
+      "begin_line": 474,
+      "end_line": 575,
+      "comment": "",
+      "child_ranges": [
+        "(line 476,col 9)-(line 476,col 64)",
+        "(line 479,col 9)-(line 482,col 42)",
+        "(line 485,col 9)-(line 488,col 32)",
+        "(line 491,col 9)-(line 494,col 19)",
+        "(line 497,col 9)-(line 500,col 23)",
+        "(line 503,col 9)-(line 506,col 24)",
+        "(line 509,col 9)-(line 512,col 30)",
+        "(line 515,col 9)-(line 518,col 19)",
+        "(line 521,col 9)-(line 524,col 16)",
+        "(line 527,col 9)-(line 530,col 24)",
+        "(line 533,col 9)-(line 536,col 24)",
+        "(line 539,col 9)-(line 542,col 25)",
+        "(line 545,col 9)-(line 548,col 37)",
+        "(line 551,col 9)-(line 554,col 25)",
+        "(line 557,col 9)-(line 557,col 66)",
+        "(line 560,col 9)-(line 560,col 75)",
+        "(line 563,col 9)-(line 563,col 80)",
+        "(line 566,col 9)-(line 569,col 31)",
+        "(line 571,col 9)-(line 574,col 22)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testAxisNamespace()",
+      "begin_line": 577,
+      "end_line": 602,
+      "comment": "",
+      "child_ranges": [
+        "(line 579,col 9)-(line 583,col 62)",
+        "(line 586,col 9)-(line 589,col 27)",
+        "(line 592,col 9)-(line 595,col 21)",
+        "(line 598,col 9)-(line 601,col 21)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testAxisAncestor()",
+      "begin_line": 604,
+      "end_line": 618,
+      "comment": "",
+      "child_ranges": [
+        "(line 606,col 9)-(line 610,col 21)",
+        "(line 613,col 9)-(line 617,col 21)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testAxisAncestorOrSelf()",
+      "begin_line": 620,
+      "end_line": 627,
+      "comment": "",
+      "child_ranges": [
+        "(line 622,col 9)-(line 626,col 21)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testAxisFollowing()",
+      "begin_line": 629,
+      "end_line": 640,
+      "comment": "",
+      "child_ranges": [
+        "(line 630,col 9)-(line 633,col 53)",
+        "(line 636,col 9)-(line 639,col 21)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testAxisSelf()",
+      "begin_line": 642,
+      "end_line": 651,
+      "comment": "",
+      "child_ranges": [
+        "(line 644,col 9)-(line 647,col 21)",
+        "(line 650,col 9)-(line 650,col 80)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testNodeTypeComment()",
+      "begin_line": 653,
+      "end_line": 659,
+      "comment": "",
+      "child_ranges": [
+        "(line 655,col 9)-(line 658,col 52)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testNodeTypeText()",
+      "begin_line": 661,
+      "end_line": 674,
+      "comment": "",
+      "child_ranges": [
+        "(line 663,col 9)-(line 666,col 37)",
+        "(line 669,col 9)-(line 672,col 47)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testNodeTypeProcessingInstruction()",
+      "begin_line": 676,
+      "end_line": 700,
+      "comment": "",
+      "child_ranges": [
+        "(line 678,col 9)-(line 681,col 35)",
+        "(line 684,col 9)-(line 687,col 28)",
+        "(line 690,col 9)-(line 693,col 73)",
+        "(line 696,col 9)-(line 699,col 24)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testLang()",
+      "begin_line": 702,
+      "end_line": 714,
+      "comment": "",
+      "child_ranges": [
+        "(line 704,col 9)-(line 704,col 68)",
+        "(line 707,col 9)-(line 707,col 74)",
+        "(line 710,col 9)-(line 713,col 21)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testDocument()",
+      "begin_line": 716,
+      "end_line": 728,
+      "comment": "",
+      "child_ranges": [
+        "(line 717,col 9)-(line 720,col 28)",
+        "(line 722,col 9)-(line 725,col 68)",
+        "(line 727,col 9)-(line 727,col 78)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testContainer()",
+      "begin_line": 730,
+      "end_line": 745,
+      "comment": "",
+      "child_ranges": [
+        "(line 731,col 9)-(line 731,col 79)",
+        "(line 733,col 9)-(line 733,col 72)",
+        "(line 735,col 9)-(line 738,col 69)",
+        "(line 741,col 9)-(line 744,col 28)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testElementInVariable()",
+      "begin_line": 747,
+      "end_line": 749,
+      "comment": "",
+      "child_ranges": [
+        "(line 748,col 9)-(line 748,col 62)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testTypeConversions()",
+      "begin_line": 751,
+      "end_line": 763,
+      "comment": "",
+      "child_ranges": [
+        "(line 753,col 9)-(line 756,col 28)",
+        "(line 759,col 9)-(line 762,col 26)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testBooleanFunction()",
+      "begin_line": 765,
+      "end_line": 780,
+      "comment": "",
+      "child_ranges": [
+        "(line 766,col 9)-(line 769,col 26)",
+        "(line 771,col 9)-(line 774,col 26)",
+        "(line 776,col 9)-(line 779,col 27)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testFunctionsLastAndPosition()",
+      "begin_line": 782,
+      "end_line": 787,
+      "comment": "",
+      "child_ranges": [
+        "(line 783,col 9)-(line 786,col 42)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.jxpath.ri.model.XMLModelTestCase.testNamespaceMapping()",
+      "begin_line": 789,
+      "end_line": 827,
+      "comment": "",
+      "child_ranges": [
+        "(line 790,col 9)-(line 790,col 53)",
+        "(line 791,col 9)-(line 791,col 56)",
+        "(line 793,col 9)-(line 795,col 50)",
+        "(line 797,col 9)-(line 799,col 49)",
+        "(line 802,col 9)-(line 804,col 31)",
+        "(line 807,col 9)-(line 810,col 55)",
+        "(line 813,col 9)-(line 814,col 72)",
+        "(line 815,col 9)-(line 818,col 55)",
+        "(line 821,col 9)-(line 822,col 70)",
+        "(line 823,col 9)-(line 826,col 55)"
+      ]
+    }
+  ]
+}

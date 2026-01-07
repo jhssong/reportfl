@@ -1,0 +1,44 @@
+{
+  "filepath": "/tmp/Math-17b/src/main/java/org/apache/commons/math3/optimization/linear/Relationship.java",
+  "nodes": [
+    {
+      "type": "field",
+      "varNames": [
+        "stringValue"
+      ],
+      "begin_line": 37,
+      "end_line": 37,
+      "comment": " Display string for the relationship. "
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.math3.optimization.linear.Relationship.Relationship(java.lang.String)",
+      "begin_line": 42,
+      "end_line": 44,
+      "comment": " Simple constructor.\n     * @param stringValue display string for the relationship\n     ",
+      "child_ranges": [
+        "(line 43,col 9)-(line 43,col 39)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math3.optimization.linear.Relationship.toString()",
+      "begin_line": 46,
+      "end_line": 49,
+      "comment": "",
+      "child_ranges": [
+        "(line 48,col 9)-(line 48,col 27)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math3.optimization.linear.Relationship.oppositeRelationship()",
+      "begin_line": 55,
+      "end_line": 64,
+      "comment": "\n     * Get the relationship obtained when multiplying all coefficients by -1.\n     * @return relationship obtained when multiplying all coefficients by -1\n     ",
+      "child_ranges": [
+        "(line 56,col 9)-(line 63,col 9)"
+      ]
+    }
+  ]
+}

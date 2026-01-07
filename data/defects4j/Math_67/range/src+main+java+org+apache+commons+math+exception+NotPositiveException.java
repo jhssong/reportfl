@@ -1,0 +1,36 @@
+{
+  "filepath": "/tmp/Math-67b/src/main/java/org/apache/commons/math/exception/NotPositiveException.java",
+  "nodes": [
+    {
+      "type": "class_interface",
+      "name": "NotPositiveException",
+      "is_interface": false,
+      "parent_types": [
+        "org.apache.commons.math.exception.NumberIsTooSmallException"
+      ],
+      "begin_line": 27,
+      "end_line": 46,
+      "comment": "\n * Exception to be thrown when the argument is negative.\n *\n * @since 2.2\n * @version $Revision$ $Date$\n "
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.math.exception.NotPositiveException.NotPositiveException(java.lang.Number)",
+      "begin_line": 33,
+      "end_line": 35,
+      "comment": "\n     * Construct the exception.\n     *\n     * @param value Argument.\n     ",
+      "child_ranges": [
+        "(line 34,col 9)-(line 34,col 30)"
+      ]
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.math.exception.NotPositiveException.NotPositiveException(org.apache.commons.math.util.Localizable, java.lang.Number)",
+      "begin_line": 42,
+      "end_line": 45,
+      "comment": "\n     * Construct the exception with a specific context.\n     *\n     * @param specific Specific context where the error occurred.\n     * @param value Argument.\n     ",
+      "child_ranges": [
+        "(line 44,col 9)-(line 44,col 40)"
+      ]
+    }
+  ]
+}

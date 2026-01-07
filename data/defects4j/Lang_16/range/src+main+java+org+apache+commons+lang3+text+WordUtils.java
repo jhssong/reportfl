@@ -1,0 +1,178 @@
+{
+  "filepath": "/tmp/Lang-16b/src/main/java/org/apache/commons/lang3/text/WordUtils.java",
+  "nodes": [
+    {
+      "type": "class_interface",
+      "name": "WordUtils",
+      "is_interface": false,
+      "parent_types": [],
+      "begin_line": 32,
+      "end_line": 497,
+      "comment": "\n * \u003cp\u003eOperations on Strings that contain words.\u003c/p\u003e\n * \n * \u003cp\u003eThis class tries to handle \u003ccode\u003enull\u003c/code\u003e input gracefully.\n * An exception will not be thrown for a \u003ccode\u003enull\u003c/code\u003e input.\n * Each method documents its behaviour in more detail.\u003c/p\u003e\n * \n * @since 2.0\n * @version $Id$\n "
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.lang3.text.WordUtils.WordUtils()",
+      "begin_line": 42,
+      "end_line": 44,
+      "comment": "\n     * \u003cp\u003e\u003ccode\u003eWordUtils\u003c/code\u003e instances should NOT be constructed in\n     * standard programming. Instead, the class should be used as\n     * \u003ccode\u003eWordUtils.wrap(\"foo bar\", 20);\u003c/code\u003e.\u003c/p\u003e\n     *\n     * \u003cp\u003eThis constructor is public to permit tools that require a JavaBean\n     * instance to operate.\u003c/p\u003e\n     ",
+      "child_ranges": [
+        "(line 43,col 7)-(line 43,col 14)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang3.text.WordUtils.wrap(java.lang.String, int)",
+      "begin_line": 66,
+      "end_line": 68,
+      "comment": "\n     * \u003cp\u003eWraps a single line of text, identifying words by \u003ccode\u003e\u0027 \u0027\u003c/code\u003e.\u003c/p\u003e\n     * \n     * \u003cp\u003eNew lines will be separated by the system property line separator.\n     * Very long words, such as URLs will \u003ci\u003enot\u003c/i\u003e be wrapped.\u003c/p\u003e\n     * \n     * \u003cp\u003eLeading spaces on a new line are stripped.\n     * Trailing spaces are not stripped.\u003c/p\u003e\n     *\n     * \u003cpre\u003e\n     * WordUtils.wrap(null, *) \u003d null\n     * WordUtils.wrap(\"\", *) \u003d \"\"\n     * \u003c/pre\u003e\n     *\n     * @param str  the String to be word wrapped, may be null\n     * @param wrapLength  the column to wrap the words at, less than 1 is treated as 1\n     * @return a line with newlines inserted, \u003ccode\u003enull\u003c/code\u003e if null input\n     ",
+      "child_ranges": [
+        "(line 67,col 9)-(line 67,col 50)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang3.text.WordUtils.wrap(java.lang.String, int, java.lang.String, boolean)",
+      "begin_line": 88,
+      "end_line": 141,
+      "comment": "\n     * \u003cp\u003eWraps a single line of text, identifying words by \u003ccode\u003e\u0027 \u0027\u003c/code\u003e.\u003c/p\u003e\n     * \n     * \u003cp\u003eLeading spaces on a new line are stripped.\n     * Trailing spaces are not stripped.\u003c/p\u003e\n     * \n     * \u003cpre\u003e\n     * WordUtils.wrap(null, *, *, *) \u003d null\n     * WordUtils.wrap(\"\", *, *, *) \u003d \"\"\n     * \u003c/pre\u003e\n     *\n     * @param str  the String to be word wrapped, may be null\n     * @param wrapLength  the column to wrap the words at, less than 1 is treated as 1\n     * @param newLineStr  the string to insert for a new line, \n     *  \u003ccode\u003enull\u003c/code\u003e uses the system property line separator\n     * @param wrapLongWords  true if long words (such as URLs) should be wrapped\n     * @return a line with newlines inserted, \u003ccode\u003enull\u003c/code\u003e if null input\n     ",
+      "child_ranges": [
+        "(line 89,col 9)-(line 91,col 9)",
+        "(line 92,col 9)-(line 94,col 9)",
+        "(line 95,col 9)-(line 97,col 9)",
+        "(line 98,col 9)-(line 98,col 43)",
+        "(line 99,col 9)-(line 99,col 23)",
+        "(line 100,col 9)-(line 100,col 76)",
+        "(line 102,col 9)-(line 135,col 9)",
+        "(line 138,col 9)-(line 138,col 50)",
+        "(line 140,col 9)-(line 140,col 38)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang3.text.WordUtils.capitalize(java.lang.String)",
+      "begin_line": 167,
+      "end_line": 169,
+      "comment": "\n     * \u003cp\u003eCapitalizes all the whitespace separated words in a String.\n     * Only the first letter of each word is changed. To convert the \n     * rest of each word to lowercase at the same time, \n     * use {@link #capitalizeFully(String)}.\u003c/p\u003e\n     *\n     * \u003cp\u003eWhitespace is defined by {@link Character#isWhitespace(char)}.\n     * A \u003ccode\u003enull\u003c/code\u003e input String returns \u003ccode\u003enull\u003c/code\u003e.\n     * Capitalization uses the Unicode title case, normally equivalent to\n     * upper case.\u003c/p\u003e\n     *\n     * \u003cpre\u003e\n     * WordUtils.capitalize(null)        \u003d null\n     * WordUtils.capitalize(\"\")          \u003d \"\"\n     * WordUtils.capitalize(\"i am FINE\") \u003d \"I Am FINE\"\n     * \u003c/pre\u003e\n     * \n     * @param str  the String to capitalize, may be null\n     * @return capitalized String, \u003ccode\u003enull\u003c/code\u003e if null String input\n     * @see #uncapitalize(String)\n     * @see #capitalizeFully(String)\n     ",
+      "child_ranges": [
+        "(line 168,col 9)-(line 168,col 37)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang3.text.WordUtils.capitalize(java.lang.String, char...)",
+      "begin_line": 200,
+      "end_line": 217,
+      "comment": "\n     * \u003cp\u003eCapitalizes all the delimiter separated words in a String.\n     * Only the first letter of each word is changed. To convert the \n     * rest of each word to lowercase at the same time, \n     * use {@link #capitalizeFully(String, char[])}.\u003c/p\u003e\n     *\n     * \u003cp\u003eThe delimiters represent a set of characters understood to separate words.\n     * The first string character and the first non-delimiter character after a\n     * delimiter will be capitalized. \u003c/p\u003e\n     *\n     * \u003cp\u003eA \u003ccode\u003enull\u003c/code\u003e input String returns \u003ccode\u003enull\u003c/code\u003e.\n     * Capitalization uses the Unicode title case, normally equivalent to\n     * upper case.\u003c/p\u003e\n     *\n     * \u003cpre\u003e\n     * WordUtils.capitalize(null, *)            \u003d null\n     * WordUtils.capitalize(\"\", *)              \u003d \"\"\n     * WordUtils.capitalize(*, new char[0])     \u003d *\n     * WordUtils.capitalize(\"i am fine\", null)  \u003d \"I Am Fine\"\n     * WordUtils.capitalize(\"i aM.fine\", {\u0027.\u0027}) \u003d \"I aM.Fine\"\n     * \u003c/pre\u003e\n     * \n     * @param str  the String to capitalize, may be null\n     * @param delimiters  set of characters to determine capitalization, null means whitespace\n     * @return capitalized String, \u003ccode\u003enull\u003c/code\u003e if null String input\n     * @see #uncapitalize(String)\n     * @see #capitalizeFully(String)\n     * @since 2.1\n     ",
+      "child_ranges": [
+        "(line 201,col 9)-(line 201,col 67)",
+        "(line 202,col 9)-(line 204,col 9)",
+        "(line 205,col 9)-(line 205,col 42)",
+        "(line 206,col 9)-(line 206,col 38)",
+        "(line 207,col 9)-(line 215,col 9)",
+        "(line 216,col 9)-(line 216,col 34)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang3.text.WordUtils.capitalizeFully(java.lang.String)",
+      "begin_line": 239,
+      "end_line": 241,
+      "comment": "\n     * \u003cp\u003eConverts all the whitespace separated words in a String into capitalized words, \n     * that is each word is made up of a titlecase character and then a series of \n     * lowercase characters.  \u003c/p\u003e\n     *\n     * \u003cp\u003eWhitespace is defined by {@link Character#isWhitespace(char)}.\n     * A \u003ccode\u003enull\u003c/code\u003e input String returns \u003ccode\u003enull\u003c/code\u003e.\n     * Capitalization uses the Unicode title case, normally equivalent to\n     * upper case.\u003c/p\u003e\n     *\n     * \u003cpre\u003e\n     * WordUtils.capitalizeFully(null)        \u003d null\n     * WordUtils.capitalizeFully(\"\")          \u003d \"\"\n     * WordUtils.capitalizeFully(\"i am FINE\") \u003d \"I Am Fine\"\n     * \u003c/pre\u003e\n     * \n     * @param str  the String to capitalize, may be null\n     * @return capitalized String, \u003ccode\u003enull\u003c/code\u003e if null String input\n     ",
+      "child_ranges": [
+        "(line 240,col 9)-(line 240,col 42)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang3.text.WordUtils.capitalizeFully(java.lang.String, char...)",
+      "begin_line": 269,
+      "end_line": 276,
+      "comment": "\n     * \u003cp\u003eConverts all the delimiter separated words in a String into capitalized words, \n     * that is each word is made up of a titlecase character and then a series of \n     * lowercase characters. \u003c/p\u003e\n     *\n     * \u003cp\u003eThe delimiters represent a set of characters understood to separate words.\n     * The first string character and the first non-delimiter character after a\n     * delimiter will be capitalized. \u003c/p\u003e\n     *\n     * \u003cp\u003eA \u003ccode\u003enull\u003c/code\u003e input String returns \u003ccode\u003enull\u003c/code\u003e.\n     * Capitalization uses the Unicode title case, normally equivalent to\n     * upper case.\u003c/p\u003e\n     *\n     * \u003cpre\u003e\n     * WordUtils.capitalizeFully(null, *)            \u003d null\n     * WordUtils.capitalizeFully(\"\", *)              \u003d \"\"\n     * WordUtils.capitalizeFully(*, null)            \u003d *\n     * WordUtils.capitalizeFully(*, new char[0])     \u003d *\n     * WordUtils.capitalizeFully(\"i aM.fine\", {\u0027.\u0027}) \u003d \"I am.Fine\"\n     * \u003c/pre\u003e\n     * \n     * @param str  the String to capitalize, may be null\n     * @param delimiters  set of characters to determine capitalization, null means whitespace\n     * @return capitalized String, \u003ccode\u003enull\u003c/code\u003e if null String input\n     * @since 2.1\n     ",
+      "child_ranges": [
+        "(line 270,col 9)-(line 270,col 69)",
+        "(line 271,col 9)-(line 273,col 9)",
+        "(line 274,col 9)-(line 274,col 32)",
+        "(line 275,col 9)-(line 275,col 43)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang3.text.WordUtils.uncapitalize(java.lang.String)",
+      "begin_line": 296,
+      "end_line": 298,
+      "comment": "\n     * \u003cp\u003eUncapitalizes all the whitespace separated words in a String.\n     * Only the first letter of each word is changed.\u003c/p\u003e\n     *\n     * \u003cp\u003eWhitespace is defined by {@link Character#isWhitespace(char)}.\n     * A \u003ccode\u003enull\u003c/code\u003e input String returns \u003ccode\u003enull\u003c/code\u003e.\u003c/p\u003e\n     *\n     * \u003cpre\u003e\n     * WordUtils.uncapitalize(null)        \u003d null\n     * WordUtils.uncapitalize(\"\")          \u003d \"\"\n     * WordUtils.uncapitalize(\"I Am FINE\") \u003d \"i am fINE\"\n     * \u003c/pre\u003e\n     * \n     * @param str  the String to uncapitalize, may be null\n     * @return uncapitalized String, \u003ccode\u003enull\u003c/code\u003e if null String input\n     * @see #capitalize(String)\n     ",
+      "child_ranges": [
+        "(line 297,col 9)-(line 297,col 39)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang3.text.WordUtils.uncapitalize(java.lang.String, char...)",
+      "begin_line": 325,
+      "end_line": 342,
+      "comment": "\n     * \u003cp\u003eUncapitalizes all the whitespace separated words in a String.\n     * Only the first letter of each word is changed.\u003c/p\u003e\n     *\n     * \u003cp\u003eThe delimiters represent a set of characters understood to separate words.\n     * The first string character and the first non-delimiter character after a\n     * delimiter will be uncapitalized. \u003c/p\u003e\n     *\n     * \u003cp\u003eWhitespace is defined by {@link Character#isWhitespace(char)}.\n     * A \u003ccode\u003enull\u003c/code\u003e input String returns \u003ccode\u003enull\u003c/code\u003e.\u003c/p\u003e\n     *\n     * \u003cpre\u003e\n     * WordUtils.uncapitalize(null, *)            \u003d null\n     * WordUtils.uncapitalize(\"\", *)              \u003d \"\"\n     * WordUtils.uncapitalize(*, null)            \u003d *\n     * WordUtils.uncapitalize(*, new char[0])     \u003d *\n     * WordUtils.uncapitalize(\"I AM.FINE\", {\u0027.\u0027}) \u003d \"i AM.fINE\"\n     * \u003c/pre\u003e\n     * \n     * @param str  the String to uncapitalize, may be null\n     * @param delimiters  set of characters to determine uncapitalization, null means whitespace\n     * @return uncapitalized String, \u003ccode\u003enull\u003c/code\u003e if null String input\n     * @see #capitalize(String)\n     * @since 2.1\n     ",
+      "child_ranges": [
+        "(line 326,col 9)-(line 326,col 69)",
+        "(line 327,col 9)-(line 329,col 9)",
+        "(line 330,col 9)-(line 330,col 42)",
+        "(line 331,col 9)-(line 331,col 40)",
+        "(line 332,col 9)-(line 340,col 9)",
+        "(line 341,col 9)-(line 341,col 34)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang3.text.WordUtils.swapCase(java.lang.String)",
+      "begin_line": 367,
+      "end_line": 395,
+      "comment": "\n     * \u003cp\u003eSwaps the case of a String using a word based algorithm.\u003c/p\u003e\n     * \n     * \u003cul\u003e\n     *  \u003cli\u003eUpper case character converts to Lower case\u003c/li\u003e\n     *  \u003cli\u003eTitle case character converts to Lower case\u003c/li\u003e\n     *  \u003cli\u003eLower case character after Whitespace or at start converts to Title case\u003c/li\u003e\n     *  \u003cli\u003eOther Lower case character converts to Upper case\u003c/li\u003e\n     * \u003c/ul\u003e\n     * \n     * \u003cp\u003eWhitespace is defined by {@link Character#isWhitespace(char)}.\n     * A \u003ccode\u003enull\u003c/code\u003e input String returns \u003ccode\u003enull\u003c/code\u003e.\u003c/p\u003e\n     * \n     * \u003cpre\u003e\n     * StringUtils.swapCase(null)                 \u003d null\n     * StringUtils.swapCase(\"\")                   \u003d \"\"\n     * StringUtils.swapCase(\"The dog has a BONE\") \u003d \"tHE DOG HAS A bone\"\n     * \u003c/pre\u003e\n     * \n     * @param str  the String to swap case, may be null\n     * @return the changed String, \u003ccode\u003enull\u003c/code\u003e if null String input\n     ",
+      "child_ranges": [
+        "(line 368,col 9)-(line 370,col 9)",
+        "(line 371,col 9)-(line 371,col 42)",
+        "(line 373,col 9)-(line 373,col 34)",
+        "(line 375,col 9)-(line 393,col 9)",
+        "(line 394,col 9)-(line 394,col 34)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang3.text.WordUtils.initials(java.lang.String)",
+      "begin_line": 420,
+      "end_line": 422,
+      "comment": "\n     * \u003cp\u003eExtracts the initial letters from each word in the String.\u003c/p\u003e\n     * \n     * \u003cp\u003eThe first letter of the string and all first letters after\n     * whitespace are returned as a new string.\n     * Their case is not changed.\u003c/p\u003e\n     *\n     * \u003cp\u003eWhitespace is defined by {@link Character#isWhitespace(char)}.\n     * A \u003ccode\u003enull\u003c/code\u003e input String returns \u003ccode\u003enull\u003c/code\u003e.\u003c/p\u003e\n     *\n     * \u003cpre\u003e\n     * WordUtils.initials(null)             \u003d null\n     * WordUtils.initials(\"\")               \u003d \"\"\n     * WordUtils.initials(\"Ben John Lee\")   \u003d \"BJL\"\n     * WordUtils.initials(\"Ben J.Lee\")      \u003d \"BJ\"\n     * \u003c/pre\u003e\n     *\n     * @param str  the String to get initials from, may be null\n     * @return String of initial letters, \u003ccode\u003enull\u003c/code\u003e if null String input\n     * @see #initials(String,char[])\n     * @since 2.2\n     ",
+      "child_ranges": [
+        "(line 421,col 9)-(line 421,col 35)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang3.text.WordUtils.initials(java.lang.String, char...)",
+      "begin_line": 451,
+      "end_line": 475,
+      "comment": "\n     * \u003cp\u003eExtracts the initial letters from each word in the String.\u003c/p\u003e\n     * \n     * \u003cp\u003eThe first letter of the string and all first letters after the\n     * defined delimiters are returned as a new string.\n     * Their case is not changed.\u003c/p\u003e\n     *\n     * \u003cp\u003eIf the delimiters array is null, then Whitespace is used.\n     * Whitespace is defined by {@link Character#isWhitespace(char)}.\n     * A \u003ccode\u003enull\u003c/code\u003e input String returns \u003ccode\u003enull\u003c/code\u003e.\n     * An empty delimiter array returns an empty String.\u003c/p\u003e\n     *\n     * \u003cpre\u003e\n     * WordUtils.initials(null, *)                \u003d null\n     * WordUtils.initials(\"\", *)                  \u003d \"\"\n     * WordUtils.initials(\"Ben John Lee\", null)   \u003d \"BJL\"\n     * WordUtils.initials(\"Ben J.Lee\", null)      \u003d \"BJ\"\n     * WordUtils.initials(\"Ben J.Lee\", [\u0027 \u0027,\u0027.\u0027]) \u003d \"BJL\"\n     * WordUtils.initials(*, new char[0])         \u003d \"\"\n     * \u003c/pre\u003e\n     * \n     * @param str  the String to get initials from, may be null\n     * @param delimiters  set of characters to determine words, null means whitespace\n     * @return String of initial letters, \u003ccode\u003enull\u003c/code\u003e if null String input\n     * @see #initials(String)\n     * @since 2.2\n     ",
+      "child_ranges": [
+        "(line 452,col 9)-(line 454,col 9)",
+        "(line 455,col 9)-(line 457,col 9)",
+        "(line 458,col 9)-(line 458,col 34)",
+        "(line 459,col 9)-(line 459,col 46)",
+        "(line 460,col 9)-(line 460,col 22)",
+        "(line 461,col 9)-(line 461,col 34)",
+        "(line 462,col 9)-(line 473,col 9)",
+        "(line 474,col 9)-(line 474,col 41)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.lang3.text.WordUtils.isDelimiter(char, char[])",
+      "begin_line": 485,
+      "end_line": 495,
+      "comment": "\n     * Is the character a delimiter.\n     *\n     * @param ch  the character to check\n     * @param delimiters  the delimiters\n     * @return true if it is a delimiter\n     ",
+      "child_ranges": [
+        "(line 486,col 9)-(line 488,col 9)",
+        "(line 489,col 9)-(line 493,col 9)",
+        "(line 494,col 9)-(line 494,col 21)"
+      ]
+    }
+  ]
+}

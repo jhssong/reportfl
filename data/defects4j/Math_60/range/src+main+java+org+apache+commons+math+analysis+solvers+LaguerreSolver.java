@@ -1,0 +1,192 @@
+{
+  "filepath": "/tmp/Math-60b/src/main/java/org/apache/commons/math/analysis/solvers/LaguerreSolver.java",
+  "nodes": [
+    {
+      "type": "class_interface",
+      "name": "LaguerreSolver",
+      "is_interface": false,
+      "parent_types": [
+        "org.apache.commons.math.analysis.solvers.AbstractPolynomialSolver"
+      ],
+      "begin_line": 41,
+      "end_line": 350,
+      "comment": "\n * Implements the \u003ca href\u003d\"http://mathworld.wolfram.com/LaguerresMethod.html\"\u003e\n * Laguerre\u0027s Method\u003c/a\u003e for root finding of real coefficient polynomials.\n * For reference, see\n * \u003cquote\u003e\n *  \u003cb\u003eA First Course in Numerical Analysis\u003c/b\u003e\n *  ISBN 048641454X, chapter 8.\n * \u003c/quote\u003e\n * Laguerre\u0027s method is global in the sense that it can start with any initial\n * approximation and be able to solve all roots from that point.\n * The algorithm requires a bracketing condition.\n *\n * @version $Revision$ $Date$\n * @since 1.2\n "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "DEFAULT_ABSOLUTE_ACCURACY"
+      ],
+      "begin_line": 43,
+      "end_line": 43,
+      "comment": " Default absolute accuracy. "
+    },
+    {
+      "type": "field",
+      "varNames": [
+        "complexSolver"
+      ],
+      "begin_line": 45,
+      "end_line": 45,
+      "comment": " Complex solver. "
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.math.analysis.solvers.LaguerreSolver.LaguerreSolver()",
+      "begin_line": 50,
+      "end_line": 52,
+      "comment": "\n     * Construct a solver with default accuracies.\n     ",
+      "child_ranges": [
+        "(line 51,col 9)-(line 51,col 40)"
+      ]
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.math.analysis.solvers.LaguerreSolver.LaguerreSolver(double)",
+      "begin_line": 58,
+      "end_line": 60,
+      "comment": "\n     * Construct a solver.\n     *\n     * @param absoluteAccuracy Absolute accuracy.\n     ",
+      "child_ranges": [
+        "(line 59,col 9)-(line 59,col 32)"
+      ]
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.math.analysis.solvers.LaguerreSolver.LaguerreSolver(double, double)",
+      "begin_line": 67,
+      "end_line": 70,
+      "comment": "\n     * Construct a solver.\n     *\n     * @param relativeAccuracy Relative accuracy.\n     * @param absoluteAccuracy Absolute accuracy.\n     ",
+      "child_ranges": [
+        "(line 69,col 9)-(line 69,col 50)"
+      ]
+    },
+    {
+      "type": "constructor",
+      "signature": "org.apache.commons.math.analysis.solvers.LaguerreSolver.LaguerreSolver(double, double, double)",
+      "begin_line": 78,
+      "end_line": 82,
+      "comment": "\n     * Construct a solver.\n     *\n     * @param relativeAccuracy Relative accuracy.\n     * @param absoluteAccuracy Absolute accuracy.\n     * @param functionValueAccuracy Function value accuracy.\n     ",
+      "child_ranges": [
+        "(line 81,col 9)-(line 81,col 73)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.solvers.LaguerreSolver.doSolve()",
+      "begin_line": 87,
+      "end_line": 125,
+      "comment": "\n     * {@inheritDoc}\n     ",
+      "child_ranges": [
+        "(line 89,col 9)-(line 89,col 30)",
+        "(line 90,col 9)-(line 90,col 30)",
+        "(line 91,col 9)-(line 91,col 41)",
+        "(line 92,col 9)-(line 92,col 72)",
+        "(line 94,col 9)-(line 94,col 42)",
+        "(line 97,col 9)-(line 97,col 57)",
+        "(line 98,col 9)-(line 100,col 9)",
+        "(line 103,col 9)-(line 103,col 49)",
+        "(line 104,col 9)-(line 106,col 9)",
+        "(line 109,col 9)-(line 111,col 9)",
+        "(line 114,col 9)-(line 114,col 49)",
+        "(line 115,col 9)-(line 117,col 9)",
+        "(line 120,col 9)-(line 122,col 9)",
+        "(line 124,col 9)-(line 124,col 62)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.solvers.LaguerreSolver.laguerre(double, double, double, double)",
+      "begin_line": 145,
+      "end_line": 169,
+      "comment": "\n     * Find a real root in the given interval.\n     *\n     * Despite the bracketing condition, the root returned by\n     * {@link LaguerreSolver.ComplexSolver#solve(Complex[],Complex)} may\n     * not be a real zero inside {@code [min, max]}.\n     * For example, \u003ccode\u003ep(x) \u003d x\u003csup\u003e3\u003c/sup\u003e + 1,\u003c/code\u003e\n     * with {@code min \u003d -2}, {@code max \u003d 2}, {@code initial \u003d 0}.\n     * When it occurs, this code calls\n     * {@link LaguerreSolver.ComplexSolver#solveAll(Complex[],Complex)}\n     * in order to obtain all roots and picks up one real root.\n     *\n     * @param lo Lower bound of the search interval.\n     * @param hi Higher bound of the search interval.\n     * @param fLo Function value at the lower bound of the search interval.\n     * @param fHi Function value at the higher bound of the search interval.\n     * @return the point at which the function value is zero.\n     ",
+      "child_ranges": [
+        "(line 147,col 9)-(line 147,col 35)",
+        "(line 148,col 9)-(line 148,col 50)",
+        "(line 149,col 9)-(line 149,col 55)",
+        "(line 150,col 9)-(line 152,col 9)",
+        "(line 153,col 9)-(line 153,col 58)",
+        "(line 154,col 9)-(line 154,col 52)",
+        "(line 155,col 9)-(line 168,col 9)"
+      ]
+    },
+    {
+      "type": "class_interface",
+      "name": "ComplexSolver",
+      "is_interface": false,
+      "parent_types": [],
+      "begin_line": 174,
+      "end_line": 349,
+      "comment": "\n     * Class for searching all (complex) roots.\n     "
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.solvers.LaguerreSolver.ComplexSolver.isRoot(double, double, org.apache.commons.math.complex.Complex)",
+      "begin_line": 184,
+      "end_line": 189,
+      "comment": "\n         * Check whether the given complex root is actually a real zero\n         * in the given interval, within the solver tolerance level.\n         *\n         * @param min Lower bound for the interval.\n         * @param max Upper bound for the interval.\n         * @param z Complex root.\n         * @return {@code true} if z is a real zero.\n         ",
+      "child_ranges": [
+        "(line 185,col 13)-(line 185,col 100)",
+        "(line 186,col 13)-(line 188,col 56)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.solvers.LaguerreSolver.ComplexSolver.solveAll(double[], double)",
+      "begin_line": 204,
+      "end_line": 214,
+      "comment": "\n         * Find all complex roots for the polynomial with the given\n         * coefficients, starting from the given initial value.\n         *\n         * @param coefficients Polynomial coefficients.\n         * @param initial Start value.\n         * @return the point at which the function value is zero.\n         * @throws org.apache.commons.math.exception.TooManyEvaluationsException\n         * if the maximum number of evaluations is exceeded.\n         * @throws NullArgumentException if the {@code coefficients} is\n         * {@code null}.\n         * @throws NoDataException if the {@code coefficients} array is empty.\n         ",
+      "child_ranges": [
+        "(line 205,col 13)-(line 207,col 13)",
+        "(line 208,col 13)-(line 208,col 59)",
+        "(line 209,col 13)-(line 209,col 48)",
+        "(line 210,col 13)-(line 212,col 13)",
+        "(line 213,col 13)-(line 213,col 34)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.solvers.LaguerreSolver.ComplexSolver.solveAll(org.apache.commons.math.complex.Complex[], org.apache.commons.math.complex.Complex)",
+      "begin_line": 229,
+      "end_line": 260,
+      "comment": "\n         * Find all complex roots for the polynomial with the given\n         * coefficients, starting from the given initial value.\n         *\n         * @param coefficients Polynomial coefficients.\n         * @param initial Start value.\n         * @return the point at which the function value is zero.\n         * @throws org.apache.commons.math.exception.TooManyEvaluationsException\n         * if the maximum number of evaluations is exceeded.\n         * @throws NullArgumentException if the {@code coefficients} is\n         * {@code null}.\n         * @throws NoDataException if the {@code coefficients} array is empty.\n         ",
+      "child_ranges": [
+        "(line 230,col 13)-(line 232,col 13)",
+        "(line 233,col 13)-(line 233,col 44)",
+        "(line 234,col 13)-(line 236,col 13)",
+        "(line 238,col 13)-(line 238,col 45)",
+        "(line 239,col 13)-(line 241,col 13)",
+        "(line 244,col 13)-(line 244,col 44)",
+        "(line 245,col 13)-(line 257,col 13)",
+        "(line 259,col 13)-(line 259,col 24)"
+      ]
+    },
+    {
+      "type": "method",
+      "signature": "org.apache.commons.math.analysis.solvers.LaguerreSolver.ComplexSolver.solve(org.apache.commons.math.complex.Complex[], org.apache.commons.math.complex.Complex)",
+      "begin_line": 275,
+      "end_line": 348,
+      "comment": "\n         * Find a complex root for the polynomial with the given coefficients,\n         * starting from the given initial value.\n         *\n         * @param coefficients Polynomial coefficients.\n         * @param initial Start value.\n         * @return the point at which the function value is zero.\n         * @throws org.apache.commons.math.exception.TooManyEvaluationsException\n         * if the maximum number of evaluations is exceeded.\n         * @throws NullArgumentException if the {@code coefficients} is\n         * {@code null}.\n         * @throws NoDataException if the {@code coefficients} array is empty.\n         ",
+      "child_ranges": [
+        "(line 276,col 13)-(line 278,col 13)",
+        "(line 280,col 13)-(line 280,col 44)",
+        "(line 281,col 13)-(line 283,col 13)",
+        "(line 285,col 13)-(line 285,col 66)",
+        "(line 286,col 13)-(line 286,col 66)",
+        "(line 287,col 13)-(line 287,col 76)",
+        "(line 289,col 13)-(line 289,col 49)",
+        "(line 290,col 13)-(line 290,col 49)",
+        "(line 292,col 13)-(line 292,col 30)",
+        "(line 293,col 13)-(line 293,col 30)",
+        "(line 294,col 13)-(line 294,col 31)",
+        "(line 295,col 13)-(line 295,col 29)",
+        "(line 296,col 13)-(line 296,col 30)",
+        "(line 297,col 13)-(line 297,col 29)",
+        "(line 298,col 13)-(line 298,col 33)",
+        "(line 299,col 13)-(line 299,col 39)",
+        "(line 300,col 13)-(line 300,col 32)",
+        "(line 301,col 13)-(line 302,col 65)",
+        "(line 303,col 13)-(line 347,col 13)"
+      ]
+    }
+  ]
+}
