@@ -7,6 +7,7 @@ import signal
 import argparse
 import datetime
 import numpy as np
+import time
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -245,6 +246,7 @@ if __name__ == "__main__":
         "Lang": 0,
         "Math": 0,
     }
+    retrieval_times = {}
 
     for bug_name in sorted(os.listdir(BUG_INFO_DIR)):
         project_name, bug_number = bug_name.split("_")
@@ -278,7 +280,11 @@ if __name__ == "__main__":
         else:
             print(f"No current report to save")
 
+        start_time = time.time()
         relevant_reports = rre.get_related_recent_bug_reports()
+        elapsed_time = time.time() - start_time
+
+        retrieval_times[bug_name] = elapsed_time
         if relevant_reports:
             if os.path.exists(relevant_save_file) and args.overwrite is False:
                 print("Relevant reports already exists")
@@ -291,3 +297,13 @@ if __name__ == "__main__":
             print(f"No relevant reports to save")
 
     print(report_count)
+
+    time_save_path = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        f"relevant_report_retrieval_times_timewindow_{args.timewindow}.json",
+    )
+
+    with open(time_save_path, "w") as f:
+        json.dump(retrieval_times, f, indent=4)
+
+    print(f"Saved retrieval times to {time_save_path}")
