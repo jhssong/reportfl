@@ -134,7 +134,6 @@ class IRFL:
         sorted_methods = sorted(irfl_scores.items(), key=lambda x: x[1], reverse=True)
         ranked_methods = [m for m, _ in sorted_methods]
 
-        # TODO allow_multi_predictions 했을 경우 어디까지 정답으로 인정할지 고민 해봐야 함.
         final_response = ranked_methods[0]
         grade_result = self.grade(final_response)
         return grade_result, final_response
