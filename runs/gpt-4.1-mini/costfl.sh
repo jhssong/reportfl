@@ -1,5 +1,5 @@
 LABEL="costfl"
-REPETITION=1
+REPETITION=5
 MODEL="gpt-4.1-mini-2025-04-14"
 PROMPT_FILE="prompts/reportfl.txt"
 USE_PURE_AUTOFL=true
