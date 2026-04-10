@@ -1,0 +1,13 @@
+LABEL="reportfl_unanonymized"
+REPETITION=5
+MODEL="gpt-3.5-turbo-0125"
+PROMPT_FILE="prompts/reportfl.txt"
+USE_PURE_AUTOFL=true
+USE_CURRENT_BUG_REPORT=true
+USE_RECENT_BUG_REPORT=true
+TIMEWINDOW=60
+TWO_PHASE=true
+
+
+bash unanonymized-runner.sh ${LABEL} ${REPETITION} ${MODEL} ${PROMPT_FILE} ${USE_PURE_AUTOFL} ${USE_CURRENT_BUG_REPORT} ${USE_RECENT_BUG_REPORT} ${TIMEWINDOW} ${TWO_PHASE}
+bash runner-combined_results.sh ${LABEL} ${REPETITION} ${MODEL} ${USE_PURE_AUTOFL}
