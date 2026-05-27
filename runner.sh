@@ -36,7 +36,10 @@ no_current_bug_report=('Cli_3' 'Cli_4' 'Cli_11' 'Cli_12' 'Cli_22' 'Cli_37' 'Cli_
 
 for rep in $(seq 1 "$REPETITION"); do
     save_dir="results/${LABEL}/R_${rep}/${MODEL}"
+    time_dir="results/${LABEL}/R_${rep}/${MODEL}/runtime"
     mkdir -p "${save_dir}"
+    mkdir -p "${time_dir}"
+
     for bugname in $(ls -d ${DATA_DIR}/*/ | xargs -n1 basename); do
         if printf '%s\n' "${no_current_bug_report[@]}" | grep -qx "$bugname"; then
             echo "Skip (no current bug report): $bugname"
@@ -44,6 +47,7 @@ for rep in $(seq 1 "$REPETITION"); do
         fi
 
         save_file="${save_dir}/XFL-${bugname}.json"
+        time_file="${time_dir}/time-${bugname}.json"
         
         if [ -f ${save_file} ]; then
             echo "${save_file} exists"
@@ -51,9 +55,15 @@ for rep in $(seq 1 "$REPETITION"); do
         fi
         if [ -f "${DATA_DIR}/${bugname}/snippet.json" ]; then
             cmd="${cmd} -b ${bugname} -o ${save_file} --test_offset $((rep - 1))"
-            log="${LABEL}_${rep}: ${bugname} - ${save_file}"
-            echo ${log}
+            echo "${LABEL}_${rep}: ${bugname} - ${save_file}"
+            
+            start_time=$(date +%s.%N)
             timeout 10m ${cmd}
+            exit_code=$?
+            end_time=$(date +%s.%N)
+            
+            runtime=$(python3 -c "print(round($end_time - $start_time, 4))")
+            echo "{\"bugname\": \"$bugname\", \"repetition\": $rep, \"runtime_sec\": $runtime, \"exit_code\": $exit_code}" > "${time_file}"
         fi
     done
 done
