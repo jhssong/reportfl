@@ -1,6 +1,6 @@
 LABEL="reportfl_unanonymized"
 REPETITION=5
-MODEL="gpt-3.5-turbo-0125"
+MODEL="gpt-4.1-mini-2025-04-14"
 PROMPT_FILE="prompts/reportfl.txt"
 USE_PURE_AUTOFL=true
 USE_CURRENT_BUG_REPORT=true

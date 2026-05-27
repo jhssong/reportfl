@@ -1,12 +1,13 @@
 import os
 import json
 
-REPETITION = 5
+GPT_VERSION = "gpt-4.1-mini-2025-04-14"
+REPETITION = 1
 REPORTFL_RESULT = (
-    f"combined_fl_results/reportfl/gpt-3.5-turbo-0125_R{REPETITION}_full_light.json"
+    f"combined_fl_results/reportfl/{GPT_VERSION}_R{REPETITION}_full_light.json"
 )
-UNANONYMIZED_RESULT = f"combined_fl_results/reportfl_unanonymized/gpt-3.5-turbo-0125_R{REPETITION}_full_light.json"
-COMBINED_RESULT = f"combined_fl_results/reportfl_unanonymized_combined/gpt-3.5-turbo-0125_R{REPETITION}_full_light.json"
+UNANONYMIZED_RESULT = f"combined_fl_results/reportfl_unanonymized/{GPT_VERSION}_R{REPETITION}_full_light.json"
+COMBINED_RESULT = f"combined_fl_results/reportfl_unanonymized_combined/{GPT_VERSION}_R{REPETITION}_full_light.json"
 
 
 def calculate_acc(buggy_method_ranks, key="autofl_rank", n=1):
@@ -55,15 +56,17 @@ bug_list = [
     "Math_9",
 ]
 
+# for b in bug_list:
+#     reportfl_buggy_method_ranks[b] = unanonymized_buggy_method_ranks[b]
+
+data = {}
 for b in bug_list:
-    reportfl_buggy_method_ranks[b] = unanonymized_buggy_method_ranks[b]
+    data[b] = reportfl_buggy_method_ranks[b]
 
 summary = {}
 
 for n in range(1, 11):
-    summary[f"acc@{n}"] = calculate_acc(
-        reportfl_buggy_method_ranks, key="autofl_rank", n=n
-    )
+    summary[f"acc@{n}"] = calculate_acc(data, key="autofl_rank", n=n)
 
 data = {
     "summary": summary,
