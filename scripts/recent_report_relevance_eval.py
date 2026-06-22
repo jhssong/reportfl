@@ -7,6 +7,7 @@ From the reportfl directory:
   python scripts/recent_report_relevance_eval.py --bugid Cli_1 --timewindow 60
   python scripts/recent_report_relevance_eval.py --bugid Lang_16 --llm-session
 """
+
 from __future__ import annotations
 
 import argparse
@@ -255,7 +256,9 @@ def run(
 
 def main() -> None:
     os.chdir(REPORTFL_ROOT)
-    p = argparse.ArgumentParser(description="LLM relevance eval for recent SBERT reports")
+    p = argparse.ArgumentParser(
+        description="LLM relevance eval for recent SBERT reports"
+    )
     p.add_argument("--bugid", required=True, help="e.g. Lang_16")
     p.add_argument("--topn", type=int, default=3)
     p.add_argument(
@@ -265,11 +268,19 @@ def main() -> None:
         metavar="DAYS",
         help="Which data/defects4j/<bugid>/relevant_reports_timewindow_{DAYS}.json to load (default: 30)",
     )
-    p.add_argument("--model", default="gpt-5.4", help="OpenAI chat model id")
+    p.add_argument("--model", default="gpt-5.4-mini", help="OpenAI chat model id")
     p.add_argument("--temperature", type=float, default=0.2)
     p.add_argument("--prompt-id", default=DEFAULT_PROMPT_ID)
-    p.add_argument("-o", "--output", help="Output JSON (default: results/relevance_eval/{bugid}_relevance.json)")
-    p.add_argument("--skip-summary", action="store_true", help="Only run relevance (no summary_of_bug LLM call)")
+    p.add_argument(
+        "-o",
+        "--output",
+        help="Output JSON (default: results/relevance_eval/{bugid}_relevance.json)",
+    )
+    p.add_argument(
+        "--skip-summary",
+        action="store_true",
+        help="Only run relevance (no summary_of_bug LLM call)",
+    )
     p.add_argument("--debug", action="store_true")
     p.add_argument("--seed", type=int, default=None)
     p.add_argument("--export-relevance-request", metavar="PATH")
@@ -321,6 +332,7 @@ def main() -> None:
     print(f"\nWrote: {out_path}", file=sys.stderr)
     if llm_session:
         print(f"LLM session: {llm_session}", file=sys.stderr)
+
 
 if __name__ == "__main__":
     main()

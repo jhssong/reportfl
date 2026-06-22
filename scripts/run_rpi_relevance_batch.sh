@@ -16,43 +16,51 @@ cd "${REPORTFL_ROOT}" || exit 1
 DATA_DEFECTS="${REPORTFL_ROOT}/data/defects4j"
 
 # Keys from rpi_data in notebooks/rpi.ipynb (lines ~17–48)
-BUGS=(
-  Cli_1
-  Cli_28
-  Cli_30 #
-  Codec_10
-  Compress_11
-  Compress_15
-  Compress_2
-  Compress_30
-  Compress_4
-  Compress_46
-  Compress_8
-  JxPath_5
-  Lang_11
-  Lang_16
-  Lang_24
-  Lang_34
-  Lang_37
-  Lang_42
-  Lang_49
-  Lang_58
-  Lang_8 #
-  Math_11
-  Math_16
-  Math_20
-  Math_43 # 
-  Math_58
-  Math_76
-  Math_83
-  Math_84
-  Math_86
-)
+# BUGS=(
+#   Cli_1
+#   Cli_28
+#   Cli_30 #
+#   Codec_10
+#   Compress_11
+#   Compress_15
+#   Compress_2
+#   Compress_30
+#   Compress_4
+#   Compress_46
+#   Compress_8
+#   JxPath_5
+#   Lang_11
+#   Lang_16
+#   Lang_24
+#   Lang_34
+#   Lang_37
+#   Lang_42
+#   Lang_49
+#   Lang_58
+#   Lang_8 #
+#   Math_11
+#   Math_16
+#   Math_20
+#   Math_43 # 
+#   Math_58
+#   Math_76
+#   Math_83
+#   Math_84
+#   Math_86
+# )
 
-BUGS=(
-  Cli_30
-  Lang_8
-  Math_43
+# BUGS=(
+#   Cli_30
+#   Lang_8
+#   Math_43
+# )
+mapfile -t BUGS < <(
+  find "${DATA_DEFECTS}" \
+    -mindepth 1 \
+    -maxdepth 1 \
+    -type d \
+    -printf '%f\n' \
+    | sort
 )
 
 PY="${PYTHON:-python3}"
