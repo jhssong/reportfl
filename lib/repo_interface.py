@@ -28,6 +28,7 @@ def get_repo_interface(
     use_recent_bug_report=False,
     timewindow=0,
     two_phase=False,
+    random_seed=-1,
     **ri_kwargs,
 ):
     def _name_matches_proj_list(name, proj_list):
@@ -42,6 +43,7 @@ def get_repo_interface(
             use_recent_bug_report,
             timewindow,
             two_phase,
+            random_seed,
             **ri_kwargs,
         )
     else:

@@ -12,6 +12,7 @@ USE_CURRENT_BUG_REPORT=$6
 USE_RECENT_BUG_REPORT=$7
 TIMEWINDOW=$8
 TWO_PHASE=$9
+RANDOM_SEED=${10:--1}
 BUDGET="10"
 NUM_TESTS="1"
 
@@ -28,6 +29,9 @@ if [ "$USE_RECENT_BUG_REPORT" = "true" ]; then
 fi
 if [ "$TWO_PHASE" = "true" ]; then
     cmd="${cmd} --two_phase"
+fi
+if [ "$RANDOM_SEED" -ne -1 ]; then
+    cmd="${cmd} --random_seed ${RANDOM_SEED}"
 fi
 
 trap 'echo interrupted; exit 1' INT

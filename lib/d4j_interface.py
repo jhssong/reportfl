@@ -1,6 +1,7 @@
 import os
 import re
 import json
+import random
 
 from copy import deepcopy
 from difflib import SequenceMatcher
@@ -90,6 +91,7 @@ class D4JRepositoryInterface:
         use_recent_bug_report,
         timewindow,
         two_phase,
+        random_seed=-1,
         show_line_number=True,
         postprocess_test_snippet=True,
         max_repetition_in_stack=5,
@@ -99,6 +101,7 @@ class D4JRepositoryInterface:
         self._use_recent_bug_report = use_recent_bug_report
         self._timewindow = timewindow
         self._two_phase = two_phase
+        self._random_seed = random_seed
 
         self._bug_name = bug_name
         self._method_lists = self._load_method_lists(bug_name)
@@ -162,6 +165,9 @@ class D4JRepositoryInterface:
             return None
         with open(os.path.join(BUG_INFO_DIR, bug_name, file_name)) as f:
             relevant_reports = json.load(f)
+        if self._random_seed != -1:
+            random.seed(self._random_seed)
+            return random.sample(relevant_reports, min(3, len(relevant_reports)))
         return relevant_reports[:3]  # return top 3 relevant reports
 
     @property

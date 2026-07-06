@@ -28,6 +28,7 @@ class AutoDebugger(llm_utils.OpenAIEngine):
         use_recent_bug_report=False,
         timewindow=0,
         two_phase=False,
+        random_seed=-1,
         **ri_kwargs,
     ):
         super().__init__()
@@ -40,6 +41,7 @@ class AutoDebugger(llm_utils.OpenAIEngine):
             use_recent_bug_report,
             timewindow,
             two_phase,
+            random_seed,
             **ri_kwargs,
         )
         self._test_offset = test_offset
@@ -344,6 +346,7 @@ if __name__ == "__main__":
     parser.add_argument("--use_recent_bug_report", action="store_true")
     parser.add_argument("--timewindow", default=0, type=int)
     parser.add_argument("--two_phase", action="store_true")
+    parser.add_argument("--random_seed", default=-1, type=int)
 
     args = parser.parse_args()
 
@@ -363,6 +366,7 @@ if __name__ == "__main__":
         use_recent_bug_report=args.use_recent_bug_report,
         timewindow=args.timewindow,
         two_phase=args.two_phase,
+        random_seed=args.random_seed,
     )
 
     try:
